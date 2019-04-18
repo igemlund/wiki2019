@@ -7,6 +7,8 @@ tocbot.init({
     contentSelector: '#main-text',
     // Which headings to grab inside of the contentSelector element.
     headingSelector: 'h1, h2, h3',
+
+    positionFixedClass: 'toc-container'
 });
 
 var stickyOffset = $('.toc-container').offset().top;

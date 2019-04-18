@@ -5,7 +5,7 @@
 
 *{
     margin: 0;
-    padding: 4px;
+    padding: 1px;
 }
 
 body{
@@ -107,17 +107,13 @@ $grid-spacing:3%;
 .col-11 { width:(100% / 1.090909090909091) - ($grid-spacing * 1 / 12); }
 .col-12 { width:100%; }
 
-.toc-col{
-    //height: 1000px; 
-}
-
-.js-toc{
-    //position: relative;
+.toc-container{
+    padding: 1em;
+    position: relative;
+    margin-right: 5.3em;
     top: 0;
 }
 
 .fixed{
-    padding: 1em;
     position: fixed;
-    top: 0;
 }

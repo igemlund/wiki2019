@@ -11412,6 +11412,8 @@ tocbot.init({
     contentSelector: '#main-text',
     // Which headings to grab inside of the contentSelector element.
     headingSelector: 'h1, h2, h3',
+
+    positionFixedClass: 'toc-container'
 });
 
 var stickyOffset = $('.toc-container').offset().top;
@@ -11421,8 +11423,6 @@ $(window).scroll(function(){
   
   var sticky = $('.toc-container'),
       scroll = $(window).scrollTop();
-   console.log(stickyOffset);
-   console.log(scroll);
 
   if (scroll >= stickyOffset) sticky.addClass('fixed');
   else sticky.removeClass('fixed');
