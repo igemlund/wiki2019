@@ -5,10 +5,10 @@ $body-bg: #FFFFFF;
 $white: #FFFFFF;
 $main-font: 'Arial';
 
-$primary-color: #AAFCB8;
-$secondary-color: #BAF0B8;
-$light-color: #D7FFF1;
-$dark-color: #008080;
+$primary-color: #96989b;
+$secondary-color: #ccc;
+$light-color: #ccc;
+$dark-color: #333333;
 
 
 *{
@@ -22,15 +22,6 @@ body{
     text-align: center;
 }
 
-h1{
-    color: $dark-color;
-    padding-top: 1em;
-}
-h2{
-    color: $dark-color;
-    padding-top: 1em;
-}
-
 a{
     text-decoration: none;
     color: $dark-color;
@@ -42,12 +33,22 @@ a{
     padding: 0x 20px;
 }
 
+h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
+    display: block;
+    content: " ";
+    height: 60px;
+    margin-top: -60px;
+    visibility: hidden;
+}
+
 header#main-header{
-    padding:1em;
+    padding-top: 20px;
     background:$primary-color;
     color:$light-color;
+    text-align: left;
     h1{
         font-size:40px;
+        font-family:'Charter';
     }
 }
 
@@ -57,6 +58,8 @@ nav#main-nav{
     ul{
         list-style: none;
         padding-top: 10px;
+        padding-left: 20px;
+        text-align: left;
     }
     
     li{
@@ -64,15 +67,28 @@ nav#main-nav{
     }
     a{
      &:hover{
-        color: #ccc;
+        color: $dark-color;
         }
     }
 }
 
 #text{
     text-align: left;
-    max-width: 400px;
+    max-width: 600px;
+    font-size: 20px;
+    font-family:'Charter';
+    color: #333333;
+    h1{
+        padding-top: 1em;
+        font-family: 'Arial';
+    }
+    h2{
+        padding-top: 1em;
+        font-family: 'Arial';
+    }
+    
 }
+
 //----- Extends
 %clearfix:after {
 	display:block;
@@ -108,11 +124,7 @@ $grid-spacing:3%;
 .col-1 { width:(100% / 12) - ($grid-spacing * 11 / 12); }
 .col-2 { width:(100% / 6) - ($grid-spacing * 10 / 12); }
 .col-3 { width:(100% / 4) - ($grid-spacing * 9 / 12); }
-//.col-4 { width:(100% / 3) - ($grid-spacing * 8 / 12); }
-.col-4 { 
-    width:(100% / 3) - ($grid-spacing * 8 / 12);
-    height: 100%;
-}
+.col-4 { width:(100% / 3) - ($grid-spacing * 8 / 12); }
 .col-5 { width:(100% / 2.4) - ($grid-spacing * 7 / 12); height: 1000px; }
 .col-6 { width:(100% / 2) - ($grid-spacing * 6 / 12); }
 .col-7 { width:(100% / 1.714285714285714) - ($grid-spacing * 5 / 12); }
@@ -121,3 +133,13 @@ $grid-spacing:3%;
 .col-10 { width:(100% / 1.2) - ($grid-spacing * 2 / 12); }
 .col-11 { width:(100% / 1.090909090909091) - ($grid-spacing * 1 / 12); }
 .col-12 { width:100%; }
+
+.toc-col{
+    height: 1000px; 
+}
+
+.js-toc{
+    position: fixed;
+    padding: 1em;
+}
+
