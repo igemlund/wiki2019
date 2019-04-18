@@ -25,23 +25,20 @@ a{
     padding: 0x 20px;
 }
 
-h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
-    display: block;
-    content: " ";
-    height: 60px;
-    margin-top: -60px;
-    visibility: hidden;
-}
+//h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
+//    display: block;
+//    content: " ";
+//    height: 60px;
+//    margin-top: -60px;
+//    visibility: hidden;
+//}
 
 header#main-header{
     padding-top: 20px;
+    padding-left: 20px;
     background:$primary-color;
     color:$light-color;
     text-align: left;
-    h1{
-        font-size:40px;
-        font-family:$header-font;
-    }
 }
 
 nav#main-nav{
@@ -101,7 +98,7 @@ $grid-spacing:3%;
 .col-2 { width:(100% / 6) - ($grid-spacing * 10 / 12); }
 .col-3 { width:(100% / 4) - ($grid-spacing * 9 / 12); }
 .col-4 { width:(100% / 3) - ($grid-spacing * 8 / 12); }
-.col-5 { width:(100% / 2.4) - ($grid-spacing * 7 / 12); height: 1000px; }
+.col-5 { width:(100% / 2.4) - ($grid-spacing * 7 / 12); }
 .col-6 { width:(100% / 2) - ($grid-spacing * 6 / 12); }
 .col-7 { width:(100% / 1.714285714285714) - ($grid-spacing * 5 / 12); }
 .col-8 { width:(100% / 1.5) - ($grid-spacing * 4 / 12); }
@@ -111,7 +108,7 @@ $grid-spacing:3%;
 .col-12 { width:100%; }
 
 .toc-col{
-    height: 1000px; 
+    //height: 1000px; 
 }
 
 .js-toc{
