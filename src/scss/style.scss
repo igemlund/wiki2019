@@ -11,7 +11,9 @@
 body{
     background: $body-bg;
     font-family: $main-font;
-    text-align: center;
+    align: left;
+    max-width: 960px;
+    margin: auto;
 }
 
 a{
@@ -25,6 +27,11 @@ a{
     padding: 0x 20px;
 }
 
+#logo{
+    padding-top:1em;
+    padding-bottom:1em;
+}
+
 //h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
 //    display: block;
 //    content: " ";
@@ -36,27 +43,29 @@ a{
 header#main-header{
     padding-top: 20px;
     padding-left: 20px;
-    background:$primary-color;
+    background:0;//$primary-color;
     color:$light-color;
     text-align: left;
 }
 
 nav#main-nav{
-    background:$secondary-color;
-    height: 40px;
+    background:0;//$secondary-color;
+    padding-bottom: 1em;
+    //height: 40px;
     ul{
         list-style: none;
-        padding-top: 10px;
-        padding-left: 20px;
-        text-align: left;
+        padding: 0;
+        margin: 0;
     }
     
-    li{
-        display:inline;
+    .menu{
+        //padding: 12px;
+        display: flex;
+        justify-content: space-between;
     }
     a{
      &:hover{
-        color: $dark-color;
+        color: $light-color;
         }
     }
 }
