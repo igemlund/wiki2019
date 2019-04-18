@@ -3,6 +3,8 @@ const browserSync  = require('browser-sync').create();
 const sass         = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const tocbot       = require('tocbot');
+const jquery       = require('jquery');
+
 
 // Compile Sass & Inject Into Browser
 gulp.task('sass', function() {

@@ -112,7 +112,12 @@ $grid-spacing:3%;
 }
 
 .js-toc{
-    position: fixed;
-    padding: 1em;
+    //position: relative;
+    top: 0;
 }
 
+.fixed{
+    padding: 1em;
+    position: fixed;
+    top: 0;
+}
