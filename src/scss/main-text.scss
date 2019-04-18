@@ -1,0 +1,16 @@
+@import 'constants';
+#main-text{
+    text-align: justify;
+    line-height: 30px;
+    max-width: 600px;
+    font-size: 20px;
+    font-family:'Charter';
+    color: #333333;
+    h1, h2, h3{
+        padding-top: 1em;
+        padding-bottom: 0.5em;
+        font-family: $header-font;
+    }
+    
+    
+}

@@ -1,15 +1,7 @@
 @import '../../node_modules/tocbot/src/scss/tocbot-core';
 @import '../../node_modules/tocbot/src/scss/tocbot-default-theme';
-
-$body-bg: #FFFFFF;
-$white: #FFFFFF;
-$main-font: 'Arial';
-
-$primary-color: #96989b;
-$secondary-color: #ccc;
-$light-color: #ccc;
-$dark-color: #333333;
-
+@import 'constants';
+@import 'main-text';
 
 *{
     margin: 0;
@@ -48,7 +40,7 @@ header#main-header{
     text-align: left;
     h1{
         font-size:40px;
-        font-family:'Charter';
+        font-family:$header-font;
     }
 }
 
@@ -72,22 +64,6 @@ nav#main-nav{
     }
 }
 
-#text{
-    text-align: left;
-    max-width: 600px;
-    font-size: 20px;
-    font-family:'Charter';
-    color: #333333;
-    h1{
-        padding-top: 1em;
-        font-family: 'Arial';
-    }
-    h2{
-        padding-top: 1em;
-        font-family: 'Arial';
-    }
-    
-}
 
 //----- Extends
 %clearfix:after {
