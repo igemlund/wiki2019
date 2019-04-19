@@ -1,0 +1,127 @@
+@import '../../node_modules/tocbot/src/scss/tocbot-core';
+@import '../../node_modules/tocbot/src/scss/tocbot-default-theme';
+@import 'constants';
+@import 'main-text';
+
+*{
+    margin: 0;
+    padding: 1px;
+}
+
+body{
+    background: $body-bg;
+    font-family: $main-font;
+    align: left;
+    max-width: 960px;
+    margin: auto;
+}
+
+a{
+    text-decoration: none;
+    color: $dark-color;
+}
+
+.container{
+    max-width: 960px;
+    margin: auto;
+    padding: 0x 20px;
+}
+
+#logo{
+    padding-top:1em;
+    padding-bottom:1em;
+}
+
+//h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
+//    display: block;
+//    content: " ";
+//    height: 60px;
+//    margin-top: -60px;
+//    visibility: hidden;
+//}
+
+header#main-header{
+    padding-top: 20px;
+    padding-left: 20px;
+    background:0;//$primary-color;
+    color:$light-color;
+    text-align: left;
+}
+
+nav#main-nav{
+    background:0;//$secondary-color;
+    padding-bottom: 1em;
+    //height: 40px;
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .menu{
+        //padding: 12px;
+        display: flex;
+        justify-content: space-between;
+    }
+    a{
+     &:hover{
+        color: $light-color;
+        }
+    }
+}
+
+
+//----- Extends
+%clearfix:after {
+	display:block;
+	clear:both;
+	content:'';
+}
+
+//----- Grid System
+$grid-spacing:3%;
+
+.row {
+	@extend %clearfix;
+
+	& + & {
+		margin-top:$grid-spacing;
+	}
+}
+
+[class^="col-"] {
+	float:left;
+	margin-right:$grid-spacing;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+
+	&:last-child {
+		margin-right:0%;
+	}
+}
+
+$grid-spacing:3%;
+
+.col-1 { width:(100% / 12) - ($grid-spacing * 11 / 12); }
+.col-2 { width:(100% / 6) - ($grid-spacing * 10 / 12); }
+.col-3 { width:(100% / 4) - ($grid-spacing * 9 / 12); }
+.col-4 { width:(100% / 3) - ($grid-spacing * 8 / 12); }
+.col-5 { width:(100% / 2.4) - ($grid-spacing * 7 / 12); }
+.col-6 { width:(100% / 2) - ($grid-spacing * 6 / 12); }
+.col-7 { width:(100% / 1.714285714285714) - ($grid-spacing * 5 / 12); }
+.col-8 { width:(100% / 1.5) - ($grid-spacing * 4 / 12); }
+.col-9 { width:(100% / 1.333333333333333) - ($grid-spacing * 3 / 12); }
+.col-10 { width:(100% / 1.2) - ($grid-spacing * 2 / 12); }
+.col-11 { width:(100% / 1.090909090909091) - ($grid-spacing * 1 / 12); }
+.col-12 { width:100%; }
+
+.toc-container{
+    padding: 15px;
+    position: relative;
+    top: 0;
+}
+
+.fixed{
+    position: fixed;
+}
