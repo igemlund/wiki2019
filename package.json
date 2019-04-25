@@ -1,22 +1,33 @@
 {
-  "name": "sass_starter_pack",
-  "version": "1.0.0",
-  "description": "Starter pack using gulp",
-  "main": "index.js",
-  "scripts": {
-    "start": "gulp"
-  },
-  "author": "Brad Traversy",
-  "license": "ISC",
-  "devDependencies": {
-    "browser-sync": "^2.18.13",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-sass": "^3.1.0"
-  },
+  "name": "wiki",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "browserify": "^16.2.3",
-    "jquery": "^3.4.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.0",
+    "react-sticky": "^6.0.3",
     "tocbot": "^4.6.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

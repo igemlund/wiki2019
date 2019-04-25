@@ -166,4 +166,5 @@ nav#main-nav {
   top: 0; }
 
 .fixed {
-  position: fixed; }
+  position: fixed;
+  top: 0; }

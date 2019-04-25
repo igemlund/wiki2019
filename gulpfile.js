@@ -11,30 +11,30 @@ const config = {
 
 // Build Tasks
 gulp.task('sass', function() {
-    return gulp.src(['app/scss/*.scss'])
+    return gulp.src(['src/scss/*.scss'])
         .pipe(sass())
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
-        .pipe(gulp.dest("build/css"))
+        .pipe(gulp.dest("src/css"))
         .pipe(browserSync.stream());
 });
 
 gulp.task('pages', function() {
-    return gulp.src(['app/pages/*.html'])
-        .pipe(gulp.dest("build/"))
+    return gulp.src(['src/pages/*.html'])
+        .pipe(gulp.dest("src/"))
         .pipe(browserSync.stream());
 });
 
 gulp.task('assets', () => {
-  return gulp.src(['app/assets/*'])
-    .pipe(gulp.dest('build/'))
+  return gulp.src(['src/assets/*'])
+    .pipe(gulp.dest('src/'))
 });
 
 gulp.task('scripts', () => {
-  return gulp.src('app/bundle.js')
-    .pipe(gulp.dest('build/'));
+  return gulp.src('src/bundle.js')
+    .pipe(gulp.dest('src/'));
 });
 
 // Watch Tasks
@@ -53,11 +53,11 @@ gulp.task('sync-assets', ['assets'], (done) => {
   done();
 });
 
-gulp.task('browser-sync', ['build'], () => {
+gulp.task('browser-sync', ['src'], () => {
   browserSync.init({
     //startPath: `/Team:${config.teamName}`,
     server: {
-      baseDir: 'build/',
+      baseDir: 'src/',
       serveStaticOptions: {
         extensions: ['html', 'css', 'min.css', 'js', 'min.js']
       },
@@ -72,17 +72,15 @@ gulp.task('browser-sync', ['build'], () => {
   });
 });
 
-gulp.task('watch', ['build', 'browser-sync'], () => {
-   gulp.watch('app/pages/*.html', ['sync-pages']);
-   gulp.watch('app/*.js', ['sync-scripts']);
-   gulp.watch('app/assets/*', ['sync-assets']);
-   gulp.watch('app/scss/*.scss', ['sass']);
+gulp.task('watch', ['src', 'browser-sync'], () => {
+   gulp.watch('src/scss/*.scss', ['sass']);
+   gulp.watch('src/assets', ['assts']);
  });
 
 // Watch & Serve
 gulp.task('serve', ['pages', 'assets', 'scripts','sass']);
 
 // Default Task
-gulp.task('build', ['pages', 'assets', 'scripts', 'sass']);
+gulp.task('src', ['pages', 'assets', 'scripts', 'sass']);
 
-gulp.task('default', ['serve', 'watch']);
+gulp.task('default', ['watch']);
