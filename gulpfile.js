@@ -1,86 +1,38 @@
-const gulp         = require('gulp');
-const browserSync  = require('browser-sync');
-const sass         = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
-const jquery       = require('jquery');
+var gulp 	= require('gulp'),
+  	sass 	= require('gulp-sass'),
+  	concat 	= require('gulp-concat'),
+  	uglify 	= require('gulp-uglify'),
+  	rename 	= require('gulp-rename');
 
-const config = {
-   teamName: 'Lund',
+var paths = {
+  styles: {
+    src: './src/scss/*.scss',
+    dest: './src/css/'
+  },
 };
 
+function styles() {
+  return gulp
+  	.src(paths.styles.src, {
+      sourcemaps: true
+    })
+	.pipe(sass())
+	.pipe(rename({
+	  basename: 'main',
+	  suffix: '.min'
+	}))
+.pipe(gulp.dest(paths.styles.dest));
+}
 
-// Build Tasks
-gulp.task('sass', function() {
-    return gulp.src(['src/scss/*.scss'])
-        .pipe(sass())
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
-        .pipe(gulp.dest("src/css"))
-        .pipe(browserSync.stream());
-});
 
-gulp.task('pages', function() {
-    return gulp.src(['src/pages/*.html'])
-        .pipe(gulp.dest("src/"))
-        .pipe(browserSync.stream());
-});
+function watch() {
+  gulp
+  	.watch(paths.styles.src, styles);
+}
 
-gulp.task('assets', () => {
-  return gulp.src(['src/assets/*'])
-    .pipe(gulp.dest('src/'))
-});
+var build = gulp.parallel(styles,  watch);
 
-gulp.task('scripts', () => {
-  return gulp.src('src/bundle.js')
-    .pipe(gulp.dest('src/'));
-});
-
-// Watch Tasks
-gulp.task('sync-pages', ['pages'], (done) => {
-  browserSync.reload();
-  done();
-});
-
-gulp.task('sync-scripts', ['scripts'], (done) => {
-  browserSync.reload();
-  done();
-});
-
-gulp.task('sync-assets', ['assets'], (done) => {
-  browserSync.reload();
-  done();
-});
-
-gulp.task('browser-sync', ['src'], () => {
-  browserSync.init({
-    //startPath: `/Team:${config.teamName}`,
-    server: {
-      baseDir: 'src/',
-      serveStaticOptions: {
-        extensions: ['html', 'css', 'min.css', 'js', 'min.js']
-      },
-     // middleware: (req,res,next) => {
-     //   // Reroute wiki url to directory in dist
-     //   req.url = req.url.replace(/^\/Team:[^/]+/, '/pages');
-     //   req.url = req.url.replace(/^\/File:/, `/assets/`);
-     //   return next();
-     // },
-    },
-    ghostMode: false,
-  });
-});
-
-gulp.task('watch', ['src', 'browser-sync'], () => {
-   gulp.watch('src/scss/*.scss', ['sass']);
-   gulp.watch('src/assets', ['assts']);
- });
-
-// Watch & Serve
-gulp.task('serve', ['pages', 'assets', 'scripts','sass']);
-
-// Default Task
-gulp.task('src', ['pages', 'assets', 'scripts', 'sass']);
-
-gulp.task('default', ['watch']);
+gulp
+  .task(build);
+gulp
+  .task('default', build);
