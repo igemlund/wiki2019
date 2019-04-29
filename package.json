@@ -8,6 +8,8 @@
     "gulp-sass": "^4.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-load-script": "0.0.6",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
     "react-sticky": "^6.0.3",
     "tocbot": "^4.6.0"
@@ -36,6 +38,7 @@
   "devDependencies": {
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^1.4.0",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "jquery": "^3.4.0"
   }
 }

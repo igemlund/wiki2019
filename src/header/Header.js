@@ -1,5 +1,13 @@
 import React from 'react';
+import Script from 'react-load-script'
 import {ReactComponent as Logo} from './logo.svg';
+import {
+    Link,
+} from 'react-router-dom';
+
+function refreshPage(){
+    window.location.reload();
+}
 
 function Header() {
   return (
@@ -12,16 +20,14 @@ function Header() {
                 <nav id="main-nav">
                 <div class="col-10">
                 <ul class="menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">Project</a></li>
-                    <li><a href="#">Model</a></li>
-                    <li><a href="#">Human Practice</a></li>
+                    <li><Link to="/" onClick={refreshPage}>Home</Link></li>
+                    <li><Link to="/Team" onClick={refreshPage}>Team</Link></li> 
                 </ul>
                 </div>
                 </nav>
           </div>
        </div>
+      <script src="../../public/bundle.js"></script>
    </div>
   );
 }

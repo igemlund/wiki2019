@@ -1,4 +1,11 @@
 import React from 'react';
+import {
+    Route
+} from 'react-router-dom';
+
+
+import Team from '../team/Team.js';
+import Homepage from '../homepage/Homepage.js';
 
 function Body() {
     return (
@@ -10,26 +17,8 @@ function Body() {
                     </div>
                 </div>
                 <div id="main-text" class="col-9">
-                <h1 id="h1"> Welcome!</h1>
-                Ipsum ipsam similique necessitatibus reprehenderit similique? Est corporis tempora sapiente commodi necessitatibus culpa obcaecati Nesciunt vel perferendis minus neque non accusamus? Dolore aut beatae sapiente ipsa voluptatem, voluptates Recusandae nobis.
-                <h2 id="h2"> Header 2</h2>
-                Ipsum ipsam similique necessitatibus reprehenderit similique? Est corporis tempora sapiente commodi necessitatibus culpa obcaecati Nesciunt vel perferendis minus neque non accusamus? Dolore aut beatae sapiente ipsa voluptatem, voluptates Recusandae nobis.
-                <h2 id="h3"> Header 2</h2>
-                Ipsum ipsam similique necessitatibus reprehenderit similique? Est corporis tempora sapiente commodi necessitatibus culpa obcaecati Nesciunt vel perferendis minus neque non accusamus? Dolore aut beatae sapiente ipsa voluptatem, voluptates Recusandae nobis.
-                <h2 id="h2"> Header 2</h2>
-                Ipsum ipsam similique necessitatibus reprehenderit similique? Est corporis tempora sapiente commodi necessitatibus culpa obcaecati Nesciunt vel perferendis minus neque non accusamus? Dolore aut beatae sapiente ipsa voluptatem, voluptates Recusandae nobis.
-                <h2 id="h3"> Header 2</h2>
-                Ipsum ipsam similique necessitatibus reprehenderit similique? Est corporis tempora sapiente commodi necessitatibus culpa obcaecati Nesciunt vel perferendis minus neque non accusamus? Dolore aut beatae sapiente ipsa voluptatem, voluptates Recusandae nobis.
-                <h1 id="h11"> Welcome!</h1>
-                Ipsum ipsam similique necessitatibus reprehenderit similique? Est corporis tempora sapiente commodi necessitatibus culpa obcaecati Nesciunt vel perferendis minus neque non accusamus? Dolore aut beatae sapiente ipsa voluptatem, voluptates Recusandae nobis.
-                <h2 id="h2"> Header 2</h2>
-                Ipsum ipsam similique necessitatibus reprehenderit similique? Est corporis tempora sapiente commodi necessitatibus culpa obcaecati Nesciunt vel perferendis minus neque non accusamus? Dolore aut beatae sapiente ipsa voluptatem, voluptates Recusandae nobis.
-                <h2 id="h3"> Header 2</h2>
-                Ipsum ipsam similique necessitatibus reprehenderit similique? Est corporis tempora sapiente commodi necessitatibus culpa obcaecati Nesciunt vel perferendis minus neque non accusamus? Dolore aut beatae sapiente ipsa voluptatem, voluptates Recusandae nobis.
-                <h2 id="h2"> Header 2</h2>
-                Ipsum ipsam similique necessitatibus reprehenderit similique? Est corporis tempora sapiente commodi necessitatibus culpa obcaecati Nesciunt vel perferendis minus neque non accusamus? Dolore aut beatae sapiente ipsa voluptatem, voluptates Recusandae nobis.
-                <h2 id="h3"> Header 2</h2>
-                Ipsum ipsam similique necessitatibus reprehenderit similique? Est corporis tempora sapiente commodi necessitatibus culpa obcaecati Nesciunt vel perferendis minus neque non accusamus? Dolore aut beatae sapiente ipsa voluptatem, voluptates Recusandae nobis.
+                    <Route exact path='/' component={Homepage} />
+                    <Route exact path='/Team' component={Team} />
                 </div>
             </div>
         </div>
