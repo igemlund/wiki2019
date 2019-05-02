@@ -67,29 +67,31 @@ a.toc-link {
 body {
   background: #FFFFFF;
   font-family: "Open Sans";
-  align: left;
-  max-width: 960px;
+  align: center;
+  max-width: 1060px;
   margin: auto; }
 
 a {
   text-decoration: none;
   color: #333333; }
-
-.container {
-  max-width: 960px;
-  margin: auto;
-  padding: 0x 20px; }
+  a:hover {
+    color: #ccc; }
 
 #logo {
   padding-top: 1em;
   padding-bottom: 1em; }
 
-header#main-header {
-  padding-top: 20px;
-  padding-left: 20px;
-  background: 0;
-  color: #ccc;
+#title {
+  line-height: 50px;
   text-align: left; }
+
+.sticky {
+  padding: 15px;
+  position: relative;
+  max-width: 200px;
+  line-height: 30px; }
+  .sticky .is-active-link::before {
+    background: #333333; }
 
 nav#main-nav {
   background: 0;
@@ -105,8 +107,10 @@ nav#main-nav {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between; }
-  nav#main-nav a:hover {
-    color: #ccc; }
+
+.fixed {
+  position: fixed;
+  top: 0px; }
 
 .row:after {
   display: block;
@@ -159,11 +163,3 @@ nav#main-nav {
 
 .col-12 {
   width: 100%; }
-
-.toc-container {
-  padding: 15px;
-  position: relative;
-  top: 0; }
-
-.fixed {
-  position: fixed; }

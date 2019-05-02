@@ -1,4 +1,32 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+var tocbot = require('tocbot');
+var $ = require('jquery');
+
+tocbot.init({
+    tocSelector: '.js-toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: '#main-text',
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: 'h1, h2, h3',
+
+    //positionFixedClass: 'toc-container'
+});
+
+
+$(window).scroll(function(){
+
+    var stickyOffset = $('#main-nav').offset().top;
+    var sticky = $('.sticky'),
+        scroll = $(window).scrollTop();
+    console.log(stickyOffset);
+    console.log(scroll);
+
+    if (scroll >= stickyOffset) sticky.addClass('fixed');
+    else sticky.removeClass('fixed');
+});
+
+
+},{"jquery":2,"tocbot":5}],2:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.4.0
  * https://jquery.com/
@@ -10588,7 +10616,7 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 /**
  * This file is responsible for building the DOM and updating DOM state.
  *
@@ -10865,7 +10893,7 @@ module.exports = function (options) {
   }
 }
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 module.exports = {
   // Where to render the table of contents.
   tocSelector: '.js-toc',
@@ -10939,7 +10967,7 @@ module.exports = {
   scrollContainer: null
 }
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 (function (global){
 /**
  * Tocbot
@@ -11155,7 +11183,7 @@ module.exports = {
 })
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./build-html.js":2,"./default-options.js":3,"./parse-content.js":5,"./scroll-smooth":6}],5:[function(require,module,exports){
+},{"./build-html.js":3,"./default-options.js":4,"./parse-content.js":6,"./scroll-smooth":7}],6:[function(require,module,exports){
 /**
  * This file is responsible for parsing the content from the DOM and making
  * sure data is nested properly.
@@ -11282,7 +11310,7 @@ module.exports = function parseContent (options) {
   }
 }
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /* globals location, requestAnimationFrame */
 
 exports.initSmoothScrolling = initSmoothScrolling
@@ -11402,31 +11430,4 @@ function jump (target, options) {
   }
 }
 
-},{}],7:[function(require,module,exports){
-var tocbot = require('tocbot');
-var $ = require('jquery');
-
-tocbot.init({
-    tocSelector: '.js-toc',
-    // Where to grab the headings to build the table of contents.
-    contentSelector: '#main-text',
-    // Which headings to grab inside of the contentSelector element.
-    headingSelector: 'h1, h2, h3',
-
-    positionFixedClass: 'toc-container'
-});
-
-var stickyOffset = $('.toc-container').offset().top;
-var stickyOffset = 242;
-
-$(window).scroll(function(){
-  
-  var sticky = $('.toc-container'),
-      scroll = $(window).scrollTop();
-
-  if (scroll >= stickyOffset) sticky.addClass('fixed');
-  else sticky.removeClass('fixed');
-});
-
-
-},{"jquery":1,"tocbot":4}]},{},[7]);
+},{}]},{},[1]);

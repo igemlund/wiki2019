@@ -8,23 +8,22 @@
     padding: 1px;
 }
 
+$site-width: 1060px;
+
 body{
     background: $body-bg;
     font-family: $main-font;
-    align: left;
-    max-width: 960px;
+    align: center;
+    max-width: $site-width;
     margin: auto;
 }
 
 a{
     text-decoration: none;
     color: $dark-color;
-}
-
-.container{
-    max-width: 960px;
-    margin: auto;
-    padding: 0x 20px;
+    &:hover{
+        color: $light-color;
+    }
 }
 
 #logo{
@@ -32,20 +31,22 @@ a{
     padding-bottom:1em;
 }
 
-//h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
-//    display: block;
-//    content: " ";
-//    height: 60px;
-//    margin-top: -60px;
-//    visibility: hidden;
-//}
-
-header#main-header{
-    padding-top: 20px;
-    padding-left: 20px;
-    background:0;//$primary-color;
-    color:$light-color;
+#title{
+    line-height: 50px;
     text-align: left;
+}
+    
+
+.sticky{
+    .is-active-link::before{
+        background: $dark-color;
+    }
+    padding: 15px;
+    position: relative;
+    max-width: 200px;
+    line-height: 30px;
+    //top: 37px;
+
 }
 
 nav#main-nav{
@@ -63,13 +64,11 @@ nav#main-nav{
         display: flex;
         justify-content: space-between;
     }
-    a{
-     &:hover{
-        color: $light-color;
-        }
-    }
 }
-
+.fixed{ 
+    position: fixed;
+    top: 0px;
+}
 
 //----- Extends
 %clearfix:after {
@@ -116,12 +115,3 @@ $grid-spacing:3%;
 .col-11 { width:(100% / 1.090909090909091) - ($grid-spacing * 1 / 12); }
 .col-12 { width:100%; }
 
-.toc-container{
-    padding: 15px;
-    position: relative;
-    top: 0;
-}
-
-.fixed{
-    position: fixed;
-}
