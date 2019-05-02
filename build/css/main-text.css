@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Lora|Open+Sans");
 #main-text {
+  padding-top: 4em;
   text-align: justify;
   line-height: 30px;
   font-size: 20px;

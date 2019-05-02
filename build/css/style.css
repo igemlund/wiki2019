@@ -49,6 +49,7 @@ a.toc-link {
   background-color: #54BC4B; }
 
 #main-text {
+  padding-top: 4em;
   text-align: justify;
   line-height: 30px;
   font-size: 20px;
@@ -100,8 +101,7 @@ a {
     color: #ccc; }
 
 #logo {
-  padding-top: 1em;
-  padding-bottom: 1em; }
+  padding-top: 1em; }
 
 #title {
   line-height: 50px;
@@ -117,13 +117,17 @@ a {
   .sticky .is-active-link::before {
     background: #333333; }
 
-div#main-nav {
-  padding-top: 138px; }
-  div#main-nav ul {
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 900px;
+  overflow: hidden;
+  background: #FFFFFF; }
+  .navbar ul {
     list-style: none;
     padding: 0;
     margin: 0; }
-  div#main-nav .menu {
+  .navbar .menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -133,7 +137,7 @@ div#main-nav {
 
 .fixed {
   position: fixed;
-  top: 0px; }
+  top: 32px; }
 
 .row:after {
   display: block;

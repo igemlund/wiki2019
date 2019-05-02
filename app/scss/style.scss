@@ -28,7 +28,6 @@ a{
 
 #logo{
     padding-top:1em;
-    padding-bottom:1em;
 }
 
 #title{
@@ -51,8 +50,12 @@ a{
 
 }
 
-div#main-nav{
-    padding-top: 138px;
+.navbar{
+    position: fixed;
+    top: 0;
+    width: $site-width;
+    overflow: hidden;
+    background: $body-bg;
     ul{
         list-style: none;
         padding: 0;
@@ -62,12 +65,13 @@ div#main-nav{
     .menu{
         //padding: 12px;
         display: flex;
+        
         justify-content: space-between;
     }
 }
 .fixed{ 
     position: fixed;
-    top: 0px;
+    top: 32px;
 }
 
 //----- Extends

@@ -1,9 +1,5 @@
 <!-- header.nunjucks -->
-<div class="row">
-    <div class="col-3">
-            <img id="logo" src="logo.svg" width="150">
-    </div>
-    <div id="main-nav" class="col-9">
+            <div class="navbar">
             <nav>
                  <ul id="main-menu" class="menu">
                     <li><a href="/index.html">Home</a></li>
@@ -14,6 +10,15 @@
                     <li><a href="#">Human Practice</a></li>
                 </ul>
             </nav>
-    </div>
+            </div>
+<div class="row">
+    <div class="col-3">
+            <img id="logo" src="logo_animated_grey.gif" width="150">
+            <img id="logo-text" src="logo.svg" width="150">
+<div class="sticky">
+         <div class="js-toc"></div>
+         </div>
 
-</div>
+    </div>
+    <div class="col-9">
+

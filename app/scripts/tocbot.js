@@ -14,7 +14,7 @@ tocbot.init({
 
 $(window).scroll(function(){
 
-    var stickyOffset = $('#main-text').offset().top;
+    var stickyOffset = $('#logo-text').offset().top;
     var sticky = $('.sticky'),
         scroll = $(window).scrollTop();
     console.log(stickyOffset);
