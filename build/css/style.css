@@ -51,7 +51,6 @@ a.toc-link {
 #main-text {
   text-align: justify;
   line-height: 30px;
-  max-width: 600px;
   font-size: 20px;
   font-family: 'Charter';
   color: #333333; }
@@ -59,6 +58,29 @@ a.toc-link {
     padding-top: 1em;
     padding-bottom: 0.5em;
     font-family: "Open Sans"; }
+  #main-text p {
+    padding-bottom: 1.0em; }
+  #main-text p.ingress {
+    font-family: "Open Sans";
+    color: #727272; }
+  #main-text p.big-cite {
+    font-family: "Open Sans";
+    font-size: 18px;
+    position: center;
+    color: #727272;
+    padding-left: 5em;
+    padding-right: 5em; }
+  #main-text p.fig {
+    font-size: 16px;
+    padding-left: 2em;
+    padding-right: 2em;
+    line-height: 20px;
+    color: #727272; }
+  #main-text p.byline {
+    font-family: "Open Sans";
+    font-size: 18px;
+    text-align: right;
+    color: #727272; }
 
 * {
   margin: 0;
@@ -68,7 +90,7 @@ body {
   background: #FFFFFF;
   font-family: "Open Sans";
   align: center;
-  max-width: 1060px;
+  max-width: 900px;
   margin: auto; }
 
 a {
@@ -86,21 +108,22 @@ a {
   text-align: left; }
 
 .sticky {
+  font-size: 15px;
   padding: 15px;
+  padding-right: 1em;
   position: relative;
-  max-width: 200px;
-  line-height: 30px; }
+  max-width: 180px;
+  line-height: 25px; }
   .sticky .is-active-link::before {
     background: #333333; }
 
-nav#main-nav {
-  background: 0;
-  padding-bottom: 1em; }
-  nav#main-nav ul {
+div#main-nav {
+  padding-top: 138px; }
+  div#main-nav ul {
     list-style: none;
     padding: 0;
     margin: 0; }
-  nav#main-nav .menu {
+  div#main-nav .menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

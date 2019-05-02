@@ -6,7 +6,7 @@ tocbot.init({
     // Where to grab the headings to build the table of contents.
     contentSelector: '#main-text',
     // Which headings to grab inside of the contentSelector element.
-    headingSelector: 'h1, h2, h3',
+    headingSelector: 'h2, h3, h4',
 
     //positionFixedClass: 'toc-container'
 });
@@ -14,7 +14,7 @@ tocbot.init({
 
 $(window).scroll(function(){
 
-    var stickyOffset = $('#main-nav').offset().top;
+    var stickyOffset = $('#main-text').offset().top;
     var sticky = $('.sticky'),
         scroll = $(window).scrollTop();
     console.log(stickyOffset);

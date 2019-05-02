@@ -2,7 +2,6 @@
 #main-text {
   text-align: justify;
   line-height: 30px;
-  max-width: 600px;
   font-size: 20px;
   font-family: 'Charter';
   color: #333333; }
@@ -10,3 +9,26 @@
     padding-top: 1em;
     padding-bottom: 0.5em;
     font-family: "Open Sans"; }
+  #main-text p {
+    padding-bottom: 1.0em; }
+  #main-text p.ingress {
+    font-family: "Open Sans";
+    color: #727272; }
+  #main-text p.big-cite {
+    font-family: "Open Sans";
+    font-size: 18px;
+    position: center;
+    color: #727272;
+    padding-left: 5em;
+    padding-right: 5em; }
+  #main-text p.fig {
+    font-size: 16px;
+    padding-left: 2em;
+    padding-right: 2em;
+    line-height: 20px;
+    color: #727272; }
+  #main-text p.byline {
+    font-family: "Open Sans";
+    font-size: 18px;
+    text-align: right;
+    color: #727272; }

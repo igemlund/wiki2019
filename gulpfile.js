@@ -3,13 +3,25 @@ const browserSync  = require('browser-sync');
 const sass         = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const jquery       = require('jquery');
+const nunjucksRender = require('gulp-nunjucks-render');
+
 
 const config = {
    teamName: 'Lund',
 };
 
-
 // Build Tasks
+gulp.task('nunjucks', function() {
+  // Gets .html and .nunjucks files in pages
+  return gulp.src('app/pages/**/*.+(html|nunjucks)')
+  // Renders template with nunjucks
+  .pipe(nunjucksRender({
+      path: ['app/templates']
+    }))
+  // output files in app folder
+  .pipe(gulp.dest('build'))
+});
+
 gulp.task('sass', function() {
     return gulp.src(['app/scss/*.scss'])
         .pipe(sass())
@@ -21,11 +33,11 @@ gulp.task('sass', function() {
         .pipe(browserSync.stream());
 });
 
-gulp.task('pages', function() {
-    return gulp.src(['app/pages/*.html'])
-        .pipe(gulp.dest("build/"))
-        .pipe(browserSync.stream());
-});
+//gulp.task('pages', function() {
+//    return gulp.src(['app/pages/*.html'])
+//        .pipe(gulp.dest("build/"))
+//        .pipe(browserSync.stream());
+//});
 
 gulp.task('assets', () => {
   return gulp.src(['app/assets/*'])
@@ -38,7 +50,7 @@ gulp.task('scripts', () => {
 });
 
 // Watch Tasks
-gulp.task('sync-pages', ['pages'], (done) => {
+gulp.task('sync-pages', ['nunjucks'], (done) => {
   browserSync.reload();
   done();
 });
@@ -74,15 +86,16 @@ gulp.task('browser-sync', ['build'], () => {
 
 gulp.task('watch', ['build', 'browser-sync'], () => {
    gulp.watch('app/pages/*.html', ['sync-pages']);
+   gulp.watch('app/templates/**/*.+(html|nunjucks)', ['sync-pages'])
    gulp.watch('app/*.js', ['sync-scripts']);
    gulp.watch('app/assets/*', ['sync-assets']);
    gulp.watch('app/scss/*.scss', ['sass']);
  });
 
 // Watch & Serve
-gulp.task('serve', ['pages', 'assets', 'scripts','sass']);
+gulp.task('serve', ['nunjucks', 'assets', 'scripts','sass']);
 
 // Default Task
-gulp.task('build', ['pages', 'assets', 'scripts', 'sass']);
+gulp.task('build', ['nunjucks', 'assets', 'scripts', 'sass']);
 
 gulp.task('default', ['serve', 'watch']);

@@ -1,0 +1,19 @@
+<!-- header.nunjucks -->
+<div class="row">
+    <div class="col-3">
+            <img id="logo" src="logo.svg" width="150">
+    </div>
+    <div id="main-nav" class="col-9">
+            <nav>
+                 <ul id="main-menu" class="menu">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/probiotics.html">Probiotics</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Project</a></li>
+                    <li><a href="#">Model</a></li>
+                    <li><a href="#">Human Practice</a></li>
+                </ul>
+            </nav>
+    </div>
+
+</div>
