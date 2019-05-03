@@ -1,5 +1,10 @@
 @import 'constants';
 
+div#logos{
+    max-width: $site-width;
+    margin: auto;
+}
+
 //footer{
 //    width: 100%;
 //    max-width: 10000px;

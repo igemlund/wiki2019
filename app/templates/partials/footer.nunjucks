@@ -3,7 +3,9 @@
 </div>
 </div>
 <footer id="footer">
+<div id="logos">
 <img src="lund.png" alt="" width="100">
+</div>
 </footer>
 
 </div>
