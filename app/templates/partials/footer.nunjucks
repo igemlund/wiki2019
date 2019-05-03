@@ -1,5 +1,5 @@
 <!-- footer.nunjucks -->
-
 </div>
 </div>
-</div>
+<footer id="footer">
+</footer>

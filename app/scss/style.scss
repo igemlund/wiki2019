@@ -2,13 +2,14 @@
 @import '../../node_modules/tocbot/src/scss/tocbot-default-theme';
 @import 'constants';
 @import 'main-text';
+@import 'header';
+@import 'footer';
 
 *{
     margin: 0;
     padding: 1px;
 }
 
-$site-width: 900px;
 
 body{
     background: $body-bg;
@@ -26,53 +27,6 @@ a{
     }
 }
 
-#logo{
-    padding-top:1em;
-}
-
-#title{
-    line-height: 50px;
-    text-align: left;
-}
-    
-
-.sticky{
-    .is-active-link::before{
-        background: $dark-color;
-    }
-    font-size: 15px;
-    padding: 15px;
-    padding-right: 1em;
-    position: relative;
-    max-width: 180px;
-    line-height: 25px;
-    //top: 37px;
-
-}
-
-.navbar{
-    position: fixed;
-    top: 0;
-    width: $site-width;
-    overflow: hidden;
-    background: $body-bg;
-    ul{
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    
-    .menu{
-        //padding: 12px;
-        display: flex;
-        
-        justify-content: space-between;
-    }
-}
-.fixed{ 
-    position: fixed;
-    top: 32px;
-}
 
 //----- Extends
 %clearfix:after {

@@ -11,7 +11,7 @@
                 </ul>
             </nav>
             </div>
-<div class="row">
+<div id="page-container" class="row">
     <div class="col-3">
             <img id="logo" src="logo_animated_grey.gif" width="150">
             <img id="logo-text" src="logo.svg" width="150">

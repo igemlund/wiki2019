@@ -1,12 +1,14 @@
 @import 'constants';
 
 #main-text{
-    padding-top: 4em;
+    padding-top: 2.5em;
+    padding-bottom: 2.5rem;
     text-align: justify;
     line-height: 30px;
     font-size: 20px;
+    min-height: 100vh;
     font-family:'Charter';
-    color: #333333;
+    color: $dark-color;
     h1, h2, h3{
         padding-top: 1em;
         padding-bottom: 0.5em;
@@ -17,7 +19,7 @@
     }
     p.ingress{
         font-family: $header-font;
-        color: #727272;
+        color: $light-color;
     }
 
     p.big-cite{
