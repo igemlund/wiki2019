@@ -1,5 +1,9 @@
 <!-- footer.nunjucks -->
 </div>
 </div>
+</div>
 <footer id="footer">
+<img src="lund.png" alt="" width="100">
 </footer>
+
+</div>
