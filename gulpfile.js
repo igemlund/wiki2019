@@ -10,12 +10,6 @@ const buffer = require('vinyl-buffer');
 const browserify = require('browserify');
 
 
-
-
-const config = {
-   teamName: 'Lund',
-};
-
 // Build Tasks
 gulp.task('nunjucks', function() {
   // Gets .html and .nunjucks files in pages
@@ -25,7 +19,7 @@ gulp.task('nunjucks', function() {
       path: ['app/templates']
     }))
   // output files in app folder
-  .pipe(gulp.dest('build'))
+  .pipe(gulp.dest('build/Team:Lund'))
 });
 
 gulp.task('sass', function() {
@@ -35,15 +29,9 @@ gulp.task('sass', function() {
             browsers: ['last 2 versions'],
             cascade: false
         }))
-        .pipe(gulp.dest("build/css"))
+        .pipe(gulp.dest("build/Team:Lund/css"))
         .pipe(browserSync.stream());
 });
-
-//gulp.task('pages', function() {
-//    return gulp.src(['app/pages/*.html'])
-//        .pipe(gulp.dest("build/"))
-//        .pipe(browserSync.stream());
-//});
 
 gulp.task('assets', () => {
   return gulp.src(['app/assets/*'])
@@ -56,7 +44,7 @@ gulp.task('scripts', function() {
     .pipe(source('bundle.js')) 
     .pipe(buffer()) 
     .pipe(uglify()) 
-    .pipe(gulp.dest('./build/'));
+    .pipe(gulp.dest('./build/Team:Lund/'));
 });
 
 
@@ -78,18 +66,12 @@ gulp.task('sync-assets', ['assets'], (done) => {
 
 gulp.task('browser-sync', ['build'], () => {
   browserSync.init({
-    //startPath: `/Team:${config.teamName}`,
+    startPath: `/Team:Lund`,
     server: {
       baseDir: 'build/',
       serveStaticOptions: {
         extensions: ['html', 'css', 'min.css', 'js', 'min.js']
       },
-     // middleware: (req,res,next) => {
-     //   // Reroute wiki url to directory in dist
-     //   req.url = req.url.replace(/^\/Team:[^/]+/, '/pages');
-     //   req.url = req.url.replace(/^\/File:/, `/assets/`);
-     //   return next();
-     // },
     },
     ghostMode: false,
   });
