@@ -1,27 +1,30 @@
 <!-- header.nunjucks -->
 <div id="page-container">
 <div id="content-wrap">
-            <div class="navbar">
-            <nav>
-                    <div class="row">
-                    <div class="col-2"><a href="/Team:Lund">Home</a></div>
-                    <div class="col-2"><a href="/Team:Lund/probiotics.html">Probiotics</a></div>
-                    <div class="col-2"><a href="#">Team</a></div>
-                    <div class="col-2"><a href="#">Project</a></div>
-                    <div class="col-2"><a href="#">Model</a></div>
-                    <div class="col-2"><a href="#">Human Practice</a></div>
-
-                   </div>
-            </nav>
-            </div>
+        <div id="right-col">
+        <img class="logo" src="https://2019.igem.org/wiki/images/d/d2/T--Lund--logo_animated_grey.gif">
+        <img class="logo-text" src="https://2019.igem.org/wiki/images/thumb/4/4c/T--Lund--logo_text.svg/800px-T--Lund--logo_text.svg.png">
+        </div>
+<div class="navbar">
+<nav>
+    <div class="row">
+    <div class="col-2"><a href="/Team:Lund">Home</a></div>
+    <div class="col-2"><a href="/Team:Lund/probiotics.html">Probiotics</a></div>
+    <div class="col-2"><a href="#">Team</a></div>
+    <div class="col-2"><a href="#">Project</a></div>
+    <div class="col-2"><a href="#">Model</a></div>
+    <div class="col-2"><a href="#">Human Practice</a></div>
+    </div>
+</nav>
+</div>
 <div class="row">
     <div id="left-col" class="col-3">
-            <img id="logo" src="https://2019.igem.org/wiki/images/d/d2/T--Lund--logo_animated_grey.gif">
-            <img id="logo-text" src="https://2019.igem.org/wiki/images/thumb/4/4c/T--Lund--logo_text.svg/800px-T--Lund--logo_text.svg.png">
-<div class="sticky">
-         <div class="js-toc"></div>
-         </div>
-
+        <img class="logo" src="https://2019.igem.org/wiki/images/d/d2/T--Lund--logo_animated_grey.gif">
+        <img id="logo-text" class="logo-text" src="https://2019.igem.org/wiki/images/thumb/4/4c/T--Lund--logo_text.svg/800px-T--Lund--logo_text.svg.png">
+        <div class="sticky">
+        <div class="js-toc"></div>
+        </div>
     </div>
     <div class="col-9">
+
 

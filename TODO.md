@@ -1,7 +1,4 @@
 #### UI
-* Make design resonsive.
-    * Hide table of content while on mobile.
-    * Put logo above main text on when on mobile.
 * Make fonts work on mobile.
 * Set style for links.
 

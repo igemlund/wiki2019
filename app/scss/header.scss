@@ -1,18 +1,28 @@
 @import 'constants';
 @import './libraries/resass';
 
-#logo{
+.logo{
     padding-top:2em;
     width: 75%;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
-#logo-text{
+.logo-text{
     width: 75%;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
-#title{
+.title{
     line-height: 50px;
     text-align: left;
+}
+#right-col{
+    width: 30%;
+    margin: auto;
+    display: block;
+    @include r(768) {display: none;}
 }
 
 #left-col{
@@ -34,6 +44,7 @@
 }
 
 .navbar{
+   margin: auto; 
 }
 .fixed{ 
     position: fixed;
