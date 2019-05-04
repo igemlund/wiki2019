@@ -4,8 +4,8 @@
             <div class="navbar">
             <nav>
                  <ul id="main-menu" class="menu">
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/probiotics.html">Probiotics</a></li>
+                    <li><a href="/Team:Lund">Home</a></li>
+                    <li><a href="/Team:Lund/probiotics.html">Probiotics</a></li>
                     <li><a href="#">Team</a></li>
                     <li><a href="#">Project</a></li>
                     <li><a href="#">Model</a></li>
@@ -15,8 +15,8 @@
             </div>
 <div class="row">
     <div id="left-col" class="col-3">
-            <img id="logo" src="logo_animated_grey.gif">
-            <img id="logo-text" src="logo.svg">
+            <img id="logo" src="https://2019.igem.org/wiki/images/d/d2/T--Lund--logo_animated_grey.gif">
+            <img id="logo-text" src="https://2019.igem.org/wiki/images/thumb/4/4c/T--Lund--logo_text.svg/800px-T--Lund--logo_text.svg.png">
 <div class="sticky">
          <div class="js-toc"></div>
          </div>

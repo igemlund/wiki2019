@@ -17,7 +17,10 @@
   },
   "dependencies": {
     "browserify": "^16.2.3",
+    "gulp-uglify": "^3.0.2",
     "jquery": "^3.4.0",
-    "tocbot": "^4.6.0"
+    "tocbot": "^4.6.0",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   }
 }

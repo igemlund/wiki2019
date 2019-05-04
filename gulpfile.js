@@ -4,6 +4,12 @@ const sass         = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const jquery       = require('jquery');
 const nunjucksRender = require('gulp-nunjucks-render');
+const uglify = require('gulp-uglify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const browserify = require('browserify');
+
+
 
 
 const config = {
@@ -24,7 +30,7 @@ gulp.task('nunjucks', function() {
 
 gulp.task('sass', function() {
     return gulp.src(['app/scss/*.scss'])
-        .pipe(sass())
+        .pipe(sass({outputStyle: 'compressed'}))
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
@@ -44,10 +50,15 @@ gulp.task('assets', () => {
     .pipe(gulp.dest('build/'))
 });
 
-gulp.task('scripts', () => {
-  return gulp.src('app/bundle.js')
-    .pipe(gulp.dest('build/'));
+gulp.task('scripts', function() {
+  return browserify('./app/scripts/tocbot.js')
+    .bundle()
+    .pipe(source('bundle.js')) 
+    .pipe(buffer()) 
+    .pipe(uglify()) 
+    .pipe(gulp.dest('./build/'));
 });
+
 
 // Watch Tasks
 gulp.task('sync-pages', ['nunjucks'], (done) => {

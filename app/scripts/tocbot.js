@@ -1,6 +1,7 @@
 var tocbot = require('tocbot');
 var $ = require('jquery');
 
+console.log("test");
 tocbot.init({
     tocSelector: '.js-toc',
     // Where to grab the headings to build the table of contents.

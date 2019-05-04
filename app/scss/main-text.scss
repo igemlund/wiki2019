@@ -1,19 +1,21 @@
 @import 'constants';
 
+
 #main-text{
     padding-top: 2.5em;
     padding-bottom: 2.5rem;
-    text-align: justify;
-    line-height: 30px;
-    font-size: 20px;
-    font-family:'Charter';
-    color: $dark-color;
+
     h1, h2, h3{
         padding-top: 1em;
         padding-bottom: 0.5em;
         font-family: $header-font;
     }
     p{
+        text-align: justify;
+        line-height: 30px;
+        font-size: 20px;
+        font-family:'Charter';
+        color: $dark-color;
         padding-bottom: 1.0em;
     }
     p.ingress{
@@ -26,7 +28,8 @@
         font-size: 18px;
         position: center;
         color: #727272;
-        padding: 10%;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     p.fig{
@@ -35,6 +38,7 @@
         padding-right: 10%;
         line-height: 20px;
         color: #727272;
+        font-family: $header-font;
     }
 
     p.byline{

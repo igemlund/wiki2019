@@ -17,6 +17,9 @@
     text-align: left;
 }
 
+#left-col{
+}
+
 .sticky{
     .is-active-link::before{
         background: $dark-color;
@@ -31,7 +34,7 @@
 
 .navbar{
     position: fixed;
-    top: 0;
+    top: 20px;
     width: $site-width;
     overflow: hidden;
     background: $body-bg;
