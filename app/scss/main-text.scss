@@ -1,4 +1,5 @@
 @import 'constants';
+@import 'libraries/resass';
 
 
 #main-text{
@@ -46,6 +47,10 @@
         font-size: 18px;
         text-align: right;
         color: #727272;
+    }
+
+    img{
+        width: 100%;
     }
 
 }

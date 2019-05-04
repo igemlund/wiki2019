@@ -62,6 +62,8 @@ $grid-spacing:3%;
 	& + & {
 		margin-top:$grid-spacing;
 	}
+    
+
 }
 
 [class^="col-"] {
@@ -86,7 +88,10 @@ $grid-spacing:3%;
 .col-6 { width:(100% / 2) - ($grid-spacing * 6 / 12); }
 .col-7 { width:(100% / 1.714285714285714) - ($grid-spacing * 5 / 12); }
 .col-8 { width:(100% / 1.5) - ($grid-spacing * 4 / 12); }
-.col-9 { width:(100% / 1.333333333333333) - ($grid-spacing * 3 / 12); }
+.col-9 { 
+    width: 100%; 
+    @include r(768) {width:(100% / 1.333333333333333) - ($grid-spacing * 3 / 12);}
+     }
 .col-10 { width:(100% / 1.2) - ($grid-spacing * 2 / 12); }
 .col-11 { width:(100% / 1.090909090909091) - ($grid-spacing * 1 / 12); }
 .col-12 { width:100%; }

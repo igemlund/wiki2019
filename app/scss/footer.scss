@@ -1,5 +1,14 @@
 @import 'constants';
 
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 8.5rem;            /* Footer height */
+  background-color: $dark-color;
+}
+
 div#logos{
     max-width: $site-width;
     margin: auto;
