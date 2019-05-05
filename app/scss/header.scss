@@ -60,7 +60,7 @@ a.navbarlink{
    position: inherit;
    @include r(480) {position: fixed}
    font-color: $dark-color;
-   top: 20; 
+   top: 20px; 
    right: 0;
    left: 0;
    background-color: $body-bg;
