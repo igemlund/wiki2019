@@ -84,7 +84,6 @@ $grid-spacing:3%;
 .col-2 { 
     width: 100%;
     text-align: center;
-    margin-right: 0;
     @include r(480) {
         width:(100% / 6) - ($grid-spacing * 10 / 12);
     }

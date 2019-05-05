@@ -2,7 +2,6 @@
 @import './libraries/resass';
 
 .logo{
-    padding-top:2em;
     width: 75%;
     margin-left: 1em;
     margin-right: 1em;
@@ -22,6 +21,7 @@
     width: 30%;
     margin: auto;
     display: block;
+    padding-bottom: 2em;
     @include r(768) {display: none;}
 }
 
