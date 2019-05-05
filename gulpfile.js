@@ -19,7 +19,7 @@ gulp.task('nunjucks', function() {
       path: ['app/templates']
     }))
   // output files in app folder
-  .pipe(gulp.dest('build/Team:Lund'))
+  .pipe(gulp.dest('build/'))
 });
 
 gulp.task('sass', function() {
@@ -29,7 +29,7 @@ gulp.task('sass', function() {
             browsers: ['last 2 versions'],
             cascade: false
         }))
-        .pipe(gulp.dest("build/Team:Lund/css"))
+        .pipe(gulp.dest("build//css"))
         .pipe(browserSync.stream());
 });
 
@@ -44,7 +44,7 @@ gulp.task('scripts', function() {
     .pipe(source('bundle.js')) 
     .pipe(buffer()) 
     .pipe(uglify()) 
-    .pipe(gulp.dest('./build/Team:Lund/'));
+    .pipe(gulp.dest('./build//'));
 });
 
 
@@ -66,7 +66,7 @@ gulp.task('sync-assets', ['assets'], (done) => {
 
 gulp.task('browser-sync', ['build'], () => {
   browserSync.init({
-    startPath: `/Team:Lund`,
+    startPath: `/`,
     server: {
       baseDir: 'build/',
       serveStaticOptions: {
