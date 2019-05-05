@@ -43,9 +43,23 @@
     
 }
 
+a.navbar{
+    font-size: 22px;
+    @include r(480) {font-size: 20px;}
+    @include r(768) {font-size: 16px;}
+    text-decoration: none;
+    color: $dark-color;
+    &:visited{color: $dark-color;}
+    &:hover{color: $light-color;}
+}
+
 .navbar{
    margin: auto; 
+   font-color: $dark-color;
 }
+a.navbar{
+}
+
 .fixed{ 
     position: fixed;
     top: 32px;

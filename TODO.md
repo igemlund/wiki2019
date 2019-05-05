@@ -1,6 +1,5 @@
 #### UI
 * Make fonts work on mobile.
-* Set style for links.
 
 #### Pages
 * People page.

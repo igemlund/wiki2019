@@ -8,12 +8,12 @@
 <div class="navbar">
 <nav>
     <div class="row">
-    <div class="col-2"><a href="/Team:Lund">Home</a></div>
-    <div class="col-2"><a href="/Team:Lund/probiotics.html">Probiotics</a></div>
-    <div class="col-2"><a href="#">Team</a></div>
-    <div class="col-2"><a href="#">Project</a></div>
-    <div class="col-2"><a href="#">Model</a></div>
-    <div class="col-2"><a href="#">Human Practice</a></div>
+    <div class="col-2"><a class="navbar" href="/Team:Lund">Home</a></div>
+    <div class="col-2"><a class="navbar" href="/Team:Lund/probiotics.html">Probiotics</a></div>
+    <div class="col-2"><a class="navbar" href="#">Team</a></div>
+    <div class="col-2"><a class="navbar" href="#">Project</a></div>
+    <div class="col-2"><a class="navbar" href="#">Model</a></div>
+    <div class="col-2"><a class="navbar" href="#">Human Practice</a></div>
     </div>
 </nav>
 </div>
