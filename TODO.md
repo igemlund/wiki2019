@@ -1,7 +1,6 @@
 #### UI
 * Make fonts work on mobile.
 * Link to accounts in footer.
-* Make navbar sticky.
 
 #### Pages
 * People page.

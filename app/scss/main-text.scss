@@ -1,6 +1,7 @@
 @import 'constants';
 @import 'libraries/resass';
 
+$body-font-size: 19px;
 
 #main-text{
     padding-top: 2.5em;
@@ -26,7 +27,7 @@
 
     p.big-cite{
         font-family: $header-font;
-        font-size: 18px;
+        font-size: $body-font-size;
         position: center;
         color: #727272;
         padding-left: 5%;
@@ -44,9 +45,22 @@
 
     p.byline{
         font-family: $header-font;
-        font-size: 18px;
+        font-size: $body-font-size;
         text-align: right;
         color: #727272;
+    }
+
+    p.byline{
+        font-family: $header-font;
+        text-align: right;
+        color: #727272;
+    }
+
+    h4.references{padding-top: 3em;}
+    ul.references{
+        margin-left: 1em;
+        color: #727272;
+        font-family: $header-font;
     }
 
     img{
