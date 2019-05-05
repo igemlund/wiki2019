@@ -5,6 +5,8 @@
     width: 75%;
     margin-left: 1em;
     margin-right: 1em;
+    @include r(480) {padding-top: 2em;}
+    @include r(480) {padding-top: 2em;}
 }
 
 .logo-text{
@@ -43,7 +45,7 @@
     
 }
 
-a.navbar{
+a.navbarlink{
     font-size: 22px;
     @include r(480) {font-size: 20px;}
     @include r(768) {font-size: 16px;}
@@ -53,11 +55,15 @@ a.navbar{
     &:hover{color: $light-color;}
 }
 
+
 .navbar{
-   margin: auto; 
+   position: inherit;
+   @include r(480) {position: fixed}
    font-color: $dark-color;
-}
-a.navbar{
+   top: 20; 
+   right: 0;
+   left: 0;
+   background-color: $body-bg;
 }
 
 .fixed{ 
