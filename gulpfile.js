@@ -9,6 +9,7 @@ const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const browserify = require('browserify');
 const middleware = require('middleware');
+const replace = require('gulp-string-replace');
 
 
 // Build Tasks
@@ -21,6 +22,15 @@ gulp.task('nunjucks', function() {
     }))
   // output files in app folder
   .pipe(gulp.dest('build/'))
+});
+
+gulp.task('update-cache', function() {
+    var date = new Date();
+    var timestamp = date.getTime();
+    return gulp.src(['app/templates/layout.html'])
+        .pipe(replace(/cache=(\d+)/g, 'cache=' +  timestamp))
+        .pipe(gulp.dest('app/templates/'))
+
 });
 
 gulp.task('sass', function() {
@@ -90,7 +100,7 @@ gulp.task('watch', ['build', 'browser-sync'], () => {
    gulp.watch('app/templates/**/*.+(html|nunjucks)', ['sync-pages'])
    gulp.watch('app/*.js', ['sync-scripts']);
    gulp.watch('app/assets/*', ['sync-assets']);
-   gulp.watch('app/scss/*.scss', ['sass']);
+   gulp.watch('app/scss/*.scss', ['sass', 'update-cache']);
  });
 
 // Watch & Serve
