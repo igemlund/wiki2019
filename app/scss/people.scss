@@ -2,7 +2,6 @@
 
 
 .person{
-   padding: 2em;
    position:relative;
    height: 241.5;
     
@@ -15,14 +14,12 @@
     width: 40%;
     height:241.5;
     position: absolute;
-    
 }
 
 .avatar{
     left: 0;
     width:40%;
     position: absolute;
-    
 }
 
 .title{
@@ -30,6 +27,6 @@
 }
 
 .group{
-    background-color: $primary-color;
+//    background-color: $primary-color;
     padding: 2em;
 }
