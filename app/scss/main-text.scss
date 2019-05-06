@@ -15,8 +15,11 @@ $body-font-size: 19px;
     p{
         text-align: justify;
         line-height: 30px;
-        font-size: 20px;
-        font-family:'Charter';
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 1.58;
+        letter-spacing: -0.003em;
+        font-family:$text-font, Georgia, Cambria, "Times New Roman";
         color: $dark-color;
         padding-bottom: 1.0em;
     }
