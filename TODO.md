@@ -1,4 +1,5 @@
 #### Overall
+* Deside on overall site structure. Make sure there are not to many tabs in the navbar while still not having to much content on each page. The frontpage should contain a very-short summery of each link. One should be able to read the frontpage and quickly get a sense of the contents of the rest of the site. 
 * Refractor so that header and footer are completely separate.
 
 #### UI
