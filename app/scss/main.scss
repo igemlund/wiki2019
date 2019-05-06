@@ -32,18 +32,17 @@
     padding: 1px;
 }
 
-
 body{
     background: $body-bg;
     font-family: $main-font;
 }
 
+
 a{
-    text-decoration: none;
-    color: $dark-color;
-    &:hover{
-        color: $light-color;
-    }
+   text-decoration: none; 
+   color: $accent-color;
+   &:hover{color: $light-color;}
+   
 }
 
 
@@ -64,7 +63,6 @@ $grid-spacing:3%;
 		margin-top:$grid-spacing;
 	}
     
-
 }
 
 [class^="col-"] {

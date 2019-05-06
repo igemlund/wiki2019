@@ -8,6 +8,7 @@ const uglify = require('gulp-uglify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const browserify = require('browserify');
+const middleware = require('middleware');
 
 
 // Build Tasks
@@ -29,7 +30,7 @@ gulp.task('sass', function() {
             browsers: ['last 2 versions'],
             cascade: false
         }))
-        .pipe(gulp.dest("build//css"))
+        .pipe(gulp.dest("build/css"))
         .pipe(browserSync.stream());
 });
 
@@ -44,7 +45,7 @@ gulp.task('scripts', function() {
     .pipe(source('bundle.js')) 
     .pipe(buffer()) 
     .pipe(uglify()) 
-    .pipe(gulp.dest('./build//'));
+    .pipe(gulp.dest('./build/'));
 });
 
 
@@ -66,12 +67,19 @@ gulp.task('sync-assets', ['assets'], (done) => {
 
 gulp.task('browser-sync', ['build'], () => {
   browserSync.init({
-    startPath: `/`,
+    startPath: `/Team:Lund`,
     server: {
       baseDir: 'build/',
       serveStaticOptions: {
         extensions: ['html', 'css', 'min.css', 'js', 'min.js']
       },
+        middleware: (req,res,next) => {
+            // Reroute wiki url to directory in dist
+            req.url = req.url.replace(/^\/Team:[^/]+/, '/');
+            req.url = req.url.replace(/^\/File:/, `/`);
+            return next();
+          },
+
     },
     ghostMode: false,
   });
