@@ -3,10 +3,16 @@
 
 $body-font-size: 19px;
 
+h1#title{
+    margin-top: 0em;
+    margin-bottom: 1.5em;
+    @include r(768) {margin-top: 3em;}
+    text-align: center;
+    font-size: 39px;
+    line-height: 43px;
+}
+
 #body{
-    margin-top: 0;
-    @include r(768) {margin-top: 7em;}
-    padding-top: 2.5em;
     padding-bottom: 2.5rem;
 
     h1, h2, h3{
@@ -15,11 +21,6 @@ $body-font-size: 19px;
         font-family: $header-font;
     }
 
-    h1#title{
-        text-align: center;
-        font-size: 34px;
-        line-height: 43px;
-    }
 
     p{
         text-align: justify;
@@ -73,6 +74,14 @@ $body-font-size: 19px;
         margin-left: 1em;
         color: #727272;
         font-family: $header-font;
+    }
+
+    p.date{
+        font-family: $header-font;
+        font-size: 18px;
+        color: $light-color;
+        position: absolute;
+        padding-top: 0.5em;
     }
 
     img.fig{width: 100%;}

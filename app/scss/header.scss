@@ -3,6 +3,7 @@
 
 .logo{
     width: 75%;
+    margin-top: 2em;
     margin-left: 1em;
     margin-right: 1em;
     @include r(480) {padding-top: 2em;}

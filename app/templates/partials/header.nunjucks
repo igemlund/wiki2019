@@ -9,9 +9,9 @@
 <nav>
     <div class="row">
     <div class="col-2"><a class="navbarlink" href="/Team:Lund">Home</a></div>
-    <div class="col-2"><a class="navbarlink" href="/Team:Lund/probiotics.html">Probiotics</a></div>
-    <div class="col-2"><a class="navbarlink" href="#">People</a></div>
-    <div class="col-2"><a class="navbarlink" href="#">Project</a></div>
+    <div class="col-2"><a class="navbarlink" href="/Team:Lund/Project">Project</a></div>
+    <div class="col-2"><a class="navbarlink" href="/Team:Lund/Team.html">People</a></div>
+    <div class="col-2"><a class="navbarlink" href="/Team:Lund/Blog.html">Blog</a></div>
     <div class="col-2"><a class="navbarlink" href="#">Parts</a></div>
     <div class="col-2"><a class="navbarlink" href="#">Human&nbspPractice</a></div>
     <div class="col-2"><a class="navbarlink" href="#">Model</a></div>
