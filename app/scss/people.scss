@@ -1,5 +1,5 @@
 @import 'constants';
-
+@import 'libraries/resass';
 
 .person{
    position:relative;
@@ -17,6 +17,8 @@
 }
 
 .avatar{
+    display: none;
+    @include r(768) {display: block; }
     left: 0;
     width:40%;
     position: absolute;
