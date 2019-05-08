@@ -1,24 +1,28 @@
 @import 'constants';
 @import './libraries/resass';
 
+.logo-container{
+    height: $header-height;
+    position: relative;
+}
+
 .logo{
     width: 75%;
     margin-left: 1em;
     margin-right: 1em;
+    margin-top: 2em;
     @include r(480) {padding-top: 2em;}
     @include r(480) {padding-top: 2em;}
+    
 }
 
 .logo-text{
     width: 75%;
     margin-left: 1em;
     margin-right: 1em;
+    float: top;
 }
 
-.title{
-    line-height: 50px;
-    text-align: left;
-}
 #right-col{
     width: 30%;
     margin: auto;
@@ -28,6 +32,8 @@
 }
 
 #left-col{
+    height: $header-height;
+    position: relative;
     display: none;
     @include r(768) {display: block;}
 }
@@ -36,17 +42,29 @@
     .is-active-link::before{
         background: $dark-color;
     }
-    font-size: 15px;
-    padding: 15px;
-    padding-right: 1em;
-    position: relative;
-    line-height: 25px;
-    max-width: 200px;
+//    font-size: 15px;
     position: absolute;
+    padding-left: 15px;
+    //line-height: 25px;
+    max-width: 9em;
+    ul,ol.is-collapsible{
+        padding:0;
+        margin-left: 10px;
+    }
+    ul,ol{
+        padding:0;
+        margin-left: 10px;
+    }
     
 }
 
+.fixed{ 
+    position: fixed;
+    top: 3.2em;
+}
+
 a.navbarlink{
+    white-space: nowrap;
     font-size: 22px;
     @include r(480) {font-size: 20px;}
     @include r(768) {font-size: 16px;}
@@ -70,7 +88,3 @@ a.navbarlink{
    background-color: $body-bg;
 }
 
-.fixed{ 
-    position: fixed;
-    top: 32px;
-}

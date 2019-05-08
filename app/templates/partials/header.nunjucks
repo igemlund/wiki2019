@@ -9,18 +9,21 @@
 <nav>
     <div class="row">
     <div class="col-2"><a class="navbarlink" href="/Team:Lund">Home</a></div>
-    <div class="col-2"><a class="navbarlink" href="/Team:Lund/probiotics.html">Probiotics</a></div>
-    <div class="col-2"><a class="navbarlink" href="#">Team</a></div>
-    <div class="col-2"><a class="navbarlink" href="#">Project</a></div>
-    <div class="col-2"><a class="navbarlink" href="#">Model</a></div>
+    <div class="col-2"><a class="navbarlink" href="/Team:Lund/Project">Project</a></div>
+    <div class="col-2"><a class="navbarlink" href="/Team:Lund/Team.html">People</a></div>
+    <div class="col-2"><a class="navbarlink" href="/Team:Lund/Blog.html">Blog</a></div>
+    <div class="col-2"><a class="navbarlink" href="#">Parts</a></div>
     <div class="col-2"><a class="navbarlink" href="#">Human Practice</a></div>
+    <div class="col-2"><a class="navbarlink" href="#">Model</a></div>
     </div>
 </nav>
 </div>
 <div class="row">
     <div id="left-col" class="col-3">
+    <div class="logo-container">
         <img class="logo" src="https://2019.igem.org/wiki/images/d/d2/T--Lund--logo_animated_grey.gif">
         <img id="logo-text" class="logo-text" src="https://2019.igem.org/wiki/images/thumb/4/4c/T--Lund--logo_text.svg/800px-T--Lund--logo_text.svg.png">
+    </div>
         <div class="sticky">
         <div class="js-toc"></div>
         </div>
