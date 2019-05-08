@@ -2,11 +2,15 @@
 @import 'libraries/resass';
 
 $body-font-size: 19px;
+.title-container{
+    @include r (768){height: $header-height;}
+}
 
 h1#title{
-    margin-top: 0em;
+    margin-top: 2em;
+    @include r(480) {margin-top: 0em;}
+    @include r(768) {margin-top: 3em;;} //margin-top: 3em;}
     margin-bottom: 1.5em;
-    @include r(768) {margin-top: 3em;}
     text-align: center;
     font-size: 39px;
     line-height: 43px;
@@ -81,8 +85,9 @@ h1#title{
         font-family: $header-font;
         font-size: 18px;
         color: $light-color;
-        position: absolute;
         padding-top: 0.5em;
+        position: relative;
+        top: 50px;
     }
 
     img.fig{width: 100%;}

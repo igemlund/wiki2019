@@ -6,12 +6,13 @@ tocbot.init({
     tocSelector: '.js-toc',
     contentSelector: '#body',
     headingSelector: 'h1, h2, h3, h4',
+    orderedList: false
 });
 
 
 $(window).scroll(function(){
 
-    var stickyOffset = $('#logo-text').offset().top;
+    var stickyOffset = $('.logo-container').offset().top + $('.logo-container').height() - 20 - $('.navbar').height();
     var sticky = $('.sticky'),
         scroll = $(window).scrollTop();
 
