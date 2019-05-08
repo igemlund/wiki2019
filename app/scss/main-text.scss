@@ -68,6 +68,11 @@ $body-font-size: 19px;
         color: #727272;
     }
 
+    p.description{
+        text-align: justify;
+        @include r(768){text-align: left;}
+    }
+
     h4.references{padding-top: 3em;}
     ul.references{
         margin-left: 1em;

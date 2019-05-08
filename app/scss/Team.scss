@@ -1,0 +1,43 @@
+@import 'constants';
+@import './libraries/resass'; 
+
+
+.person{
+    height: auto;
+   @include r(768)
+        {height: 500;
+        padding-top: 30px;
+        }
+    }
+
+.bio{
+    float: bottom;
+    text-align: center;
+    
+    @include r(768) 
+        {float: right;
+        width: 50%;
+        }
+}
+
+.avatar{
+    float: top;
+    height: 45%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    @include r(768){ 
+        float: left; 
+        width:45%;
+        height: auto; 
+        }
+}
+
+.title{
+    text-align:center;
+}
+
+.group{
+//    background-color: $primary-color;
+    padding: 2em;
+}
