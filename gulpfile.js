@@ -100,7 +100,7 @@ gulp.task('watch', ['build', 'browser-sync'], () => {
    gulp.watch('app/templates/**/*.+(html|nunjucks)', ['sync-pages'])
    gulp.watch('app/*.js', ['sync-scripts']);
    gulp.watch('app/assets/*', ['sync-assets']);
-   gulp.watch('app/scss/*.scss', ['sass', 'update-cache']);
+   gulp.watch('app/scss/*.scss', ['sass']);
  });
 
 // Watch & Serve
