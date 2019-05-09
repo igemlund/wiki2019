@@ -1,0 +1,95 @@
+@import 'constants';
+@import 'libraries/resass';
+
+$body-font-size: 19px;
+.title-container{
+    @include r (768){height: $header-height;}
+}
+
+h1#title{
+    margin-top: 2em;
+    @include r(480) {margin-top: 0em;}
+    @include r(768) {margin-top: 3em;;} //margin-top: 3em;}
+    margin-bottom: 1.5em;
+    text-align: center;
+    font-size: 39px;
+    line-height: 43px;
+}
+
+#body{
+    padding-bottom: 2.5rem;
+
+    h1, h2, h3{
+        padding-top: 1em;
+        padding-bottom: 0.5em;
+        font-family: $header-font;
+    }
+
+
+    p{
+        text-align: justify;
+        line-height: 30px;
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 1.58;
+        letter-spacing: -0.003em;
+        font-family:$text-font, Georgia, Cambria, "Times New Roman";
+        color: $dark-color;
+        padding-bottom: 1.0em;
+    }
+    p.ingress{
+        font-family: $header-font;
+        color: $light-color;
+    }
+
+    p.big-cite{
+        font-family: $header-font;
+        font-size: $body-font-size;
+        position: center;
+        color: #727272;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    p.fig{
+        font-size: 16px;
+        padding-left: 10%;
+        padding-right: 10%;
+        line-height: 20px;
+        color: #727272;
+        font-family: $header-font;
+    }
+
+    p.byline{
+        margin-bottom: 2em;
+        font-family: $header-font;
+        font-size: $body-font-size;
+        text-align: right;
+        color: #727272;
+    }
+
+    p.byline{
+        font-family: $header-font;
+        text-align: right;
+        color: #727272;
+    }
+
+    h4.references{padding-top: 3em;}
+    ul.references{
+        margin-left: 1em;
+        color: #727272;
+        font-family: $header-font;
+    }
+
+    p.date{
+        font-family: $header-font;
+        font-size: 18px;
+        color: $light-color;
+        padding-top: 0.5em;
+        position: relative;
+        top: 50px;
+    }
+
+    img.fig{width: 100%;}
+
+}
