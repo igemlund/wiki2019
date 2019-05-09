@@ -1,18 +1,22 @@
 @import 'constants';
 @import 'libraries/resass';
 
-$body-font-size: 19px;
 .title-container{
+    img{
+        margin-top: 1em;
+        @include r (768){margin-top: 8em;}
+    }
     @include r (768){height: $header-height;}
 }
 
 h1#title{
+    font-family: $header-font;
     margin-top: 2em;
     @include r(480) {margin-top: 0em;}
     @include r(768) {margin-top: 3em;;} //margin-top: 3em;}
     margin-bottom: 1.5em;
     text-align: center;
-    font-size: 39px;
+    font-size: 50px;
     line-height: 43px;
 }
 
@@ -25,7 +29,6 @@ h1#title{
         font-family: $header-font;
     }
 
-
     p{
         text-align: justify;
         line-height: 30px;
@@ -37,6 +40,7 @@ h1#title{
         color: $dark-color;
         padding-bottom: 1.0em;
     }
+
     p.ingress{
         font-family: $header-font;
         color: $light-color;
