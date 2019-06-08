@@ -1,11 +1,12 @@
 @import 'constants';
+@import './libraries/resass';
 
 
 #footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: $footer-height;            /* Footer height */
+  height: $footer-height;   
   background-color: $dark-color;
 }
 
@@ -13,5 +14,42 @@ div#logos{
     max-width: $site-width;
     padding: 2em;
     margin: auto;
+    position: relative;
+    img{
+        float: top;
+        margin-left: auto;
+        margin-right: 3em;
+        margin-bottom: 1em;
+        height: 20%;
+    }
+
+    img#bakertilly{
+        height: 10%;
+        
+    }
+
+    div#social{
+        @include r(480){
+        float: right;
+        width: auto;
+        height: auto;
+        margin: 0;
+    }
+        ul{
+            list-style: none;
+            color: #FFFF;
+            a{
+                color: #FFFF;
+                padding: 0;
+            }
+        }
+        img{
+            width: 1em;
+            height: 1em;
+            margin-right: 1em;
+        margin-bottom: 0;
+        }
+
+    }
 }
 

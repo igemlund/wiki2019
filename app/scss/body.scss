@@ -4,7 +4,13 @@
 .title-container{
     img{
         margin-top: 1em;
-        @include r (768){margin-top: 8em;}
+        @include r (768){margin-top: 6em;}
+    }
+    img.subtitle{
+        margin-bottom: 1em;
+        margin-top: 0;
+        @include r (768){margin-top: 0;}
+
     }
     @include r (768){height: $header-height;}
 }
