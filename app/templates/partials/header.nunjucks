@@ -7,14 +7,11 @@
         </div>
 <div class="navbar">
 <nav>
-    <div class="row">
-    <div class="col-2 drop-down">
-        <div class="dropdown">
-            <a class="dropbtn" href="/Team:Lund">Home</a></div>
-        </div>
+    <ul class="row">
+        <li class="dropdown">
+            <a class="dropbtn" href="/Team:Lund">Home</a></li>
 
-    <div class="col-2 drop-down">
-        <div class="dropdown">
+        <li class="dropdown">
           <a class="dropbtn">Project</a>
           <div class="dropdown-content">
             <ul>
@@ -31,11 +28,9 @@
                 <li><a href="/Team:Lund/Safety">Safety</a></li>
             </ul>
           </div>
-        </div>
-    </div>
+        </li>
 
-    <div class="col-2 drop-down">
-        <div class="dropdown">
+        <li class="dropdown">
           <a class="dropbtn">People</a>
           <div class="dropdown-content">
             <ul>
@@ -43,16 +38,12 @@
                 <li><a href="/Team:Lund/Collaborations">Collaborations</a></li>
             </ul>
           </div>
-        </div>
-    </div>
+        </li>
 
-    <div class="col-2">
         <div class="dropdown">
             <a class="dropbtn" href="/Team:Lund/Blog">Blog</a></div>
-        </div>
 
-    <div class="col-2 drop-down">
-        <div class="dropdown">
+        <li class="dropdown">
           <a class="dropbtn">Parts</a>
           <div class="dropdown-content">
             <ul>
@@ -62,11 +53,9 @@
                 <li><a href="/Team:Lund/Part_Collection">Part Collection</a></li>
             </ul>
           </div>
-        </div>
-    </div>
+        </li>
 
-    <div class="col-2 drop-down">
-        <div class="dropdown">
+        <li class="dropdown">
           <a class="dropbtn">Practicies</a>
           <div class="dropdown-content">
             <ul>
@@ -74,9 +63,8 @@
                 <li><a href="/Team:Lund/Public_Engagement">Public Engagement</a></li>
             </ul>
           </div>
-        </div>
-    </div>
-    </div>
+        </li>
+    </ul>
 </nav>
 </div>
 <div class="row">
