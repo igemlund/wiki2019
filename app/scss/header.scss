@@ -63,28 +63,6 @@
     top: 3.2em;
 }
 
-a.navbarlink{
-    white-space: nowrap;
-    font-size: 22px;
-    @include r(480) {font-size: 20px;}
-    @include r(768) {font-size: 16px;}
-    text-decoration: none;
-    color: $dark-color;
-    &:visited{color: $dark-color;}
-    &:hover{color: $light-color;}
-}
 
 
-.navbar{
-   max-width: $site-width;
-   margin: auto;
-   z-index: 999;
-   position: inherit;
-   @include r(480) {position: fixed}
-   font-color: $dark-color;
-   top: 20px; 
-   right: 0;
-   left: 0;
-   background-color: $body-bg;
-}
 

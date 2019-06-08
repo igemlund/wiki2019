@@ -8,13 +8,74 @@
 <div class="navbar">
 <nav>
     <div class="row">
-    <div class="col-2"><a class="navbarlink" href="/Team:Lund">Home</a></div>
-    <div class="col-2"><a class="navbarlink" href="/Team:Lund/Project">Project</a></div>
-    <div class="col-2"><a class="navbarlink" href="/Team:Lund/Team.html">People</a></div>
-    <div class="col-2"><a class="navbarlink" href="/Team:Lund/Blog.html">Blog</a></div>
-    <div class="col-2"><a class="navbarlink" href="#">Parts</a></div>
-    <div class="col-2"><a class="navbarlink" href="#">Human Practice</a></div>
-    <div class="col-2"><a class="navbarlink" href="#">Model</a></div>
+    <div class="col-2 drop-down">
+        <div class="dropdown">
+            <a class="dropbtn" href="/Team:Lund">Home</a></div>
+        </div>
+
+    <div class="col-2 drop-down">
+        <div class="dropdown">
+          <a class="dropbtn">Project</a>
+          <div class="dropdown-content">
+            <ul>
+                <li><a href="/Team:Lund/Description">Description</a></li>
+                <li><a href="/Team:Lund/Design">Design</a></li>
+                <li><a href="/Team:Lund/Experiments">Experiments</a></li>
+                <li><a href="/Team:Lund/Model">Model</a></li>
+                <li><a href="/Team:Lund/Notebook">Notebook</a></li>
+                <li><a href="/Team:Lund/Contribution">Contribution</a></li>
+                <li><a href="/Team:Lund/Results">Results</a></li>
+                <li><a href="/Team:Lund/Demonstrate">Demonstrate</a></li>
+                <li><a href="/Team:Lund/Improve">Improve</a></li>
+                <li><a href="/Team:Lund/Attributions">Attributions</a></li>
+                <li><a href="/Team:Lund/Safety">Safety</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-2 drop-down">
+        <div class="dropdown">
+          <a class="dropbtn">People</a>
+          <div class="dropdown-content">
+            <ul>
+                <li><a href="/Team:Lund/Team">Team</a></li>
+                <li><a href="/Team:Lund/Collaborations">Collaborations</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-2">
+        <div class="dropdown">
+            <a class="dropbtn" href="/Team:Lund/Blog">Blog</a></div>
+        </div>
+
+    <div class="col-2 drop-down">
+        <div class="dropdown">
+          <a class="dropbtn">Parts</a>
+          <div class="dropdown-content">
+            <ul>
+                <li><a href="/Team:Lund/Parts">Overview</a></li>
+                <li><a href="/Team:Lund/Basic_Part">Basic Parts</a></li>
+                <li><a href="/Team:Lund/Composite_Part">Composite Parts</a></li>
+                <li><a href="/Team:Lund/Part_Collection">Part Collection</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-2 drop-down">
+        <div class="dropdown">
+          <a class="dropbtn">Practicies</a>
+          <div class="dropdown-content">
+            <ul>
+                <li><a href="/Team:Lund/Human_Practicies">Human Practicies</a></li>
+                <li><a href="/Team:Lund/Public_Engagement">Public Engagement</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
     </div>
 </nav>
 </div>

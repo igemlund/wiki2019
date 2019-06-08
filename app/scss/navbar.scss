@@ -1,0 +1,62 @@
+@import 'constants';
+@import './libraries/resass';
+
+col-2{
+    width: 17%;
+}
+.dropdown {
+
+  a{
+    white-space: nowrap;
+    font-size: 22px;
+    @include r(480) {font-size: 20px;}
+    @include r(768) {font-size: 16px;}
+    text-decoration: none;
+    color: $dark-color;
+    &:visited{color: $dark-color;}
+    &:hover{
+    color: $light-color;
+    }
+  }
+
+  width: 100%;
+  position: relative;
+  padding: 0;
+  &:hover{
+      background-color: #f1f1f1;
+      font-weight: bold;
+      .dropdown-content{
+          display: block;
+          font-weight: normal;
+      }
+  }
+}
+
+.dropdown-content {
+  padding: 0;
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  z-index: 1;
+  width: 100%;
+  text-align: left;
+  ul{
+      list-style: none;
+  }
+}
+
+.navbar{
+   max-width: $site-width;
+   margin: auto;
+   z-index: 999;
+   position: inherit;
+   @include r(480) {position: fixed}
+   font-color: $dark-color;
+   top: 20px; 
+   right: 0;
+   left: 0;
+   background-color: $body-bg;
+}
+
+
+
