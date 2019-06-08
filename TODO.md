@@ -4,8 +4,6 @@
 #### UI
 * Make drop down menu in navbar.
 * tocbot.js scrolls too far.
-* Tocbot jumps when scrolling.
-* Link to accounts in footer.
 
 #### Pages
 * People page.
