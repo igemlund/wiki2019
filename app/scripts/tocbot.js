@@ -9,10 +9,9 @@ tocbot.init({
     orderedList: false
 });
 
-
 $(window).scroll(function(){
 
-    var stickyOffset = $('.logo-container').offset().top + $('.logo-container').height() - 20 - $('.navbar').height();
+    var stickyOffset = $('.logo-container').offset().top + $('.logo-container').height() - $('.navbar-background').height();
     var sticky = $('.sticky'),
         scroll = $(window).scrollTop();
 

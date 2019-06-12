@@ -1,11 +1,8 @@
 <!-- header.nunjucks -->
 <div id="page-container">
-<div id="content-wrap">
-        <div id="right-col">
-        <img class="logo" src="https://2019.igem.org/wiki/images/d/d2/T--Lund--logo_animated_grey.gif">
-        <img class="logo-text" src="https://2019.igem.org/wiki/images/thumb/4/4c/T--Lund--logo_text.svg/800px-T--Lund--logo_text.svg.png">
-        </div>
+<div class="navbar-background">
 <div class="navbar">
+        <img id="mobile-logo" src="https://2019.igem.org/wiki/images/d/da/T--Lund--logo-animated-white.gif">
 <nav>
     <ul class="row">
         <li class="dropdown">
@@ -40,9 +37,6 @@
           </div>
         </li>
 
-        <div class="dropdown">
-            <a class="dropbtn" href="/Team:Lund/Blog">Blog</a></div>
-
         <li class="dropdown">
           <a class="dropbtn">Parts</a>
           <div class="dropdown-content">
@@ -64,9 +58,17 @@
             </ul>
           </div>
         </li>
+        <div class="dropdown">
+            <a class="dropbtn" href="/Team:Lund/Blog">Blog</a></div>
+
     </ul>
 </nav>
-</div>
+</div></div>
+<div id="content-wrap">
+        <div id="right-col">
+        <img class="logo" src="https://2019.igem.org/wiki/images/d/d2/T--Lund--logo_animated_grey.gif">
+        <img class="logo-text" src="https://2019.igem.org/wiki/images/thumb/4/4c/T--Lund--logo_text.svg/800px-T--Lund--logo_text.svg.png">
+        </div>
 <div class="row">
     <div id="left-col" class="col-3">
     <div class="logo-container">

@@ -24,8 +24,8 @@ ul.row{
     @include r(480) {font-size: 20px;}
     @include r(768) {font-size: 16px;}
     text-decoration: none;
-    color: $dark-color;
-    &:visited{color: $dark-color;}
+    color: $body-bg;
+    &:visited{color: $body-bg;}
     &:hover{
     color: $light-color;
     }
@@ -35,7 +35,6 @@ ul.row{
   position: relative;
   padding: 0;
   &:hover{
-      background-color: #f1f1f1;
       font-weight: bold;
       .dropdown-content{
           display: block;
@@ -45,29 +44,49 @@ ul.row{
 }
 
 .dropdown-content {
-  padding: 0;
+  padding: 1em;
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: $dark-color;
   z-index: 1;
   width: 100%;
+  min-width: 12em;
   text-align: left;
   ul{
       list-style: none;
   }
 }
+.navbar-background{
+    @include r(480) {
+        position: fixed;
+        height: 60px;
+    }
+    top: 0px; 
+    height: $mobile-navbar-height;
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+    background-color: $dark-color;
+
+    #mobile-logo{
+        @include r(480) {display: none;}
+        margin-left: auto;
+        margin-right: auto;
+        width: 5em;
+        display: block;
+    }
+}
 
 .navbar{
+   top: 25px;
    max-width: $site-width;
    margin: auto;
    z-index: 999;
-   position: inherit;
+   position: relative;
    @include r(480) {position: fixed}
    font-color: $dark-color;
-   top: 20px; 
    right: 0;
    left: 0;
-   background-color: $body-bg;
 }
 
 
