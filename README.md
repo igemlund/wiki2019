@@ -32,6 +32,14 @@
     <li>To save your edits, press the button labeled "Commit changes".</li>
 </ol>
 
+<h3>I want to update an existing figure.</h3>
+<ol>
+    <li>Find the figure you want to update, right click and press "open in new tab", you will find the name of the image in the address-bar. It will be called T--Lund--xxxxx.xxx</li>
+    <li>Go to https://2019.igem.org/File:T--Lund--xxxxxxxx</li>
+    <li>Press the link called "Update a new version of this file"</li>
+    <li>Select new version and press "Upload file".</li>
+</ol>
+
 <h3>I want make edits files using a local dev-server.</h3>
 <ol>
     <li>Install git and npm.</li>
