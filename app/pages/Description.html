@@ -1,0 +1,55 @@
+<!-- index.html -->
+{% extends "layout.html" %}
+{% block content %} 
+{% include "partials/header.nunjucks" %}
+<h1 id="title" class="js-toc-ignore">Project Description</h1>
+<div id="body">
+<p class="ingress" >Welcome to the Project Description section of the iGEM Lund wiki. Here you can get an overview of our project. </p>
+<h2 id="the problem">The Problem</h2>
+<p>The recent technological evolution has raised our demand of electronic products, leading to an increment in industrial mining and mass production of electronics. The increase has led to a surge in redistribution of heavy metals (henceforth referred to as HMs), and thorough regulation has been implemented in developed countries to counter this [1][2]. However, even though we may regulate our contamination, there are many other ways in which HMs are being let out into nature. Volcanic eruptions, geothermal vents and microbial activity are responsible for a major part of HM redistribution [3].  
+</p>
+<img class="fig" src="https://2019.igem.org/wiki/images/3/38/T--Lund--sources.svg" alt="Sources of heavy metals.">
+<p class="fig"></p>
+<p>HMs exist in several forms; organic, inorganic and ions, each have different characteristics. A common trait amongst them is the ability to bioaccumulate and disrupt metabolic activities by mimicking the structure of other compounds such as phosphates and amino acids [4]. Therefore, HM poisoning have severe implications on the human body. HM-poisoning is treated with chelation therapy, a last resort-treatment with several gruesome side effects. We saw a need for a viable and sustainable way of reducing the amount of HM-poisoning worldwide.
+</p>
+<p class="fig"></p>
+<p>The three most common, widespread and troublesome HMs are arsenic, lead and mercury - each contributing to HM-poisoning in major parts of the world [5]. Being the health-freaks that we are in Sweden, you often hear about the dangers of HMs in your daily lives: “wash your rice eight times before cooking it to get rid of the arsenic”, “only eat fish once a week or you’ll get mercury poisoning”. Therefore, we started looking into ways of dealing with HM-contamination and poisoning. 
+</p>
+<img class="fig" src="https://2019.igem.org/wiki/images/2/2b/T--Lund--map.svg" alt="">
+<p class="fig"></p>
+<h2 id="Inspiration">Inspiration</h2>
+<p>In 2006, the iGEM-team from Edinburgh successfully made a biosensor that detects levels of arsenic in water wells. Through their project, they highlighted the calamity of HMs on our systems and provided insight regarding what awaits us in the future [6]. Later on, several teams within the iGEM competition worked on methods that employ synthetic biology to remove HMs from external sources such as soil [7], water [8][9], and fish [10][11]. Therefore, we saw the opportunities of a potential project focusing on a different aspect of preventing HM-poisoning.
+</p>
+<p>We realized how extensive a filtration system would have to be if it were to be implemented in bodies of water in means of reducing the amounts of HMs before entering the human body, and therefore dismissed the idea. Instead, through conversation with experts we decided to focus on preventing HM-poisoning by bioaccumulation through synthetic probiotic bacteria.
+</p>
+<h2 id="Our Goal">Our Goal</h2>
+<p>Bacteria has lived alongside HMs on this earth for 4 billion years, and have therefore evolved a way to deal with HMs. Through accumulation proteins and chemical reactions they’ve managed to survive and thrive in contaminated areas. Our goal is to increase the inherent bioaccumulation-capabilities of the known probiotic bacteria Escherischia coli Nissle 1917. We will focus on the three HMs: arsenic, lead and mercury. For each heavy metal we’ve identified the pathways of transport and accumulation in means of overexpressing some of the necessary proteins involved [12][13][14]. We’ll do so by introducing three plasmids, one for each HM. 
+</p>
+<img class="fig" src="https://2019.igem.org/wiki/images/1/1a/T--Lund--absorption.svg" alt="">
+<p class="fig"></p>
+<p>As our engineered bacteria is ingested it will adapt to the gut microbiome, absorb and accumulate HMs, to later be excreted through faeces, returning the HMs to the earth. It will be a preventative measure implemented in probiotic products to reduce the extent of HM-poisoning across the globe. Our product could also lay ground for the development of filters to be used in bodies of water and elsewhere.
+</p>
+<p class="byline">- The iGEM Lund Team</p>
+<h4 class="references js-toc-ignore" >References:</h4>
+<ul class="references">
+    <li>[1] Tchounwou PB, Yedjou CG, Patlolla AK, Sutton DJ., “Heavy metal toxicity and the environment”. 2014-08-26, Taken from [internet]: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4144270">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4144270</a></li>
+    <li>[2] (SE) Kemikalieinspektionen, “lagstiftning” 2018-12-28, Taken from [internet]:<a href="https://www.kemi.se/prio-start/kemikalier-i-praktiken/lagstiftning">https://www.kemi.se/prio-start/kemikalier-i-praktiken/lagstiftning</a></li>
+    <li>[3] Masindi V., Muedi KL., “Environmental Contamination by Heavy Metals” 2018-06-27, Taken from [internet]: <a href="https://www.intechopen.com/books/heavy-metals/environmental-contamination-by-heavy-metals">https://www.intechopen.com/books/heavy-metals/environmental-contamination-by-heavy-metals</a></li>
+    <li>[5] Järup L., “Hazards of heavy metal contamination” 2003-12-01, Taken from [internet]: <a href="https://academic.oup.com/bmb/article/68/1/167/421303">https://academic.oup.com/bmb/article/68/1/167/421303</a></li>
+    <li>[6] <a href="http://2006.igem.org/wiki/index.php/Arsenic_Biosensor">http://2006.igem.org/wiki/index.php/Arsenic_Biosensor</a></li>
+    <li>[7] <a href="http://2017.igem.org/Team:FAFU-CHINA">http://2017.igem.org/Team:FAFU-CHINA</a></li>
+    <li>[8] <a href="http://2017.igem.org/Team:Exeter"> http://2017.igem.org/Team:Exeter</a></li>
+    <li>[9] <a href="http://2016.igem.org/Team:UConn">http://2016.igem.org/Team:UConn</a></li>
+    <li>[10] <a href=" http://2016.igem.org/Team:Lanzhou"> http://2016.igem.org/Team:Lanzhou</a></li>
+    <li>[11] <a href="http://2018.igem.org/Team:ColegioFDR_Peru/About">http://2018.igem.org/Team:ColegioFDR_Peru/About</a></li>
+    <li>[12] Yang HC., Fu HL., Lin YF., Rosen BP., “Pathways of Arsenic Uptake and Efflux”, 2015-09-22 Taken from [internet]: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4578627/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4578627/</a></li>
+    <li>[13] Mok T., Chen JS., Shlykov MA., Saier Jr MH., “Bioinformatic Analyses of Bacterial Mercury Ion (Hg2+) Transporters” 2012-06-02, Taken from [internet]: <a href="https://link.springer.com/article/10.1007%2Fs11270-012-1208-3">https://link.springer.com/article/10.1007%2Fs11270-012-1208-3</a></li>
+    <li>[14] Hložková K., Šuman J.,  Strnad H., Ruml T., Paces V., Kotrba P., “Characterization of pbt genes conferring increased Pb2+ and Cd2+ tolerance upon Achromobacter xylosoxidans A8”, 2013-10-12, Taken from [internet]:
+<a href="https://www.sciencedirect.com/science/article/pii/S0923250813001873?via%3Dihub#">https://www.sciencedirect.com/science/article/pii/S0923250813001873?via%3Dihub#</a></li>
+</ul>
+
+
+</div>
+{% include "partials/footer.nunjucks" %}
+
+{% endblock %}

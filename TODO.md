@@ -2,7 +2,7 @@
 * Refractor so that header and footer are completely separate.
 
 #### UI
-* Make drop down menu in navbar.
+* Center social media.
 * tocbot.js scrolls too far.
 
 #### Pages

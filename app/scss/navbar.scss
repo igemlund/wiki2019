@@ -60,6 +60,7 @@ ul.row{
     @include r(480) {
         position: fixed;
         height: 60px;
+        top: 0px;
     }
     top: 0px; 
     height: $mobile-navbar-height;
@@ -78,7 +79,7 @@ ul.row{
 }
 
 .navbar{
-   top: 25px;
+   top: 20px;
    max-width: $site-width;
    margin: auto;
    z-index: 999;
