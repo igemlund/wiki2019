@@ -1,9 +1,9 @@
 <h1>iGEM Lund wiki 2019</h1>
 
 <h2>Editing guide</h2>
-This is a guide for anyone in the team who wants to make edits to the wiki. If you want to edit layout or make other extensive edits you will have to clone the github repo using git. Then run "npm install in order to download the required packages. Then run "npm start" in order to start the dev-server.
+<p>This is a guide for anyone in the team who wants to make edits to the wiki. If you want to edit layout or make other extensive edits you will have to clone the github repo using git. Then run "npm install in order to download the required packages. Then run "npm start" in order to start the dev-server.</p>
 
-If you want to edit or add content to the wiki then you don't need to download anything, just follow the steps bellow.
+<p>If you want to edit or add content to the wiki then you don't need to download anything, just follow the steps below.</p>
 
 <h3>I want edit an existing page...</h3>
 
