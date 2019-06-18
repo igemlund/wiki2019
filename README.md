@@ -13,7 +13,7 @@
     <li>Sign in and press "wiki tools" and then "Edit".</li>
     <li>Edit the html code. You can press "preview" to make sure you did't make any mistakes.</li>
     <li>Press "Save" to save your edits.</li>
-    <li>In order not to have your edits overwritten when someone updates the pages with new code fro mgithub, it is important that you edit the corresponding page on github aswell. Go to the corresponding page in <a href="https://github.com/igemlund/wiki2019/tree/master/app/pages">app/pages/</a></li>
+    <li>In order not to have your edits overwritten when someone updates the pages with new code fro github, it is important that you edit the corresponding page on github aswell. Go to the corresponding page in <a href="https://github.com/igemlund/wiki2019/tree/master/app/pages">app/pages/</a></li>
     <li>To edit the file, press the small pen in the upper right corner. Make the same edits you made at <a href="https://2019.igem.org/Team:Lund">wiki </a>. Do NOT copy/paste the whole page.</li>
 <li>To save your edits, press the button labeled "Commit changes".</li>
 </ol>
