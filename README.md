@@ -3,9 +3,7 @@
 <h2>Editing guide</h2>
 <p>This is a guide for anyone in the team who wants to make edits to the wiki. If you want to edit layout or make other extensive edits you will have to clone the github repo using git. Then run "npm install in order to download the required packages. Then run "npm start" in order to start the dev-server.</p>
 
-<p>If you want to edit or add content to the wiki then you don't need to download anything, just follow the steps below.</p>
-
-<h3>I want edit an existing page...</h3>
+<h3>I want edit an existing page... (without having to download or install any software)</h3>
 
 <h4>...and it is urgent.</h4>
 <ol>
@@ -26,6 +24,22 @@
     <li>Your edits will show up on the wiki whenever someone updates the whole page.</li>
 </ol>
 
+<h3>I want to add a new page</h3>
+<ol>
+    <li>Go to the pages folder <a href="https://github.com/igemlund/wiki2019/tree/master/app/pages">app/pages/</a></li>
+    <li>Press "Create new file".</li>
+    <li>Copy/past the contents from a similar file in <a href="https://github.com/igemlund/wiki2019/tree/master/app/pages">app/pages/</a>.</li>
+    <li>To save your edits, press the button labeled "Commit changes".</li>
+</ol>
 
-
+<h3>I want make edits files using a local dev-server.</h3>
+<ol>
+    <li>Install git and npm.</li>
+    <li>Clone the repo using git: git clone https://github.com/igemlund/wiki2019.</li>
+    <li>Navigate to the folder wiki2019: cd wiki2019.</li>
+    <li>Install required packages: npm install.</li>
+    <li>Start dev-server: npm start.</li>
+    <li>Edit the files you want to.</li>
+    <li>Don't forget to commit you changes.</li>
+</ol>
 
