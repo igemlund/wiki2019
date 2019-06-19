@@ -13,7 +13,6 @@
     margin-top: 2em;
     @include r(480) {padding-top: 2em;}
     @include r(480) {padding-top: 2em;}
-    
 }
 
 .logo-text{
@@ -43,16 +42,20 @@
     .is-active-link::before{
         background: $dark-color;
     }
-//    font-size: 15px;
+    font-size: 15px;
     position: absolute;
     padding-left: 15px;
     //line-height: 25px;
-    max-width: 9em;
+    max-width: 14em;
     ul,ol.is-collapsible{
-        padding:0;
+        padding: 0;
         margin-left: 10px;
     }
+    li{
+        margin: 0 0 1em 0;
+    }
     ul,ol{
+        font-size: inherit;
         padding:0;
         margin-left: 10px;
     }
