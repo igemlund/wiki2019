@@ -40,7 +40,7 @@
     <li>Select new version of the file and press "Upload file".</li>
 </ol>
 
-<h3>I want make edits files using a local dev-server.</h3>
+<h3>I want make edits using a local dev-server.</h3>
 <ol>
     <li>Install git and npm.</li>
     <li>Clone the repo using git: git clone https://github.com/igemlund/wiki2019.</li>
