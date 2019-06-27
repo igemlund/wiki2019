@@ -1,6 +1,8 @@
 #### Overall
 * Refractor so that header and footer are completely separate.
 
+* Increase line-spacing on headlines
+
 #### UI
 * Center social media.
 * tocbot.js scrolls too far.
