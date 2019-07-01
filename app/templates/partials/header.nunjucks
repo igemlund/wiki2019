@@ -53,7 +53,7 @@
           <a class="dropbtn">Practicies</a>
           <div class="dropdown-content">
             <ul>
-                <li><a href="/Team:Lund/Human_Practicies">Human Practicies</a></li>
+                <li><a href="/Team:Lund/Human_Practices">Human Practices</a></li>
                 <li><a href="/Team:Lund/Public_Engagement">Public Engagement</a></li>
             </ul>
           </div>
