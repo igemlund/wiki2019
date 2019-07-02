@@ -72,7 +72,7 @@
 <div class="row">
     <div id="left-col" class="col-3">
     <div class="logo-container">
-        <img class="logo" src="https://2019.igem.org/wiki/images/d/d2/T--Lund--logo_animated_grey.gif">
+        <video autoplay loop muted playsinline class="logo" src="https://2019.igem.org/wiki/images/e/ef/T--Lund--logo_animated_grey.webm">
         <img id="logo-text" class="logo-text" src="https://2019.igem.org/wiki/images/thumb/4/4c/T--Lund--logo_text.svg/800px-T--Lund--logo_text.svg.png">
     </div>
         <div class="sticky">
