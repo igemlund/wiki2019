@@ -1,5 +1,6 @@
 //@import 'reset_wiki_style';
 @import '../../node_modules/tocbot/src/scss/tocbot-core';
+@import './libraries/katex';
 @import '../../node_modules/tocbot/src/scss/tocbot-default-theme';
 @import 'constants';
 @import 'body';
