@@ -17,9 +17,11 @@
   },
   "dependencies": {
     "browserify": "^16.2.3",
+    "default-options": "^1.0.0",
     "gulp-string-replace": "^1.1.2",
     "gulp-uglify": "^3.0.2",
     "jquery": "^3.4.1",
+    "katex": "^0.10.2",
     "middleware": "^1.0.0",
     "tocbot": "^4.6.0",
     "vinyl-buffer": "^1.0.1",
