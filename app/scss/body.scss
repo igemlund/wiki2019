@@ -5,7 +5,9 @@
     padding: 1px;
         @include r(480){ margin-top: 0;}
         margin-top: $mobile-navbar-height;
-    img{
+
+    img,video{
+        width: 100%;
         margin-top: 1em;
         @include r (768){margin-top: 6em;}
     }
@@ -13,7 +15,6 @@
         margin-bottom: 1em;
         margin-top: 0;
         @include r (768){margin-top: 0;}
-
     }
     @include r (768){height: $header-height;}
 }
