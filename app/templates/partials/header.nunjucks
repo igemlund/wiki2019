@@ -2,7 +2,7 @@
 <div id="page-container">
 <div class="navbar-background">
 <div class="navbar">
-        <img id="mobile-logo" src="https://2019.igem.org/wiki/images/d/da/T--Lund--logo-animated-white.gif">
+<img id="mobile-logo" src="https://2019.igem.org/wiki/images/d/da/T--Lund--logo-animated-white.gif">
 <nav>
     <ul class="row">
         <li class="dropdown">
@@ -66,13 +66,18 @@
 </div></div>
 <div id="content-wrap">
         <div id="right-col">
-        <img class="logo" src="https://2019.igem.org/wiki/images/d/d2/T--Lund--logo_animated_grey.gif">
+        <video autoplay loop muted playsinline class="logo">
+            <source src="https://2019.igem.org/wiki/images/7/7e/T--Lund--logo.webm" type="video/webm">
+            <source src="https://2019.igem.org/wiki/images/8/82/T--Lund--logo.mp4" type="video/mp4">
+        </video> 
         </div>
 <div class="row">
     <div id="left-col" class="col-3">
     <div class="logo-container">
-        <video autoplay loop muted playsinline class="logo" src="https://2019.igem.org/wiki/images/e/ef/T--Lund--logo_animated_grey.webm">
-        <img id="logo-text" class="logo-text" src="https://2019.igem.org/wiki/images/thumb/4/4c/T--Lund--logo_text.svg/800px-T--Lund--logo_text.svg.png">
+        <video autoplay loop muted playsinline class="logo">
+            <source src="https://2019.igem.org/wiki/images/7/7e/T--Lund--logo.webm" type="video/webm">
+            <source src="https://2019.igem.org/wiki/images/8/82/T--Lund--logo.mp4" type="video/mp4">
+        </video> 
     </div>
         <div class="sticky">
         <div class="js-toc"></div>
