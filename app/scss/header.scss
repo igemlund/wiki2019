@@ -23,14 +23,14 @@
         margin-top: 1em;
         @include r (768){margin-top: 6em;}
     }
-    .subtitle{
+    img.subtitle{
         @include fade(5.5s, 2.5s);
-        font-family: 'Open Sans';
-        text-align: center;
-        font-size: 3.4vw;
-        line-height: 0;
         margin-bottom: 1em;
         margin-top: 1em;
+        position: relative;
+        left: 5%;
+        right: 5%;
+        width: 90%;
     }
     @include r (768){height: $header-height;}
 }
