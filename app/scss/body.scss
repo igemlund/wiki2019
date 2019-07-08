@@ -34,11 +34,17 @@ h1#title{
     padding: 4px;
     padding-bottom: 2.5rem;
 
-    h1, h2, h3{
-        padding-top: 1em;
-        padding-bottom: 0.5em;
-        font-family: $header-font;
-        line-height: 1.5em;
+    h1{
+        @include header();
+        font-size: 34px;
+    }
+    h2{
+        @include header();
+        font-size: 29px;
+    }
+    h3{
+        @include header();
+        font-size: 25px;
     }
 
     p{

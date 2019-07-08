@@ -13,6 +13,11 @@ $mobile-navbar-height: 20em;
 
 // Typography
 @import url('https://fonts.googleapis.com/css?family=Lora|Open+Sans');
+@mixin header(){
+    padding-top: 1em;
+    font-family: $header-font;
+    line-height: 1.5em;
+}
 $main-font: 'Open Sans';
 $header-font: 'Open Sans';
 $text-font: "Lora";
