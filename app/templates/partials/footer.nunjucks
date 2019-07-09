@@ -3,11 +3,12 @@
 </div>
 </div>
 <div id="footer-lund">
-<div id="logos">
-<img class="logo"src="https://2019.igem.org/wiki/images/4/40/T--Lund--lund.png" alt="">
-<img class="logo"src="https://2019.igem.org/wiki/images/3/37/T--Lund--lmk.svg" alt="">
-<img class="logo"src="https://2019.igem.org/wiki/images/5/5f/T--Lund--probi-light.svg" alt="">
-<img class="logo"id="bakertilly" src="https://2019.igem.org/wiki/images/c/c8/T--Lund--bakertilly-light.svg" alt="">
+<div id="sponsors">
+<img class="sponsor"src="https://2019.igem.org/wiki/images/4/40/T--Lund--lund.png" alt="">
+<img class="sponsor"src="https://2019.igem.org/wiki/images/3/37/T--Lund--lmk.svg" alt="">
+<img class="sponsor"src="https://2019.igem.org/wiki/images/5/5f/T--Lund--probi-light.svg" alt="">
+<img class="sponsor"id="bakertilly" src="https://2019.igem.org/wiki/images/c/c8/T--Lund--bakertilly-light.svg" alt="">
+<img class="sponsor"id="bakertilly" src="https://2019.igem.org/wiki/images/d/df/T--Lund--snapgene.svg" alt="">
 <div id="social">
 <ul>
     <a href="https://www.instagram.com/igem_lund/"><li><img id="social" src="https://2019.igem.org/wiki/images/b/be/T--Lund--instagram.png" alt="">@igem_lund</li></a>

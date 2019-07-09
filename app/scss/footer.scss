@@ -10,33 +10,30 @@
   background-color: $dark-color;
 }
 
-div#logos{
+div#sponsors{
     max-width: $site-width;
     margin: auto;
     padding: 2em;
     position: relative;
 
-    img.logo{
-        float: left;
-        margin-left: 8;
+    img.sponsor{
+        float: top;
+        margin-left: 7%;
         margin-bottom: 1em;
         max-width: 10%;
+        min-width: 7%;
     }
 
     img#bakertilly{
         padding-top: 10%;
-        max-width: 12%;
+        max-width: 15%;
+        float: top;
     }
 
     div#social{
-        @include r(480){
-            margin-top: 4em;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        margin-top: 2em;
-        margin-left: 10%;
-        margin-right: 10%;
+        margin-top: 4em;
+        margin-left: auto;
+        margin-right: auto;
         float: right;
         width: auto;
         height: auto;
