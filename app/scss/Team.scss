@@ -1,36 +1,39 @@
 @import 'constants';
 @import './libraries/resass'; 
 
-
 .person{
-    height: auto;
-   @include r(768)
-        {height: 500;
-        padding-top: 30px;
-        }
+    margin-bottom: 2em;
+    @include r(768){
+        position: relative;
+        height: 30em;
+        width: 100%;
     }
+}
 
 .bio{
     float: bottom;
     text-align: center;
-    
-    @include r(768) 
-        {float: right;
-        width: 50%;
-        }
+
+    @include r(768) {
+        position: absolute;
+        right: 0;
+        width: 70%;
+    }
 }
 
 .avatar{
+    @include fade(0s, 2s);
     float: top;
-    height: 45%;
     display: block;
+    margin-top: 0em;
     margin-left: auto;
     margin-right: auto;
     @include r(768){ 
-        float: left; 
-        width:45%;
-        height: auto; 
-        }
+        position: absolute;
+        width: 30%;
+        top: 5em;
+        left: 0;
+    }
 }
 
 .title{
@@ -38,6 +41,6 @@
 }
 
 .group{
-//    background-color: $primary-color;
+    //    background-color: $primary-color;
     padding: 2em;
 }

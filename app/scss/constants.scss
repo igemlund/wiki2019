@@ -1,3 +1,14 @@
+@mixin fade($delay, $duration) {
+    opacity: 0;
+    animation: fadein $duration;
+    animation-delay: $delay;
+    animation-fill-mode: forwards;
+    @keyframes fadein {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+}
+
 // Colors
 $body-bg: #FFFF;
 $site-width: 900px;
@@ -24,3 +35,4 @@ $text-font: "Lora";
 $text-size-mobile: 17px;
 $text-size: 22px;
 $body-font-size: '21px'
+

@@ -50,7 +50,7 @@ gulp.task('assets', () => {
 });
 
 gulp.task('scripts', function() {
-  return browserify('./app/scripts/tocbot.js')
+  return browserify('./app/scripts/script.js')
     .bundle()
     .pipe(source('bundle.js')) 
     .pipe(buffer()) 
