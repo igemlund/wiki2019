@@ -72,16 +72,28 @@ ul {
 </style>
         <link rel="stylesheet" href="css/main.css">
         <!Uncomment the stylesheet below when publishing>
-        <link rel="stylesheet" href="/Team:Lund/style/wrapper?action=raw&ctype=text/css&cache=1562238892196">
+        <link rel="stylesheet" href="/Team:Lund/style/wrapper?action=raw&ctype=text/css&cache=1562675325917">
 </head>
 <body>
 
   <!-- You write code for this content block in another file -->
   {% block content %} {% endblock %}
 </body>
-        <script src="bundle.js"></script>
+<script src="bundle.js"></script>
+<script>
+    // Hamburger menu
+    function nav() {
+        var x = document.getElementById("navbar");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+
+</script>
         <!script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Template:Lund/JS&action=raw&ctype=text/javascript"</script>
         <!Uncomment the script below when publishing>
-        <script type="text/javascript" src="/Team:Lund/script/wrapper?action=raw&ctype=text/javascript&cache=1562238892196"></script>
+        <script type="text/javascript" src="/Team:Lund/script/wrapper?action=raw&ctype=text/javascript&cache=1562675325917"></script>
 
 </html>

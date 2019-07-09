@@ -8,7 +8,7 @@ ul.row{
             text-align: left;
         }
     }
-    text-align: center;
+    text-align: left;
     display: block;
     list-style: none;
     margin: 0 2px;
@@ -18,76 +18,106 @@ ul.row{
 }
 .dropdown {
 
-  a{
-    white-space: nowrap;
-    font-size: 22px;
-    @include r(480) {font-size: 20px;}
-    @include r(768) {font-size: 16px;}
-    text-decoration: none;
-    color: $body-bg;
-    &:visited{color: $body-bg;}
-    &:hover{
-    color: $light-color;
-    }
-  }
+        width: 100%;
+        position: relative;
+        padding: 0;
+        &:hover{
+            font-weight: bold;
+            .dropdown-content{
+                display: block;
+                font-weight: normal;
+            }
+        }
 
-  width: 100%;
-  position: relative;
-  padding: 0;
-  &:hover{
-      font-weight: bold;
-      .dropdown-content{
-          display: block;
-          font-weight: normal;
-      }
-  }
+    a{
+        white-space: nowrap;
+        font-size: 22px;
+        @include r(480) {font-size: 20px;}
+        @include r(768) {font-size: 16px;}
+        text-decoration: none;
+        color: $body-bg;
+        &:visited{color: $body-bg;}
+        &:hover{
+            color: $light-color;
+        }
+    }
 }
 
 .dropdown-content {
-  padding: 1em;
-  display: none;
-  position: absolute;
-  background-color: $dark-color;
-  z-index: 1;
-  min-width: 12em;
-  text-align: left;
-  ul{
-      list-style: none;
-  }
+    @include r(480){
+        padding: 1em;
+        display: none;
+        position: absolute;
+        z-index: 1;
+        min-width: 12em;
+        text-align: left;
+        left: -0.5em;
+
+    }
+
+    ul{
+        list-style: none;
+    }
+    background-color: $dark-color;
+    position: relative;
+    left: 40px;
 }
+
 .navbar-background{
     @include r(480) {
-        position: fixed;
         height: 60px;
-        top: 0px;
+        position: fixed;
     }
+    position: fixed;
     top: 0px; 
-    height: $mobile-navbar-height;
-    position: absolute;
     width: 100%;
     z-index: 999;
     background-color: $dark-color;
+    min-height: 60px;
 
     #mobile-logo{
         @include r(480) {display: none;}
-        margin-left: auto;
-        margin-right: auto;
-        width: 5em;
+        width: 25px;
         display: block;
+        position: relative;
+        top: 22px;
+        left: 0;
     }
 }
 
-.navbar{
-   top: 26px;
-   max-width: $site-width;
-   margin: auto;
-   z-index: 999;
-   position: relative;
-   @include r(480) {position: fixed}
-   font-color: $dark-color;
-   right: 0;
-   left: 0;
+#navbar{
+    @include r(480){
+        display: block;
+        left: 1em;
+        overflow-y: visible;
+        top: 26px;
+    }
+    right: 0;
+    left: 0;
+    position: fixed;
+    top: 22px;
+    max-width: $site-width;
+    margin: auto;
+    z-index: 9999;
+    position: relative;
+    font-color: $dark-color;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 
-
+.hamburger {
+  @include r(480){display: none;}
+  z-index: 999;
+  content: "";
+  position: fixed;
+  top: 24px;
+  right: 14px;
+  width: 24px;
+  height: 21px;
+  border-top: 12px double #FFFF;
+  border-bottom: 4px solid #FFFF;
+}

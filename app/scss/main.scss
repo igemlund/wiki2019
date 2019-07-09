@@ -2,13 +2,13 @@
 @import '../../node_modules/tocbot/src/scss/tocbot-core';
 @import './libraries/katex';
 @import '../../node_modules/tocbot/src/scss/tocbot-default-theme';
-@import 'constants';
 @import 'body';
 @import 'header';
 @import 'navbar';
 @import 'footer';
 @import 'Team';
 @import 'timeline';
+@import 'constants';
 
 #page-container {
   padding-top: 20px;

@@ -1,28 +1,11 @@
 @import 'constants';
 @import 'libraries/resass';
 
-.title-container{
-    padding: 1px;
-    @include r(480){ margin-top: 0;}
-    margin-top: $mobile-navbar-height;
-
-    img,video{
-        width: 100%;
-        margin-top: 1em;
-        @include r (768){margin-top: 6em;}
-    }
-    img.subtitle{
-        margin-bottom: 1em;
-        margin-top: 0;
-        @include r (768){margin-top: 0;}
-    }
-    @include r (768){height: $header-height;}
-}
 
 h1#title{
     @include r(480) {margin-top: 0em;}
     @include r(768) {margin-top: 3em;;} 
-    margin-top: 6.5em;
+    margin-top: 1em;
     margin-bottom: 1em;
     font-family: $header-font;
     text-align: center;

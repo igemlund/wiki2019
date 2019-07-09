@@ -1,28 +1,27 @@
 <!-- header.nunjucks -->
 <div id="page-container">
 <div class="navbar-background">
-<div class="navbar">
-<img id="mobile-logo" src="https://2019.igem.org/wiki/images/d/da/T--Lund--logo-animated-white.gif">
+<div id="navbar">
 <nav>
     <ul class="row">
         <li class="dropdown">
-            <a class="dropbtn" href="/Team:Lund">Home</a></li>
+            <a class="dropbtn" href="/Team:Lund" onclick="nav()" >Home</a></li>
 
         <li class="dropdown">
           <a class="dropbtn">Project</a>
           <div class="dropdown-content">
             <ul>
-                <li><a href="/Team:Lund/Description">Description</a></li>
-                <li><a href="/Team:Lund/Design">Design</a></li>
-                <li><a href="/Team:Lund/Experiments">Experiments</a></li>
-                <li><a href="/Team:Lund/Model">Model</a></li>
-                <li><a href="/Team:Lund/Notebook">Notebook</a></li>
-                <li><a href="/Team:Lund/Contribution">Contribution</a></li>
-                <li><a href="/Team:Lund/Results">Results</a></li>
-                <li><a href="/Team:Lund/Demonstrate">Demonstrate</a></li>
-                <li><a href="/Team:Lund/Improve">Improve</a></li>
-                <li><a href="/Team:Lund/Attributions">Attributions</a></li>
-                <li><a href="/Team:Lund/Safety">Safety</a></li>
+                <li><a href="/Team:Lund/Description" onclick="nav()" >Description</a></li>
+                <li><a href="/Team:Lund/Design" onclick="nav()" >Design</a></li>
+                <li><a href="/Team:Lund/Experiments" onclick="nav()" >Experiments</a></li>
+                <li><a href="/Team:Lund/Model" onclick="nav()" >Model</a></li>
+                <li><a href="/Team:Lund/Notebook" onclick="nav()" >Notebook</a></li>
+                <li><a href="/Team:Lund/Contribution" onclick="nav()" >Contribution</a></li>
+                <li><a href="/Team:Lund/Results" onclick="nav()" >Results</a></li>
+                <li><a href="/Team:Lund/Demonstrate" onclick="nav()" >Demonstrate</a></li>
+                <li><a href="/Team:Lund/Improve" onclick="nav()" >Improve</a></li>
+                <li><a href="/Team:Lund/Attributions" onclick="nav()" >Attributions</a></li>
+                <li><a href="/Team:Lund/Safety" onclick="nav()" >Safety</a></li>
             </ul>
           </div>
         </li>
@@ -31,8 +30,8 @@
           <a class="dropbtn">People</a>
           <div class="dropdown-content">
             <ul>
-                <li><a href="/Team:Lund/Team">Team</a></li>
-                <li><a href="/Team:Lund/Collaborations">Collaborations</a></li>
+                <li><a href="/Team:Lund/Team" onclick="nav()" >Team</a></li>
+                <li><a href="/Team:Lund/Collaborations" onclick="nav()" >Collaborations</a></li>
             </ul>
           </div>
         </li>
@@ -41,10 +40,10 @@
           <a class="dropbtn">Parts</a>
           <div class="dropdown-content">
             <ul>
-                <li><a href="/Team:Lund/Parts">Overview</a></li>
-                <li><a href="/Team:Lund/Basic_Part">Basic Parts</a></li>
-                <li><a href="/Team:Lund/Composite_Part">Composite Parts</a></li>
-                <li><a href="/Team:Lund/Part_Collection">Part Collection</a></li>
+                <li><a href="/Team:Lund/Parts" onclick="nav()" >Overview</a></li>
+                <li><a href="/Team:Lund/Basic_Part" onclick="nav()" >Basic Parts</a></li>
+                <li><a href="/Team:Lund/Composite_Part" onclick="nav()" >Composite Parts</a></li>
+                <li><a href="/Team:Lund/Part_Collection" onclick="nav()" >Part Collection</a></li>
             </ul>
           </div>
         </li>
@@ -53,17 +52,20 @@
           <a class="dropbtn">Practices</a>
           <div class="dropdown-content">
             <ul>
-                <li><a href="/Team:Lund/Human_Practices">Human Practices</a></li>
-                <li><a href="/Team:Lund/Public_Engagement">Public Engagement</a></li>
+                <li><a href="/Team:Lund/Human_Practices" onclick="nav()" >Human Practices</a></li>
+                <li><a href="/Team:Lund/Public_Engagement" onclick="nav()" >Public Engagement</a></li>
             </ul>
           </div>
         </li>
         <div class="dropdown">
-            <a class="dropbtn" href="/Team:Lund/Blog">Blog</a></div>
+            <a class="dropbtn" href="/Team:Lund/Blog" onclick="nav()" >Blog</a></div>
 
     </ul>
 </nav>
-</div></div>
+</div>
+</div>
+<div class="hamburger" onclick="nav()">
+</div>
 <div id="content-wrap">
         <div id="right-col">
         <video autoplay loop muted playsinline class="logo">
