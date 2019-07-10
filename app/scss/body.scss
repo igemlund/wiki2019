@@ -9,7 +9,7 @@ h1#title{
     margin-bottom: 1em;
     font-family: $header-font;
     text-align: center;
-    font-size: 50px;
+    font-size: $page-title-font-size;
     line-height: normal;
 }
 
@@ -19,15 +19,15 @@ h1#title{
 
     h1{
         @include header();
-        font-size: 34px;
+        font-size: $h1-font-size;
     }
     h2{
         @include header();
-        font-size: 29px;
+        font-size: $h2-font-size;
     }
     h3{
         @include header();
-        font-size: 25px;
+        font-size: $h3-font-size;
     }
 
     p{
@@ -58,7 +58,7 @@ h1#title{
     }
 
     p.fig{
-        font-size: 16px;
+        font-size: $fig-font-size;
         padding-left: 10%;
         padding-right: 10%;
         line-height: 20px;
@@ -90,7 +90,7 @@ h1#title{
 
     p.date{
         font-family: $header-font;
-        font-size: 18px;
+        font-size: $date-font-size;
         color: $light-color;
         padding-top: 0.5em;
         position: relative;
