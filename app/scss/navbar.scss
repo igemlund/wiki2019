@@ -2,6 +2,10 @@
 @import './libraries/resass';
 
 ul.row{
+    font-size: 22px;
+    @include r(480) {font-size: 20px;}
+    @include r(768) {font-size: 16px;}
+
     @include r(480){
         display: flex;
         li.dropdown-content{
@@ -14,8 +18,8 @@ ul.row{
     margin: 0 2px;
     padding: 0;
     justify-content: space-around;
-
 }
+
 .dropdown {
 
         width: 100%;
@@ -31,83 +35,66 @@ ul.row{
 
     a{
         white-space: nowrap;
-        font-size: 22px;
-        @include r(480) {font-size: 20px;}
-        @include r(768) {font-size: 16px;}
         text-decoration: none;
         color: $body-bg;
         &:visited{color: $body-bg;}
-        &:hover{
-            color: $light-color;
-        }
+        &:hover{color: $light-color;}
     }
 }
 
 .dropdown-content {
     @include r(480){
-        padding: 1em;
         display: none;
+        min-width: 10em; // To fit "Public Engagement"
         position: absolute;
         z-index: 1;
-        min-width: 12em;
         text-align: left;
-        left: -0.5em;
-
+        width: 100%;
+        left: -20px;
     }
+
+    width: 6em;
+    min-width: 6em;
+    left: 40px;
+    background-color: $dark-color;
+    position: relative;
 
     ul{
         list-style: none;
+        margin: 10px;
     }
-    background-color: $dark-color;
-    position: relative;
-    left: 40px;
+    li{overflow: visible;}
 }
 
 .navbar-background{
-    @include r(480) {
-        height: 60px;
-        position: fixed;
-    }
+    @include r(480){ overflow: visible;}
+
+    overflow: scroll;
+    min-height: 60px;
     position: fixed;
     top: 0px; 
-    width: 100%;
     z-index: 999;
     background-color: $dark-color;
-    min-height: 60px;
-
-    #mobile-logo{
-        @include r(480) {display: none;}
-        width: 25px;
-        display: block;
-        position: relative;
-        top: 22px;
-        left: 0;
-    }
+    width: 100%;
 }
 
 #navbar{
     @include r(480){
         display: block;
         left: 1em;
-        overflow-y: visible;
         top: 26px;
-        height: auto;
-        width: auto;
+        height: 100%;
     }
-    right: 0;
+    display: none;
     left: 0;
-    position: fixed;
     top: 22px;
-    max-width: $site-width;
+    height: 100vh;
+
+    position: relative;
     margin: auto;
     z-index: 9999;
-    position: relative;
+    max-width: $site-width;
     font-color: $dark-color;
-    display: none;
-    height: 100vh;
-    width: 100vw;
-    overflow-y: scroll;
-    overflow-x: hidden;
 }
 
 
