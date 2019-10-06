@@ -1,5 +1,10 @@
 @mixin fade($delay, $duration) {
     opacity: 0;
+    
+    -webkit-animation: fadein $delay; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein $delay; /* Firefox < 16 */
+        -ms-animation: fadein $delay; /* Internet Explorer */
+         -o-animation: fadein $delay; 
     animation: fadein $duration;
     animation-delay: $delay;
     animation-fill-mode: forwards;

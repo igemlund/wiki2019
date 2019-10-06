@@ -103,7 +103,7 @@ h1#title{
     }
 
     img.fig{width: 100%;}
-    video{width: 100%;}
+    video.fig{width: 100%;}
     table{
         border-collapse: collapse;
         @include r(480) {font-size: $table-font-size;}

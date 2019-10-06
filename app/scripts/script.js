@@ -20,20 +20,29 @@ $(window).scroll(function(){
 
 
 // Maths
-var x = document.getElementsByClassName('maths');
-for (var i = 0; i < x.length; i++) {
-    console.log("test");
-    try {
-        if(x[i].tagName == "DIV"){
-            t= katex.render(x[i].textContent,x[i],{ displayMode: true });
-        } else {
+txlist = document.getElementsByTagName("dtex");
+for (var i = 0; i < txlist.length; i++) {
+    var tx = txlist[i];
+    var txtext = "\\displaystyle " + tx.textContent;
+    var html = katex.renderToString(txtext, tx, { displayMode: true });
+    html = "<div style='text-align:left;margin-bottom:1em;'>" + html
+               + "<span style='float:right'>(" + (i+1) + ")</span></div>";
+    tx.innerHTML = html;
+}
 
-            t= katex.render(x[i].textContent,x[i]);
-        }
+// Collapibles
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
     }
-    catch(err) {
-        x[i].style.color = 'red';
-        x[i].textContent= err;
-    }
+  });
 }
 
