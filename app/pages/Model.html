@@ -2,31 +2,159 @@
 {% extends "layout.html" %}
 {% block content %} 
 {% include "partials/header.nunjucks" %}
-<h1 id="title" class="js-toc-ignore">Model</h1>
+<h1 id="title" class="js-toc-ignore">Mathematical models for predicting the long term health benefits of using PRODEACC (work in progress)</h1>
 <div id="body">
-<h2 id="Equations">Equations</h2>
-<p> This is an equation <span class="maths">\sum_{i=1}^\infty\frac{1}{n^2}
-=\frac{\pi^2}{6}</span>
-</p>
-<h2 id="Constants">Constants</h2>
+    <p>To better understand the long term health benefits of PRODEACC consumption, mathematical models of transformed <i>E. Coli Nissle 1917</i> colonies were developed. Unknown parameters were estimated using parameter optimization against data collected from in-vitro experiments. Ones the models could predict the toxic metal bioaccumulation in a single colony, they could be integrated into existing models describing how lead and arsenic is bioaccumulated in the human body. By comparing the output of the modified body accumulation models to the output of the non-modified model, the long term effects of PRODEACC could be assessed.</p>
 <p>
-<table style="width:100%">
+To better understand this text it’s recommended to read the <a href="/Team:Lund/Description">project description</a> before continuing.
+</p>
+<h1 id="Modeling-growth-and-ion-accumulation in a singel colony">Single colony model</h2>
+
+<p>
+To model the growth of a single colony, its protein production, and its ions accumulation, a system of seven differential equations was devised. Equation (1) and (2) describes the colony as a whole and the concentration of ions in its growth medium, whereas equation (3) - (7) describes the changes inside the average individual cell. A graphical representation of the equation can be found in figure x. Short descriptions of the time-dependent variables can be found in table x and descriptions and approximate values of the parameters can be found in table 1.
+</p>
+
+<video autoplay muted loop playsinline>
+    <source src="https://2019.igem.org/wiki/images/d/d8/T--Lund--colony-model.webm" type="video/webm">
+</video>
+<p class="fig" >Animation 1: A graphical representation of the rate of change of the ions and proteins described by equation (1) and (3)-(7). </p>
+
+<h2 id="derivatoin-of-equations">Derivation of equations</h2>
+<p>
+The model was devised to simulate the colony in a number of conditions, with only the values of the parameters needed to be changed. For example, for the growth rate <i>k<sub>growth</sub></i> would most likely be lower in a gut environment compared to an in-vitro environment with good pH and no competition from other microbes.
+
+<p>
+<b>Equation (1)</b> describes the rate of change of the total number of living bacteria cells in the colony. The cells are assumed to divide at a constant rate kgrowth after the lag phase is over. However, the exponential growth will not continue forever. At some point, the lack of energy will force the colony to stop dividing and will reach a stationary phase. Because of this, the term  was introduced making the growth rate stagnate once <i>N</i> reaches <i>N<sub>max</sub></i> [1].
+</p>
+
+<p>
+<b>Equation (2)</b> describes the rate of change of the total number of lead or arsenic ions in the gut (or growth medium). The rate of accumulation by the colony should be a function of the number of living cells <i>N</i>, as well as the number of transport proteins per cell. The working mechanisms for the lead/ion transporter pbrT are unknown[2].  The Michaelis–Menten equation was used in order to represent the transport rate with the rational that a higher concentration of ions outside the cells would increase the probability of an ion finding its way through a transporter, but that the increment would give diminishing returns one more and more transporters work at their highest capacity.[3]
+</p>
+
+<p>
+<b>Equation (2)</b> describes the change in the number of mRNAs coding for the accumulation proteins and the transport proteins. The transcription rate Itsc is assumed to be constant once the promoter has been induced. Then the mRNA will degrade att the kinetic rate kRNA-deg.
+</p>
+
+<p>
+<b>Equation (2)</b> describes the rate of change in the number of transport proteins per cell. The proteins are translated from the mRNAs at a kinetic rate ktsl. The proteins are assumed to degrade at the kinetic rate kpro-deg. The kinetic rate -dN/dT/N was introduced to take into account the effective degradation due to cell growth. Every time a cell divides the average number of proteins in one cell is halved. These kinetics apply the other proteins as well.
+</p>
+
+<p>
+<b>Equation (5)</b> describes the rate change in the number of free accumulation proteins. Whenever an accumulation protein binds to an ion, the accumulation protein is no longer free. This rate is proportional to the number of accumulation proteins APfree and the number of free ions in cytoplasm C. The kinetic rate kcapture was introduced to scale the rate of capture.
+</p>
+
+<p>
+<b>Equation (6)</b> describes the rate of change in the number of occupied accumulation proteins, the proteins bound to an ion. The kinetics are similar to that of equation (5).
+</p>
+
+<p>
+<b>Equation (7)</b> describes the rate of change in the number of free ions in the cytoplasm.
+</p>
+
+
+<p class ="math">
+<dtex>\frac{dN}{dt} = k_{growth}\times N − k_{growth}\times\frac{N^2}{N_{max}}</dtex> 
+<dtex>\frac{dG}{dt} = −\frac{V_{max}}{1+k_m/ \frac{G}{v_{gut}}}\times TP \times N</dtex> 
+<dtex>\frac{d(mRNA)}{dt} = tsc − k_{RNA−deg} \times mRNA</dtex>
+<dtex>\frac{d(TP)}{dt} = k_{tsl} \times mRNA − \frac{dN}{dt} \times \frac{TP}{N} − k_{pro−deg} \times TP </dtex>
+<dtex>\frac{d(AP_{free})}{dt} = k_{tsl} \times mRNA − \frac{dN}{dt} \times \frac{AP_{free}}{N} − k_{pro−deg} \times AP_{free} − k_{capture} \times C \times AP_{free}</dtex>
+<dtex>\frac{d(AP_{occupied})}{dt} = k_{capture} \times AP_{free} \times C − \frac{dN}{dt} \times \frac{AP_{occupied}}{N} − k_{pro−deg} \times AP_{occupied}</dtex>
+<dtex>\frac{dC}{dt}= \frac{V_{max}}{1+k_m/ \frac{G}{v_{gut}}} \times TP − k_{capture} \times C \times AP_{free} + k_{pro−deg} \times  AP_{occupied} − \frac{dN}{dt} \times \frac{C}{N}  </dtex>
+</p>
+
+<button type="button" class="collapsible">Table 1: Variable descriptions</button>
+<table class="collapsible-content">
   <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Age</th>
+    <th>Varible</th>
+    <th>Description</th>
   </tr>
   <tr>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>50</td>
+    <td><i>N</i></td>
+    <td>The total number of living cells in the growth medium.</td>
   </tr>
   <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
+    <td><i>G</i></td>
+    <td>The total number of ions in the growth medium.</td>
+  </tr>
+  <tr>
+      <td><i>mRNA</i></td>
+      <td>The number of mRNAs coding for the ion-transport protein and the ions accumulation protein.</td>
+  </tr>
+  <tr>
+      <td><i>TP</i></td>
+      <td>The number of transport proteins expressed in a single cell.</td>
+  </tr>
+  <tr>
+      <td><i>AP<sub>free</sub></i></td>
+      <td>The number of free accumulation protein expressed inside a single cell.</td>
+  </tr>
+  <tr>
+      <td><i>AP<sub>occupied</sub></i></td>
+      <td>The number of accumulation protein expressed a single cell, that are bound to an ion.</td>
+  </tr>
+  <tr>
+      <td><i>C</i></td>
+      <td>The number of free ions inside the cytoplasm of a single cell.</td>
   </tr>
 </table>
+<p></p>
+<button type="button" class="collapsible">Table 2: Parameter descriptions</button>
+<table class="collapsible-content">
+  <tr>
+    <th>Parameter</th>
+    <th>Description</th>
+    <th>Estimated Value</th>
+    <th>Unit</th>
+    <th>Notes and refereces</th>
+  </tr>
+  <tr>
+      <td><i>V<sub>cell</sub></i></td>
+      <td>Volume of <i>E.coli</i> cell.</td>
+      <td>1.5e-10</td>
+      <td>Litre</td>
+      <td><a href="https://link.springer.com/article/10.1007%2Fs00253-013-5377-9">Allen C. S. Yu et al 2014</a></td>
+  </tr>
+  <tr>
+    <td><i>V<sub>gut</sub></i></td>
+    <td>Volume of gut</td>
+    <td>1.2</td>
+    <td>Litre</td>
+    <td><a href="https://www.sciencedirect.com/science/article/pii/S1382668917303241?via%3Dihub"></a>Eric Dede 2018</td>
+  </tr>
+  <tr>
+    <td><i>tsc</i></td>
+    <td>Transcripton rate</td>
+    <td>900</td>
+    <td>mRNA/h</td>
+    <td>Genes VIII, Lewin 2004. (Original unit is mRNA/min)</td>
+  </tr>
+  <tr>
+      <td><i>k<sub>tsl</sub></i></td>
+      <td>Translation rate</td>
+      <td></td>
+      <td>/h</td>
+      <td><a href="https://www.ncbi.nlm.nih.gov/pubmed/3071683?ordinalpos=3&itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DefaultReportPanel.Pubmed_RVDocSum">Ehrenberg and Kurland, 1988</a></td>
+  </tr>
+  <tr>
+      <td><i>k<sub>RNA-deg</sub></i></td>
+      <td>RNA degradation rate</td>
+      <td>8.3177</td>
+      <td>/h</td>
+      <td><a href="http://book.bionumbers.org/how-fast-do-rnas-and-proteins-degrade/">Bionumbers.org</a>, calculated from mRNA’s half life of e.coli which is  about 5 minutes.</td>
+  </tr>
+  <tr>
+      <td><i>k<sub>pro-deg</sub></i></td>
+      <td>Protein degradation rate</td>
+      <td>1.0397</td>
+      <td>/h</td>
+      <td><a href="http://book.bionumbers.org/how-fast-do-rnas-and-proteins-degrade/">Bionumbers.org</a>, calculated from mean protein’s half life in yeast which is about 40 minutes. </td>
+  </tr>
+</table>
+
+
+
+<h2 id="Constants">Constants</h2>
+<p>
 </p>
 </div>
 {% include "partials/footer.nunjucks" %}
