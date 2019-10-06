@@ -10,6 +10,16 @@
 @import 'timeline';
 @import 'constants';
 
+img#group-photo{
+    background: url("https://2019.igem.org/wiki/images/d/d5/T--Lund--group-photo.JPG");
+    &:hover{
+        background: url("https://2019.igem.org/wiki/images/9/98/T--Lund--group-photo-alt.JPG")
+    }
+    height: 600px;
+    width: 100%;
+}
+
+
 #page-container {
   padding-top: 20px;
   position: relative;
