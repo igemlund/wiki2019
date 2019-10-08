@@ -54,6 +54,7 @@
             <ul>
                 <li><a href="/Team:Lund/Human_Practices" onclick="nav()" >Human Practices</a></li>
                 <li><a href="/Team:Lund/Public_Engagement" onclick="nav()" >Public Engagement</a></li>
+                <li><a href="/Team:Lund/SynthEthics" onclick="nav()" >SynthEthics</a></li>
             </ul>
           </div>
         </li>
