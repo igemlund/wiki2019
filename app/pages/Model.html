@@ -8,18 +8,18 @@
 <p>
 To better understand this text it’s recommended to read the <a href="/Team:Lund/Description">project description</a> before continuing.
 </p>
-<h1 id="Modeling-growth-and-ion-accumulation in a singel colony">Single colony model</h2>
+<h2 id="Modeling-growth-and-ion-accumulation in a singel colony">Single colony model</h2>
 
 <p>
 To model the growth of a single colony, its protein production, and its ions accumulation, a system of seven differential equations was devised. Equation (1) and (2) describes the colony as a whole and the concentration of ions in its growth medium, whereas equation (3) - (7) describes the changes inside the average individual cell. A graphical representation of the equation can be found in figure x. Short descriptions of the time-dependent variables can be found in table x and descriptions and approximate values of the parameters can be found in table 1.
 </p>
 
-<video autoplay muted loop playsinline>
+<video class="fig" autoplay muted loop playsinline>
     <source src="https://2019.igem.org/wiki/images/d/d8/T--Lund--colony-model.webm" type="video/webm">
 </video>
 <p class="fig" >Animation 1: A graphical representation of the rate of change of the ions and proteins described by equation (1) and (3)-(7). </p>
 
-<h2 id="derivatoin-of-equations">Derivation of equations</h2>
+<h3 id="derivatoin-of-equations">Derivation of equations</h3>
 <p>
 The model was devised to simulate the colony in a number of conditions, with only the values of the parameters needed to be changed. For example, for the growth rate <i>k<sub>growth</sub></i> would most likely be lower in a gut environment compared to an in-vitro environment with good pH and no competition from other microbes.
 
@@ -62,7 +62,7 @@ The model was devised to simulate the colony in a number of conditions, with onl
 <dtex>\frac{dC}{dt}= \frac{V_{max}}{1+k_m/ \frac{G}{v_{gut}}} \times TP − k_{capture} \times C \times AP_{free} + k_{pro−deg} \times  AP_{occupied} − \frac{dN}{dt} \times \frac{C}{N}  </dtex>
 </p>
 
-<button type="button" class="collapsible">Table 1: Variable descriptions</button>
+<button type="button" class="collapsible">Table 1: Time dependent variable</button>
 <table class="collapsible-content">
   <tr>
     <th>Varible</th>
@@ -150,12 +150,56 @@ The model was devised to simulate the colony in a number of conditions, with onl
       <td><a href="http://book.bionumbers.org/how-fast-do-rnas-and-proteins-degrade/">Bionumbers.org</a>, calculated from mean protein’s half life in yeast which is about 40 minutes. </td>
   </tr>
 </table>
-
-
-
-<h2 id="Constants">Constants</h2>
+<p></p>
+<button type="button" class="collapsible">Table 3: Initial conditions</button>
+<table class="collapsible-content">
+  <tr>
+    <th>Varible</th>
+    <th>Description</th>
+  </tr>
+</table>
+<p></p>
+<h3 id="parameter-optimization">Parameter Optimization</h3>
 <p>
+Values for the parameters that couldn't be found in the literature were estimated using data acquired from experiments. The model could be fitted to the data with the help of optimization algorithms. The acquired parameter values were the ones that yielded the lowest cost from a linear loss function. To find the lowest cost adaptive particle swarm algorithm was used[1]. Particle swarm optimization has been used with good efficiency for other non-linear ODE-parameter estimation for biological systems, where there's a big solution space[2].
 </p>
+<p>
+Particle swarm optimization (PSO) is an optimization algorithm inspired by the movement of a group of organisms, for example, a flock of birds or a shoal of fish. An upper and a lower bound to the search space is given and the algorithm initializes by uniformly distributing the particles/organisms in the space. The solution is calculated for each particle. Each particle then moves in the search space in the direction of the vector sum of is own previous best solution and the group’s best solution. The length at which the particles moves varies from different flavors of the algorithm.[2]
+</p>
+<img class="fig-small" src="https://2019.igem.org/wiki/images/9/90/T--Lund--pso.gif" alt="">
+<p class="fig">Animation 2: Animation showing how particles navigate the solution space and converging on the global minimum. Courtesy: Ephramac, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+<p>Data acquired from wet lab was used in order to derive the correct values for the colony model parameters. It’s important to keep in mind that the parameters are different in different conditions. For example, the growth rate kgrowth, lag phase time, and Nmax  in vitro for E. Coli Nissle 1917 with the vector XXXX was found to X, Y, and Z respectively.
+</p>
+<img class="fig" src="https://2019.igem.org/wiki/images/d/d5/T--Lund--growth-fitting.svg" alt="">
+<p class="fig">Figure 1: An example of how the model was fitted to wet lab data. This example shows how the parameter <i>k<sub>growth</sub></i>, <i>lag-phase</i>, and <i>N<sub>max</sub></i> was derrived for a certain scenario.
+</p> 
+<h2 id="body-uptake">Modelling the de-accumulating effect of the colony on the human body</h2>
+<p>
+The human body uptake models show how much toxic metal accumulates in different organs of the body. Each of them consists of a system of differential equations, where each differential equation describes the rate of change of the amount of toxic metal in one compartment. A compartment can be either an organ or an excretion pool. We implemented the body uptake models for Arsenic and Lead based on a paper by Eric Dede published in 2018 [1]. We then modified the models by adding differential equations describing how the bacteria colony is expected to interact with the toxic metal in the human body.
+</p>
+<h3 id="arsenic">Arsenic</h3>
+<p>
+In arsenic body uptake model, there are 12 compartments that are taken into consideration as seen in figure x1. The figure describes the dynamics between the compartments with first order rate constants. A first-order reaction has a rate proportional to the concentration of one reactant [2], meaning the higher the concentration of a toxic metal is, the faster it is being transferred to other compartments.
+</p>
+<img class="fig" src="https://2019.igem.org/wiki/images/8/81/T--Lund--arsenic-model.svg" alt="">
+<p class="fig">Figure 2: Overview of compartements and their relations in the arsenic body uptake model.</p>
+<p>
+The model also takes into account that arsenic exists in different forms in the human body. They can be inorganic ions, such as As(III) or As(V), or organic forms such as monomethylarsenic acid (MMA) or dimethylarsenic acid (DMA). There are reactions taking place in the body such that one form of arsenic is converted to another so extra terms are added to the differential equations for that. Since we model for 12 compartments and 4 forms of arsenic, there’s a total of 48 equations in the system of differential equations, 12 for each of the form of arsenic. 
+</p>
+<p>
+We then couple the colony model from above to this human body uptake model by adding a term in the gut compartment that represents the rate of ions being absorbed by the colony of bacteria. 
+</p>
+<h3 id="lead">Lead</h3>
+<p>The body uptake model for lead was originally developed during the 1990s[3][4][5], it was later modified in 2018[1]. There are seven compartments, as seen in figure x. To integrate the colony uptake model into the body uptake it first had to be modified. 
+</p>
+<img class="fig" src="https://2019.igem.org/wiki/images/f/f0/T--Lund--lead.svg" alt="">
+<p class="fig">Figure 3: Overview of compartements and their relations in non-modfied the lead body uptake model.</p>
+<p>The original-, modified- and colony integrated versions of the the GI-tract-liver dynamics can be seen in figure x. In the original version the oral lead intake was described as a constant rate IRgi. The rate being absorbed by the liver was described as a fraction of the daily intake. In order to integrate the colony uptake model, these dynamics had to be replaced by first order kinetic rates, similar to the body uptake model for arsenic. The daily intake IRgi was then set as an initial condition for the GI tract differential equation. The model could then be solved piecewise, each time with the initial condition G(0) = IRgi. The values for kGF and kGL could not be found in literature. To find the values for these rates, while preserving the models predictability, the parameter optimization as described earlier was used. 
+</p>
+
+
+
+
 </div>
 {% include "partials/footer.nunjucks" %}
 
