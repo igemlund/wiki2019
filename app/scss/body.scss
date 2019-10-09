@@ -28,6 +28,7 @@ h1#title{
     h3{
         @include header();
         font-size: $h3-font-size;
+        color: $h3-font-color;
     }
 
     p{
@@ -128,6 +129,12 @@ h1#title{
         th{font-family: $header-font;}
         td{font-family:$text-font, Georgia, Cambria, "Times New Roman";}
     }
+    img#SynthEthics {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 
 }
 
@@ -157,3 +164,4 @@ h1#title{
   overflow: hidden;
   background-color: #f1f1f1;
 }
+
