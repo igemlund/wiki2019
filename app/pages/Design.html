@@ -12,23 +12,25 @@
 <h2 id="applied-design">Applied Design</h2>
 <p>By taking some of the genes from <i>C. metallidurans</i> CH34 and inserting them into a probiotic chassis, <em>Escherichia coli </em>Nissle 1917 (EcN), we could increase the arsenic- and lead-accumulation capabilities of EcN. The bacteria is then to be ingested as a probiotic, where it adapts to our gut microbiome due to the innate abilities of EcN. There, it will accumulate arsenic and lead in your place. Soon the bacteria full of metals will be excreted, decreasing the amount of accumulation in your body.&nbsp;</p>
 <h3 id="lead">Lead</h3>
-<p>The mechanism of the <em>C. metallidurans pbr</em> operon on pMOL30 is showcased below. Since we&rsquo;re focusing on bioaccumulation our interests are PbrT (BBa_K3282001), a lead transporter protein, and PbrD(BBa_K3282002), a putative lead-sequestration protein. To achieve the highest amount of expression we&rsquo;ve used a T7 promoter (BBa_I719005) for use in <em>E.coli BL21-DE3, </em>and Tac promoter (BBa_K3282006) for use in <em>E.coli Nissle.&nbsp;</em></p>
-<ul>
-<li>Lead Basic part: <a href="http://parts.igem.org/Part:BBa_K3282001">BBa_K3282001</a></li>
-<li>Lead Basic part: <a href="http://parts.igem.org/Part:BBa_K3282002">BBa_K3282002</a></li>
-<li>Lead T7 composite part: <a href="http://parts.igem.org/Part:BBa_K3282005">BBa_K3282005</a></li>
-<li>Lead Tac composite part: <a href="http://parts.igem.org/Part:BBa_K3282007">BBa_K3282007</a></li>
-</ul>
+<p>The mechanism of the <em>C.metallidurans pbr</em> operon on pMOL30 is showcased below. Since we&rsquo;re focusing on bioaccumulation our interests are PbrT (BBa_K3282001), a lead transporter protein, and PbrD(BBa_K3282002), a putative lead-sequestration protein. To achieve the highest amount of expression we&rsquo;ve used a T7 promoter (BBa_I719005) for use in <em>E.coli BL21-DE3, </em>and Tac promoter (BBa_K3282006) for use in <em>E.coli Nissle.&nbsp;</em></p>
+<p><strong>Lead Basic part: <a href="http://parts.igem.org/Part:BBa_K3282001">BBa_K3282001</a></strong></p>
+<p><strong>Lead Basic part: <a href="http://parts.igem.org/Part:BBa_K3282002">BBa_K3282002</a></p></strong>
+<p></p>
+<p><strong>Lead T7 composite part: <a href="http://parts.igem.org/Part:BBa_K3282005">BBa_K3282005</a></p></strong>
+<img class="fig" src="https://2019.igem.org/wiki/images/2/2d/T--Lund--PbT7.svg" alt="">
+<p><strong>Lead Tac composite part: <a href="http://parts.igem.org/Part:BBa_K3282007">BBa_K3282007</a></p></strong>
+<img class="fig" src="https://2019.igem.org/wiki/images/a/ad/T--Lund--PbTac.svg" alt="">
+
 <img class="fig" src="https://2019.igem.org/wiki/images/4/47/T--Lund--lead-resistence.svg" alt="">
 <p class="fig">Figure from &ldquo;Lead(II) resistance in <i>Cupriavidus metallidurans</i> CH34: the interplay between plasmid and chromosomally-located functions&rdquo; Safiyh Taghavi, Celine Lesaulnier, Sebastien Monchy, Ruddy Wattiez, Max Mergeay, Daniel van der Lelie</p>
 
 <h3 id="arsenic">Arsenic</h3>
 <p>The ars operon is widespread amongst bacteria, including EcN. However, the accumulation capabilities of EcN is low, something we aimed to improve. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC492386/">A paper from 2004 by Kostal et al.</a> showcased that overexpression of ArsR (BBa_K3282000), a regulatory protein in the ars operon, in genetically modified <em>E. coli, </em>increased its accumulation capabilities by 5-60 fold. Applying the same logic we decided to include this protein as an accumulation protein. Because arsenic transport is facilitated in glycerol uptake facilitator proteins (GlpF) we do not have to include a transport protein. Similarly, we&rsquo;re aiming for the highest possible expression and have thus chosen a T7 promoter (BBa_I719005) for use in <em>E.coli BL21-DE3 </em>and Tac-promoter (BBa_K3282006) for use in <em>E.coli Nissle</em>.</p>
-<ul>
-<li>Arsenic Basic part: <a href="http://parts.igem.org/Part:BBa_K3282000">BBa_K3282000</a></li>
-<li>Arsenic T7 composite part: <a href="http://parts.igem.org/Part:BBa_K3282003">BBa_K3282003</a></li>
-<li>Arsenic Tac composite part: <a href="http://parts.igem.org/Part:BBa_K3282004">BBa_K3282004</a></li>
-</ul>
+<p><strong>Arsenic Basic part: <a href="http://parts.igem.org/Part:BBa_K3282000">BBa_K3282000</a></p></strong>
+<p><strong>Arsenic T7 composite part: <a href="http://parts.igem.org/Part:BBa_K3282003">BBa_K3282003</a></p></strong>
+<img class="fig" src="https://2019.igem.org/wiki/images/2/2b/T--Lund--arsRT7.svg" alt="">
+<p><strong>Arsenic Tac composite part: <a href="http://parts.igem.org/Part:BBa_K3282004">BBa_K3282004</a></p></strong>
+<img class="fig" src="https://2019.igem.org/wiki/images/b/bf/T--Lund--arsRTac.svg" alt="">
 <h3 id="experimental-plan">Experimental Plan</h3>
 <p>Experiments were designed in a way to prove the protein expression and protein function. Before experiments could start the proper constructs were created according to common biochemical methods of cloning and transformed into the correct strains. The experimental plan was made to first characterize the growth of the bacteria in their preferred conditions, and to test the expression of the proteins that had been implemented. This was done by growing cultures, testing cell growth and using SDS-PAGE to illustrate the presence of the expected protein. Thereafter the plan was to prove the concept and the function of the proteins. This was done by growing culture in toxic metal-infused media. The uptake of metal into the cell was investigated by measuring the concentration of metal in the media over time. A decrease of metal concentration in the growth media would prove uptake into cells.&nbsp;</p>
 
