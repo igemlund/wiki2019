@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %} 
+{% include "partials/header.nunjucks" %}
+<h1 id="title" class="js-toc-ignore">Project Design</h1>
+<div id="body">
+<h2 id="process">Design process</h2>
+<p>The engineering principles used to design the whole product was to first analyze what was needed to solve the problem that had been chosen, the accumulation of toxic metals in the body. The first conclusion was to design a preventative solution for accumulation of the toxic metals before they accumulate in the body. Since the main way of metal uptake comes from food and beverage, the idea of a modified probiotic bacteria emerged, which could, in theory, accumulate the metal for you and then leave the body naturally. Literature was then used to find naturally metal accumulating bacteria that could be used as a model and applied to a safe, ingestible bacteria. Genes for metal remediation were found specific details of the design and composition can be found below, under &ldquo;Applied design&rdquo;. Since most probiotic bacteria can be a struggle to work with, a probiotic <em>E.coli Nissle </em>strain was chosen. Since this specific strain is less well documented than other <em>E.coli </em>strains, <em>E.coli BL21-DE3 </em>was also used as a way to prove the concept in case the other strain would fail.&nbsp;</p>
+
+<h3 id="deal-with-toxic-metals">How do some Bacteria Deal with Toxic Metals?</h3>
+<p>Depending on the level of exposure of toxic metals bacteria has had during its evolution its genome has adapted in different ways. A special case is <strong><em>Cupriavidus metallidurans</em></strong> strain CH34, as it has been subject to high levels of toxic metal stress and has developed two megaplasmids, pMOL28 and pMOL30 because of it. These plasmids contain genes coding for toxic metal remediation.&nbsp;</p>
+
+<h2 id="applied-design">Applied Design</h2>
+<p>By taking some of the genes from C. metallidurans CH34 and inserting them into a probiotic chassis, <em>Escherichia coli </em>Nissle 1917 (EcN), we could increase the arsenic- and lead-accumulation capabilities of EcN. The bacteria is then to be ingested as a probiotic, where it adapts to our gut microbiome due to the innate abilities of EcN. There, it will accumulate arsenic and lead in your place. Soon the bacteria full of metals will be excreted, decreasing the amount of accumulation in your body.&nbsp;</p>
+<h3 id="lead">Lead</h3>
+<p>The mechanism of the <em>C.metallidurans pbr</em> operon on pMOL30 is showcased below. Since we&rsquo;re focusing on bioaccumulation our interests are PbrT (BBa_K3282001), a lead transporter protein, and PbrD(BBa_K3282002), a putative lead-sequestration protein. To achieve the highest amount of expression we&rsquo;ve used a T7 promoter (BBa_I719005) for use in <em>E.coli BL21-DE3, </em>and Tac promoter (BBa_K3282006) for use in <em>E.coli Nissle.&nbsp;</em></p>
+<ul>
+<li>Lead Basic part: <a href="http://parts.igem.org/Part:BBa_K3282001">BBa_K3282001</a></li>
+<li>Lead Basic part: <a href="http://parts.igem.org/Part:BBa_K3282002">BBa_K3282002</a></li>
+<li>Lead T7 composite part: <a href="http://parts.igem.org/Part:BBa_K3282005">BBa_K3282005</a></li>
+<li>Lead Tac composite part: <a href="http://parts.igem.org/Part:BBa_K3282007">BBa_K3282007</a></li>
+</ul>
+<img class="fig" src="https://2019.igem.org/wiki/images/4/47/T--Lund--lead-resistence.svg" alt="">
+<p class="fig">Figure from &ldquo;Lead(II) resistance in Cupriavidus metallidurans CH34: the interplay between plasmid and chromosomally-located functions&rdquo; Safiyh Taghavi, Celine Lesaulnier, Sebastien Monchy, Ruddy Wattiez, Max Mergeay, Daniel van der Lelie</p>
+
+<h3 id="arsenic">Arsenic</h3>
+<p>The ars operon is widespread amongst bacteria, including EcN. However, the accumulation capabilities of EcN is low, something we aimed to improve. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC492386/">A paper from 2004 by Kostal et al.</a> showcased that overexpression of ArsR (BBa_K3282000), a regulatory protein in the ars operon, in genetically modified <em>E. coli, </em>increased its accumulation capabilities by 5-60 fold. Applying the same logic we decided to include this protein as an accumulation protein. Because arsenic transport is facilitated in glycerol uptake facilitator proteins (GlpF) we do not have to include a transport protein. Similarly, we&rsquo;re aiming for the highest possible expression and have thus chosen a T7 promoter (BBa_I719005) for use in <em>E.coli BL21-DE3 </em>and Tac-promoter (BBa_K3282006) for use in <em>E.coli Nissle</em>.</p>
+<ul>
+<li>Arsenic Basic part: <a href="http://parts.igem.org/Part:BBa_K3282000">BBa_K3282000</a></li>
+<li>Arsenic T7 composite part: <a href="http://parts.igem.org/Part:BBa_K3282003">BBa_K3282003</a></li>
+<li>Arsenic Tac composite part: <a href="http://parts.igem.org/Part:BBa_K3282004">BBa_K3282004</a></li>
+</ul>
+<h3 id="experimental-plan">Experimental Plan</h3>
+<p>Experiments were designed in a way to prove the protein expression and protein function. Before experiments could start the proper constructs were created according to common biochemical methods of cloning and transformed into the correct strains. The experimental plan was made to first characterize the growth of the bacteria in their preferred conditions, and to test the expression of the proteins that had been implemented. This was done by growing cultures, testing cell growth and using SDS-PAGE to illustrate the presence of the expected protein. Thereafter the plan was to prove the concept and the function of the proteins. This was done by growing culture in toxic metal-infused media. The uptake of metal into the cell was investigated by measuring the concentration of metal in the media over time. A decrease of metal concentration in the growth media would prove uptake into cells.&nbsp;</p>
+
+<p>The plan was to then prove the function of the constructs in realistic conditions. This would be proved by letting earthworms consume the engineered <em>E.coli Nissle</em> as well as toxic metals. This would be compared with a control group of worms that were supplied with toxic metals without the helpful bacteria. The proof of the concept in a realistic environment would then come from the survival rate of worms. Another option for the design of this experiment would be to measure the concentration of toxic metals in the actual worms. Worms fed with both metal and engineered <em>E.coli Nissle </em>would according to our hypothesis have a lower concentration of metal than a control group of worms fed with only metal. Even though this experiment had several suggestions for design, there was not enough time to prove the concept in a realistic setting using worms.</p>
+</div>
+{% include "partials/footer.nunjucks" %}
+
+{% endblock %}
