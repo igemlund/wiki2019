@@ -104,6 +104,12 @@ h1#title{
     }
 
     img.fig{width: 100%;}
+    img.fig-small{
+        float: top;
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
     video.fig{width: 100%;}
     table{
         border-collapse: collapse;
