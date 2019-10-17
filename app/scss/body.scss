@@ -81,6 +81,19 @@ h1#title{
     }
 
     h4.references{padding-top: 3em;}
+    ul,ol{
+        margin-left: 4em;
+        @include r(480) {font-size: $text-size}
+        font-size: $text-size-mobile;
+        text-align: left;
+        line-height: 30px;
+        font-weight: 400;
+        line-height: 1.58;
+        letter-spacing: -0.003em;
+        font-family:$text-font, Georgia, Cambria, "Times New Roman";
+        color: $dark-color;
+        padding-bottom: 0.5em;
+    }
     ul.references{
         word-wrap: break-word;
         margin-left: 1em;
