@@ -2,13 +2,13 @@
 {% extends "layout.html" %}
 {% block content %} 
 {% include "partials/header.nunjucks" %}
-<h1 id="title" class="js-toc-ignore">Mathematical models for predicting the long term health benefits of using PRODEACC (work in progress)</h1>
+<h1 id="title" class="js-toc-ignore">Mathematical models for predicting the long term health benefits of using PRODEACC</h1>
 <div id="body">
-    <p>To better understand the long term health benefits of PRODEACC consumption, mathematical models of transformed <i>E. Coli Nissle 1917</i> colonies were developed. Unknown parameters were estimated using parameter optimization against data collected from in-vitro experiments. Ones the models could predict the toxic metal bioaccumulation in a single colony, they could be integrated into existing models describing how lead and arsenic is bioaccumulated in the human body. By comparing the output of the modified body accumulation models to the output of the non-modified model, the long term effects of PRODEACC could be assessed.</p>
+    <p>To better understand the long term health benefits of PRODEACC consumption, mathematical models of transformed <i>E. Coli Nissle 1917</i> colonies were developed. Unknown parameters were estimated using parameter optimization against data collected from in-vitro experiments. Ones the models could predict the toxic metal bioaccumulation in a single colony, they could be integrated into existing models describing how lead and arsenic are bioaccumulated in the human body. By comparing the output of the modified body accumulation models to the output of the non-modified model, the long term effects of PRODEACC could be assessed.</p>
 <p>
 To better understand this text it’s recommended to read the <a href="/Team:Lund/Description">project description</a> before continuing.
 </p>
-<h2 id="Modeling-growth-and-ion-accumulation in a singel colony">Single colony model</h2>
+<h2 id="Modeling-growth-and-ion-accumulation in a singel colony">Bioaccumulation in a bacteria colony</h2>
 
 <p>
 To model the growth of a single colony, its protein production, and its ions accumulation, a system of seven differential equations was devised. Equation (1) and (2) describes the colony as a whole and the concentration of ions in its growth medium, whereas equation (3) - (7) describes the changes inside the average individual cell. A graphical representation of the equation can be found in figure x. Short descriptions of the time-dependent variables can be found in table x and descriptions and approximate values of the parameters can be found in table 1.
@@ -16,6 +16,7 @@ To model the growth of a single colony, its protein production, and its ions acc
 
 <video class="fig" autoplay muted loop playsinline>
     <source src="https://2019.igem.org/wiki/images/d/d8/T--Lund--colony-model.webm" type="video/webm">
+    <source src="https://2019.igem.org/wiki/images/b/bb/T--Lund--colony-model.mp4" type="video/mp4">
 </video>
 <p class="fig" >Animation 1: A graphical representation of the rate of change of the ions and proteins described by equation (1) and (3)-(7). </p>
 
@@ -173,7 +174,7 @@ Particle swarm optimization (PSO) is an optimization algorithm inspired by the m
 <img class="fig" src="https://2019.igem.org/wiki/images/d/d5/T--Lund--growth-fitting.svg" alt="">
 <p class="fig">Figure 1: An example of how the model was fitted to wet lab data. This example shows how the parameter <i>k<sub>growth</sub></i>, <i>lag-phase</i>, and <i>N<sub>max</sub></i> was derrived for a certain scenario.
 </p> 
-<h2 id="body-uptake">Modelling the de-accumulating effect of the colony on the human body</h2>
+<h2 id="body-uptake">Bioaccumulation in the human body</h2>
 <p>
 The human body uptake models show how much toxic metal accumulates in different organs of the body. Each of them consists of a system of differential equations, where each differential equation describes the rate of change of the amount of toxic metal in one compartment. A compartment can be either an organ or an excretion pool. We implemented the body uptake models for Arsenic and Lead based on a paper by Eric Dede published in 2018 [1]. We then modified the models by adding differential equations describing how the bacteria colony is expected to interact with the toxic metal in the human body.
 </p>
@@ -196,6 +197,30 @@ We then couple the colony model from above to this human body uptake model by ad
 <p class="fig">Figure 3: Overview of compartements and their relations in non-modfied the lead body uptake model.</p>
 <p>The original-, modified- and colony integrated versions of the the GI-tract-liver dynamics can be seen in figure x. In the original version the oral lead intake was described as a constant rate IRgi. The rate being absorbed by the liver was described as a fraction of the daily intake. In order to integrate the colony uptake model, these dynamics had to be replaced by first order kinetic rates, similar to the body uptake model for arsenic. The daily intake IRgi was then set as an initial condition for the GI tract differential equation. The model could then be solved piecewise, each time with the initial condition G(0) = IRgi. The values for kGF and kGL could not be found in literature. To find the values for these rates, while preserving the models predictability, the parameter optimization as described earlier was used. 
 </p>
+<p>After the modification, the colony uptake model could be integrated in the lead uptake model, just as in the case with arsenic.
+</p>
+<img class="fig" src="https://2019.igem.org/wiki/images/3/34/T--Lund--model-mod.svg" alt="">
+<p class="fig">Figure 3: Overview of the original liver-gut compartment, the modified liver-gut compartement, and the colony model integrated liver-gut compartement.</p>
+
+<h2 class="integrate">Integration of colony model into human body model</h2>
+<p>The colony models could be integrated into the human body uptake models by adding the colony as a compartment connected to the gut compartment. This way the bacteria colony will compete against the liver when absorbing the metals from the gut.
+</p>
+<h3 id="arsenic2">Arsenic</h3>
+<p>The colony model was integrated by adding the colony model as a compartment resulting in a model that can be overview in figure 4.
+</p>
+<img class="fig" src="https://2019.igem.org/wiki/images/5/5a/T--Lund--arsenic-model-integrated.svg" alt="">
+<p class="fig">Figure 4: An overview of the bacteria colony integrated human body uptake model for arseic.</p>
+
+<h3 id="lead2">Lead</h3>
+<p>To integrate the colony uptake model into the body uptake it first had to be modified. The original-, modified- and colony integrated versions of the GI-tract-liver dynamics can be seen in figure x. In the original version, the oral lead intake was described as a constant rate IRgi. The rate being absorbed by the liver was described as a fraction of the daily intake. To integrate the colony uptake model, these dynamics had to be replaced by first-order kinetic rates, similar to the rates found in the body uptake model for arsenic. The daily intake IRgi was then set as an initial condition for the GI tract differential equation. The model could then be solved piecewise, each time with the initial condition G(0) = IRgi. The values for kGF and kGL could not be found in the literature. To find the values for these rates, while preserving the model's predictability, the parameter optimization, as described earlier, was used. 
+</p>
+<p class="maths">
+<dtex>\frac{dG}{dt} = IR_{gi} - A_{gi} \times IR_{gi} - (1-A_{gi}) \times IR_{gi} = 0 </dtex> 
+<dtex>\frac{dG}{dt} = -k_{GF} \times IR_{gi} - k_{GB} \times G </dtex> 
+</p>
+<img class="fig" src="https://2019.igem.org/wiki/images/1/1c/T--Lund--lead-model-integrated.svg" alt="">
+<p class="fig">Figure 5: An overview of the bacteria colony integrated human body uptake model for lead.</p>
+
 
 
 
