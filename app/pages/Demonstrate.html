@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %} 
+{% include "partials/header.nunjucks" %}
+<h1 id="title" class="js-toc-ignore">Demonstrate</h1>
+<div id="body">
+    <p class="ingress">On this page, we explain how we showcased how our system would work under real world conditions! </p>
+    <br>
+    <p>In order to obtain an indication on whether our system would work under realistic conditions and whether our engineered bacteria would thrive in the gut, we applied two methods. Firstly, we provided experimental evidence by changing the pH in the growth media to simulate the gut. We then observed the engineered bacteria's ability to grow and absorb arsenic and lead compared to controls of untransformed bacteria.&nbsp;</p>
+    <br>
+<p>Second, we modeled the distribution of metals in the human body with and without our the influence of our probiotic bacteria. The model was created by improving old models of metal-distribution. It was then backed up by data regarding growth and accumulation from the wet-lab as mentioned above.</p>
+<br>
+<p>By implementing data from the wet-lab to our improved distribution model, we&rsquo;ve created a probable model of how our engineered bacteria would affect the human body. <a href="Model">Read more in our model!</a></p>
+</div>
+{% include "partials/footer.nunjucks" %}
+
+{% endblock %}
