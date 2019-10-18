@@ -4,11 +4,12 @@
 {% include "partials/header.nunjucks" %}
 <h1 id="title" class="js-toc-ignore">Mathematical models for predicting the long term health benefits of using PRODEACC</h1>
 <div id="body">
-    <p>To better understand the long term health benefits of PRODEACC consumption, mathematical models of transformed <i>E. Coli Nissle 1917</i> colonies were developed. Unknown parameters were estimated using parameter optimization against data collected from in-vitro experiments. Ones the models could predict the toxic metal bioaccumulation in a single colony, they could be integrated into existing models describing how lead and arsenic are bioaccumulated in the human body. By comparing the output of the modified body accumulation models to the output of the non-modified model, the long term effects of PRODEACC could be assessed.</p>
+    <p>To better understand the long term health benefits of PRODEACC consumption, mathematical models of transformed <em>E. coli </em>Nissle 1917 colonies were developed. Unknown parameters were estimated using parameter optimization against data collected from in-vitro experiments. Once the models could predict the toxic metal bioaccumulation in a single colony, they could be integrated into existing models describing how lead and arsenic are bio-accumulated in the human body. By comparing the output of the modified body accumulation models to the output of the non-modified model, the long term effects of PRODEACC could be assessed. <strong>The modeling team has worked in conjunction with the lab group to reach this goal. In the beginning, it was planned to study the deaccumulating effects of PRODEACC on worms in order to assess the long term benefits. This id&eacute;a was discarded in favor of using computer models. The computer model has, therefore, had a huge impact on the lab work by alleviating this opportunity cost.</strong></p>
+    <br>
 <p>
 To better understand this text it’s recommended to read the <a href="/Team:Lund/Description">project description</a> before continuing.
 </p>
-<h2 id="Modeling-growth-and-ion-accumulation in a singel colony">Bioaccumulation in a bacteria colony</h2>
+<h2 id="Modeling-growth-and-ion-accumulation in a singel colony">Bioaccumulation in a Bacteria Colony</h2>
 
 <p>
 To model the growth of a single colony, its protein production, and its ions accumulation, a system of seven differential equations was devised. Equation (1) and (2) describes the colony as a whole and the concentration of ions in its growth medium, whereas equation (3) - (7) describes the changes inside the average individual cell. A graphical representation of the equation can be found in figure x. Short descriptions of the time-dependent variables can be found in table x and descriptions and approximate values of the parameters can be found in table 1.
@@ -23,26 +24,30 @@ To model the growth of a single colony, its protein production, and its ions acc
 <h3 id="derivatoin-of-equations">Derivation of equations</h3>
 <p>
 The model was devised to simulate the colony in a number of conditions, with only the values of the parameters needed to be changed. For example, for the growth rate <i>k<sub>growth</sub></i> would most likely be lower in a gut environment compared to an in-vitro environment with good pH and no competition from other microbes.
-
 <p>
-<b>Equation (1)</b> describes the rate of change of the total number of living bacteria cells in the colony. The cells are assumed to divide at a constant rate kgrowth after the lag phase is over. However, the exponential growth will not continue forever. At some point, the lack of energy will force the colony to stop dividing and will reach a stationary phase. Because of this, the term  was introduced making the growth rate stagnate once <i>N</i> reaches <i>N<sub>max</sub></i> [1].
-</p>
+<br>
 
-<p>
-<b>Equation (2)</b> describes the rate of change of the total number of lead or arsenic ions in the gut (or growth medium). The rate of accumulation by the colony should be a function of the number of living cells <i>N</i>, as well as the number of transport proteins per cell. The working mechanisms for the lead/ion transporter pbrT are unknown[2].  The Michaelis–Menten equation was used in order to represent the transport rate with the rational that a higher concentration of ions outside the cells would increase the probability of an ion finding its way through a transporter, but that the increment would give diminishing returns one more and more transporters work at their highest capacity.[3]
+<b>Equation (1)</b> describes the rate of change of the total number of living bacteria cells in the colony. The cells are assumed to divide at a constant rate kgrowth after the lag phase is over. However, the exponential growth will not continue forever. At some point, the lack of energy will force the colony to stop dividing and will reach a stationary phase. Because of this, the term <i>−k<sub>growth</sub>&times N <sup>2</sup>/N<sub>max</sub></i> was introduced making the growth rate stagnate once <i>N</i> reaches <i>N<sub>max</sub></i> [1].
 </p>
+<br>
+<p>
+<b>Equation (2)</b> describes the rate of change of the total number of lead or arsenic ions in the gut (or growth medium). The rate of accumulation by the colony should be a function of the number of living cells <i>N</i>, as well as the number of transport proteins per cell. The working mechanisms for the lead/iron transporter pbrT are unknown[2].  The Michaelis–Menten equation was used in to represent the transport rate with the rational that a higher concentration of ions outside the cells would increase the probability of an ion finding its way through a transporter, but that the increment would give diminishing returns one more and more transporters work at their highest capacity.[3]
+</p>
+<br>
 
 <p>
 <b>Equation (2)</b> describes the change in the number of mRNAs coding for the accumulation proteins and the transport proteins. The transcription rate Itsc is assumed to be constant once the promoter has been induced. Then the mRNA will degrade att the kinetic rate kRNA-deg.
 </p>
+<br>
 
 <p>
 <b>Equation (2)</b> describes the rate of change in the number of transport proteins per cell. The proteins are translated from the mRNAs at a kinetic rate ktsl. The proteins are assumed to degrade at the kinetic rate kpro-deg. The kinetic rate -dN/dT/N was introduced to take into account the effective degradation due to cell growth. Every time a cell divides the average number of proteins in one cell is halved. These kinetics apply the other proteins as well.
 </p>
-
+<br>
 <p>
 <b>Equation (5)</b> describes the rate change in the number of free accumulation proteins. Whenever an accumulation protein binds to an ion, the accumulation protein is no longer free. This rate is proportional to the number of accumulation proteins APfree and the number of free ions in cytoplasm C. The kinetic rate kcapture was introduced to scale the rate of capture.
 </p>
+<br>
 
 <p>
 <b>Equation (6)</b> describes the rate of change in the number of occupied accumulation proteins, the proteins bound to an ion. The kinetics are similar to that of equation (5).
@@ -50,6 +55,8 @@ The model was devised to simulate the colony in a number of conditions, with onl
 
 <p>
 <b>Equation (7)</b> describes the rate of change in the number of free ions in the cytoplasm.
+<br>
+
 </p>
 
 
