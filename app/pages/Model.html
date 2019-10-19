@@ -157,60 +157,196 @@ The model was devised to simulate the colony in a number of conditions, with onl
       <td>/h</td>
       <td><a href="http://book.bionumbers.org/how-fast-do-rnas-and-proteins-degrade/">Bionumbers.org</a>, calculated from mean protein’s half life in yeast which is about 40 minutes. </td>
   </tr>
+  <tr>
+      <td><i>k<sub>growth</sub></i> (in vitro)</td>
+      <td>Cell growth in vitro</td>
+      <td>1.3862</td>
+      <td>/h</td>
+      <td><a href="https://bionumbers.hms.harvard.edu/bionumber.aspx?id=101699&ver=9">Bionumbers.org</a> Cell doubles every half an hour in vitro</td>
+  </tr>
+  <tr>
+      <td><i>k<sub>growth</sub></i> (in gut)</td>
+      <td>Cell growth in the gut</td>
+      <td>0.0173</td>
+      <td>/h</td>
+      <td><a href="https://bionumbers.hms.harvard.edu/bionumber.aspx?id=101699&ver=9">Bionumbers.org</a> Cell doubles every 40 hours in the gut.</td>
+  </tr>
+    <tr>
+        <td><i>N<sub>max</sub></i></td>
+        <td>Maximum number of bacteria</td>
+        <td>10e13</td>
+        <td>-</td>
+        <td><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5433529/">Thursby E. 2017</a> Total number of bacteria in human GI tract exceeds 1e14, estimate that around 10% can be E. <i>coli</i> Nissle.</td>
+    </tr>
+    <tr>
+        <td><i>V<sub>max</sub></i></td>
+        <td>Maximum transport rate per transport protein</td>
+        <td>0.35676</td>
+        <td>ions/TP/h</td>
+        <td><a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=Weimar%20WR%5BAuthor%5D&cauthor=true&cauthor_uid=2185228">R J Bergeron and W R Weimar</a> The parameter is for another bacteria and another transport protein. Original unit is pg-ion/min/transport protein.</td>
+    </tr>
+    <tr>
+        <td><i>k<sub>m</sub></i></td>
+        <td>Ion concentration in the medium, where the rate of transport is half of the maximum.</td>
+        <td>2.3486e14</td>
+        <td>ions/m<sup>3</sup></td>
+        <td><a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=Weimar%20WR%5BAuthor%5D&cauthor=true&cauthor_uid=2185228">R J Bergeron and W R Weimar</a> The parameter is for another bacteria and another transport protein. Original unit is microM.</td>
+    </tr>
+    <tr>
+        <td><i>k<sub>ca</sub></i></td>
+        <td>Accumulation protein capture rate</td>
+        <td>0.1</td>
+        <td>/h</td>
+        <td>Estimated rate since this parameter doesn’t affect the current model</td>
+    </tr>
 </table>
 <p></p>
 <button type="button" class="collapsible">Table 3: Initial conditions</button>
 <table class="collapsible-content">
   <tr>
-    <th>Varible</th>
+    <th>Parameter</th>
     <th>Description</th>
+    <th>Comments</th>
+  </tr>
+  <tr>
+      <td><i>G<sub>0</sub></i></td>
+      <td>Number of ions in the gut at start.</td>
+      <td>Should be known by the user when using the model.</td>
+  </tr>
+  <tr>
+      <td><i>N<sub>0</sub></i></td>
+      <td>Number of cells in the gut/medium at start.</td>
+      <td>Can be set manually or derived from parameter optimization.</td>
+  </tr>
+  <tr>
+      <td><i>t<sub>induction</sub></i></td>
+      <td>Time of promoter induction</td>
+      <td>Can be set manually.</td>
+  </tr>
+  <tr>
+      <td><i>t<sub>lag</sub></i></td>
+      <td>Lag-phase duration</td>
+      <td>Can be set manually or derived from parameter optimization. </td>
   </tr>
 </table>
+
 <p></p>
 <h3 id="parameter-optimization">Parameter Optimization</h3>
 <p>
-Values for the parameters that couldn't be found in the literature were estimated using data acquired from experiments. The model could be fitted to the data with the help of optimization algorithms. The acquired parameter values were the ones that yielded the lowest cost from a linear loss function. To find the lowest cost adaptive particle swarm algorithm was used[1]. Particle swarm optimization has been used with good efficiency for other non-linear ODE-parameter estimation for biological systems, where there's a big solution space[2].
+Values for the parameters that couldn't be found in the literature were estimated using data acquired from experiments. The model could be fitted to the data with the help of optimization algorithms. The acquired parameter values were the ones that yielded the lowest cost from a linear loss function. To find the lowest cost adaptive particle swarm algorithm was used[4]. Particle swarm optimization has been used with good efficiency for other non-linear ODE-parameter estimation for biological systems, where there's a big solution space [5].
 </p>
+<br>
 <p>
-Particle swarm optimization (PSO) is an optimization algorithm inspired by the movement of a group of organisms, for example, a flock of birds or a shoal of fish. An upper and a lower bound to the search space is given and the algorithm initializes by uniformly distributing the particles/organisms in the space. The solution is calculated for each particle. Each particle then moves in the search space in the direction of the vector sum of is own previous best solution and the group’s best solution. The length at which the particles moves varies from different flavors of the algorithm.[2]
+Values for the parameters that couldn't be found in the literature were estimated using data acquired from experiments. The model could be fitted to the data with the help of optimization algorithms. The acquired parameter values were the ones that yielded the lowest cost from a linear loss function. To find the lowest cost adaptive particle swarm algorithm was used[4]. Particle swarm optimization has been used with good efficiency for other non-linear ODE-parameter estimation for biological systems, where there's a big solution space [5].
 </p>
 <img class="fig-small" src="https://2019.igem.org/wiki/images/9/90/T--Lund--pso.gif" alt="">
 <p class="fig">Animation 2: Animation showing how particles navigate the solution space and converging on the global minimum. Courtesy: Ephramac, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
-<p>Data acquired from wet lab was used in order to derive the correct values for the colony model parameters. It’s important to keep in mind that the parameters are different in different conditions. For example, the growth rate kgrowth, lag phase time, and Nmax  in vitro for E. Coli Nissle 1917 with the vector XXXX was found to X, Y, and Z respectively.
-</p>
-<img class="fig" src="https://2019.igem.org/wiki/images/d/d5/T--Lund--growth-fitting.svg" alt="">
-<p class="fig">Figure 1: An example of how the model was fitted to wet lab data. This example shows how the parameter <i>k<sub>growth</sub></i>, <i>lag-phase</i>, and <i>N<sub>max</sub></i> was derrived for a certain scenario.
+<p>Data acquired from wetlab was used in order to derive the correct values for the colony model parameters. It’s important to keep in mind that the parameters are different in different conditions. Which parameter values that could be acquired from which measurement can be seen in table 4.</p>
+
+<button type="button" class="collapsible">Table 4: Parameters that can be derived from expeiments.</button>
+<table class="collapsible-content">
+    <tr>
+        <th>Experiment</th>
+        <th>Parameters</th>
+    </tr>
+    <tr>
+        <td>CFU and OD</td>
+        <td><i>k<sub>growth</sub>, N<sub>max</sub>, N<sub>0</sub>, and t<sub>lag</sub></i></td>
+
+    </tr>
+    <tr>
+        <td>SDS-page</td>
+        <td><i>k<sub>tsl</sub></i></td>
+
+    </tr>
+    <tr>
+        <td>Metal ion concentration in growth medium. ICP-MS was used in this case.</td>
+        <td><i>V<sub>max</sub> and k<sub>m</sub></i></td>
+    </tr>
+</table>
+
 </p> 
+<h3 id="sensitivity">Sensitivity Analysis</h3>
+<p>When having a complex system of inputs and outputs, it’s difficult to know which inputs have more effects on the outputs. Insight on how to adjust the system to a preferred output can be acquired via sensitivity analysis, in this case how to improve the probiotic’s ability to accumulate metals. Several parameters in the colony model have the potential to be critical, such as  <i>k<sub>ca</sub></i> (the capture rate of accumulation protein, which does not have an importance in the current state of this model), <i>k<sub>m</sub></i> and <i>V<sub>max</sub></i> (the rate constants for transport protein), or <i>k<sub>growth</sub></i> and <i>N<sub>max</sub></i> (the growth rate and the maximum concentration of the bacteria colony), etc. So knowing the importance of these parameters for the de-accumulating effect is also knowing which part of the bacteria colony should be focused on for future improvement. It can either the accumulation protein, the transport protein or the survival of bacteria itself. In order to do that, sensitivity analysis is carried out on the model.</p>
+<br>
+<p>In particular, a global sensitivity analysis (GSA) method called Sobol is used, which is a variance-based analysis. GSA allows us to vary all the parameters simultaneously to evaluate their relative contribution to the model outputs as well as their interaction with each other [6]. Unlike local sensitivity analysis, which only allows for the evaluation of one parameter at a time. The steps for Sobol analysis are described in the figure below.</p>
+
+<img class="fig"src="https://2019.igem.org/wiki/images/3/38/T--Lund--sobol.svg" alt="">
+<p class="fig">Figure 1: Pre-Sobol and Sobol sensitivity analysis steps [6]</p>
+
+<p>Before doing sensitivity analysis on parameters, it’s critical to estimate the sensible ranges of them since the analysis would inform the importance of parameters within the ranges. Range estimation is described in table 5. Furthermore, 5000 samples are taken for each parameter within its range. The higher the number of samples is, the more accurate the analysis is. 5000 seems to be a good number of samples for each for a complex system [6].</p>
+
+<button type="button" class="collapsible">Table 6: Range estimation of parameters of interest.
+</button>
+<table class="collapsible-content">
+    <tr>
+        <th>Parameter</th>
+        <th>Range</th>
+        <th>Range</th>
+    </tr>
+    <tr>
+        <td><i>N<sub>max</sub></i></td>
+        <td>1e10-1e14</td>
+    <td>The lower bound is the intended initial population of one bacteria colony. The upper bound is based on the fact that there are around 1014 bacteria living in the human gut.</td>
+    </tr>
+    <tr>
+        <td><i>tsc</i></td>
+        <td>120-1000</td>
+        <td>Both lower and upper bound are estimated from the available literature[16].</td>
+    </tr>
+    <td><i>V<sub>max</sub></i></td>
+    <td>1e-2-1e2</td>
+    <td>The lower bound is based on literature value used in the parameter table above. Since it is uncertain what the upper bound is, an estimation of 4 order of magnitude bigger than the lower bound is used.</td>
+
+    <tr>
+        <td><i>k<sub>m</sub></i></td>
+        <td>1e-5-1e14</td>
+        <td>The upper bound is based on literature value used in the parameter table above. The lower bound is estimated to be a small number bigger than 0 since it is known that km can’t be negative. </td>
+    </tr>
+    <tr>
+        <td><i>k<sub>RNA-deg</sub>, k<sub>tsl</sub>, k<sub>pro-deg</sub></i></td>
+        <td>x/10-x*10</td>
+        <td>Where x is the value used in the parameter table above. These values are estimated from literature, ranging them one order of magnitude lower and higher seems to be sensible given their values.  </td>
+    </tr>
+
+</table>
+
 <h2 id="body-uptake">Bioaccumulation in the human body</h2>
 <p>
-The human body uptake models show how much toxic metal accumulates in different organs of the body. Each of them consists of a system of differential equations, where each differential equation describes the rate of change of the amount of toxic metal in one compartment. A compartment can be either an organ or an excretion pool. We implemented the body uptake models for Arsenic and Lead based on a paper by Eric Dede published in 2018 [1]. We then modified the models by adding differential equations describing how the bacteria colony is expected to interact with the toxic metal in the human body.
+The human body uptake models show how much toxic metal accumulates in different organs of the body. Each of them consists of a system of differential equations, where each differential equation describes the rate of change of the amount of toxic metal in one compartment. A compartment can be either an organ or an excretion pool. We implemented the body uptake models, for arsenic and lead, based on a paper by Eric Dede, published in 2018 [7].
 </p>
 <h3 id="arsenic">Arsenic</h3>
 <p>
-In arsenic body uptake model, there are 12 compartments that are taken into consideration as seen in figure x1. The figure describes the dynamics between the compartments with first order rate constants. A first-order reaction has a rate proportional to the concentration of one reactant [2], meaning the higher the concentration of a toxic metal is, the faster it is being transferred to other compartments.
+The arsenic body uptake model is adopted from El-Masri and Kenyon (2008) [8] with some modification. In the model, there are 12 compartments that are taken into consideration as seen in figure 1. The figure describes the dynamics between the compartments with first-order rate constants (The constants are left out in this figure for clarity but can be found in Dede 2018. A first-order reaction has a rate proportional to the concentration of one reactant [9], meaning the higher the concentration of a toxic metal is, the faster it is being transferred to other compartments.
 </p>
 <img class="fig" src="https://2019.igem.org/wiki/images/8/81/T--Lund--arsenic-model.svg" alt="">
 <p class="fig">Figure 2: Overview of compartements and their relations in the arsenic body uptake model.</p>
 <p>
-The model also takes into account that arsenic exists in different forms in the human body. They can be inorganic ions, such as As(III) or As(V), or organic forms such as monomethylarsenic acid (MMA) or dimethylarsenic acid (DMA). There are reactions taking place in the body such that one form of arsenic is converted to another so extra terms are added to the differential equations for that. Since we model for 12 compartments and 4 forms of arsenic, there’s a total of 48 equations in the system of differential equations, 12 for each of the form of arsenic. 
+The model also takes into account that arsenic exists in different forms in the human body. They can be inorganic ions, either As(III) or As(V), or organic forms like monomethyl arsenic acid (MMA) and dimethyl arsenic acid (DMA). There are reactions taking place in the body such that one form of arsenic is converted to another so extra terms are added to the differential equations for that. Since the model contains 12 compartments and 4 forms of arsenic, there’s a total of 48 equations in the system of differential equations, 12 for each of the form of arsenic.
 </p>
+<br>
 <p>
-We then couple the colony model from above to this human body uptake model by adding a term in the gut compartment that represents the rate of ions being absorbed by the colony of bacteria. 
+The full system of differential equations including the rate constants can be found in the supplementary materials of Dede et al [7]. To make sure there were no mistakes in the implementation, results were compared to examples in the original paper.
 </p>
 <h3 id="lead">Lead</h3>
-<p>The body uptake model for lead was originally developed during the 1990s[3][4][5], it was later modified in 2018[1]. There are seven compartments, as seen in figure x. To integrate the colony uptake model into the body uptake it first had to be modified. 
-</p>
+<p>The body uptake model for lead was originally developed during the 1990s[10][11][12], it was later modified in 2018[7]. There are ten compartments, seven of which are organs while the other three are excretion pools, as seen in figure 3. </p>
 <img class="fig" src="https://2019.igem.org/wiki/images/f/f0/T--Lund--lead.svg" alt="">
 <p class="fig">Figure 3: Overview of compartements and their relations in non-modfied the lead body uptake model.</p>
-<p>The original-, modified- and colony integrated versions of the the GI-tract-liver dynamics can be seen in figure x. In the original version the oral lead intake was described as a constant rate IRgi. The rate being absorbed by the liver was described as a fraction of the daily intake. In order to integrate the colony uptake model, these dynamics had to be replaced by first order kinetic rates, similar to the body uptake model for arsenic. The daily intake IRgi was then set as an initial condition for the GI tract differential equation. The model could then be solved piecewise, each time with the initial condition G(0) = IRgi. The values for kGF and kGL could not be found in literature. To find the values for these rates, while preserving the models predictability, the parameter optimization as described earlier was used. 
-</p>
-<p>After the modification, the colony uptake model could be integrated in the lead uptake model, just as in the case with arsenic.
-</p>
-<img class="fig" src="https://2019.igem.org/wiki/images/3/34/T--Lund--model-mod.svg" alt="">
-<p class="fig">Figure 3: Overview of the original liver-gut compartment, the modified liver-gut compartement, and the colony model integrated liver-gut compartement.</p>
+To make sure there were no mistakes in the implementation, results were compared to examples in the original paper, when given the same input.
+<br>
+<p>To illustrate how lead accumulates in different organs over many years, an animation was created using data given by the model, see animation 2.  This animation illustrates the accumulation when the daily intake is 11.4 µg, over 8 years. After 8 years the accumulation reaches a steady-state for this dose.</p>
+<video class="fig-small" autoplay muted loop playsinline>
+    <source src="https://2019.igem.org/wiki/images/a/af/T--Lund--Body_Modelling_Pb_wiki.webm" type="video/webm">
+    <source src="https://2019.igem.org/wiki/images/c/cf/T--Lund--Body_Modelling_Pb_wiki.mp4" type="video/mp4">
+</video>
+<p class="fig" >Animation 3: The lead accumulation according to the modified body uptake model. The animation shows bioaccumulation over 8 years, when the daily dose was 11.4 µg.</p>
 
-<h2 class="integrate">Integration of colony model into human body model</h2>
-<p>The colony models could be integrated into the human body uptake models by adding the colony as a compartment connected to the gut compartment. This way the bacteria colony will compete against the liver when absorbing the metals from the gut.
+<h2 class="integrate">Integration of Colony Model into Human Body Model</h2>
+<p>The colony models could be integrated into the human body uptake models by adding the colony as a compartment connected to the gut compartment. This way the bacteria colony will compete against the liver when absorbing the metals from the gut. Some assumptions are made for the integration:
+<ol>
+    <li>The bacteria colony in gut gets excreted out daily.</li>
+    <li>New bacteria colony is consumed daily.</li>
+</ol>
 </p>
 <h3 id="arsenic2">Arsenic</h3>
 <p>The colony model was integrated by adding the colony model as a compartment resulting in a model that can be overview in figure 4.
@@ -219,14 +355,187 @@ We then couple the colony model from above to this human body uptake model by ad
 <p class="fig">Figure 4: An overview of the bacteria colony integrated human body uptake model for arseic.</p>
 
 <h3 id="lead2">Lead</h3>
-<p>To integrate the colony uptake model into the body uptake it first had to be modified. The original-, modified- and colony integrated versions of the GI-tract-liver dynamics can be seen in figure x. In the original version, the oral lead intake was described as a constant rate IRgi. The rate being absorbed by the liver was described as a fraction of the daily intake. To integrate the colony uptake model, these dynamics had to be replaced by first-order kinetic rates, similar to the rates found in the body uptake model for arsenic. The daily intake IRgi was then set as an initial condition for the GI tract differential equation. The model could then be solved piecewise, each time with the initial condition G(0) = IRgi. The values for kGF and kGL could not be found in the literature. To find the values for these rates, while preserving the model's predictability, the parameter optimization, as described earlier, was used. 
-</p>
+<p>To integrate the colony uptake model into the body uptake it first had to be modified. The original-, modified- and colony integrated versions of the GI-tract-liver dynamics can be seen in figure 5.</p>
+
+<img class="fig" src="https://2019.igem.org/wiki/images/3/34/T--Lund--model-mod.svg" alt="">
+<p class="fig">Figure 5: Overview of the original liver-gut compartment, the modified liver-gut compartement, and the colony model integrated liver-gut compartement.</p>
+<br>
+
+<p>In the original version, the oral lead intake was described as a constant rate <i>IR<sub>gi</sub></i>. The rate being absorbed by the liver was described as a fraction of the daily intake. Which means it tells how much of lead is being absorbed daily but not how fast. To integrate the colony uptake model, these dynamics had to be replaced by first-order kinetic rates, similar to the rates found in the body uptake model for arsenic. The daily intake <i>IR<sub>gi</sub></i> was then set as an initial condition for the GI tract differential equation. The model could then be solved piecewise, each time with the initial condition <i>G(0) = IR<sub>gi</sub></i>. The original (8) and the modified (9) equation for the gut-compartement can be seen below.</p>
+<br>
+
 <p class="maths">
 <dtex>\frac{dG}{dt} = IR_{gi} - A_{gi} \times IR_{gi} - (1-A_{gi}) \times IR_{gi} = 0 </dtex> 
 <dtex>\frac{dG}{dt} = -k_{GF} \times IR_{gi} - k_{GB} \times G </dtex> 
 </p>
+<p>The values for <i>k<sub>GF</sub></i> and <i>k<sub>GL</sub></i> could not be found in the literature. To find the values for these rates, while preserving the model's predictability, the parameter optimization, as described earlier, was used.</p>
+<br>
+<p>After the modification, the colony uptake model could be integrated into the lead uptake model, just as in the case with arsenic, resulting in a model that can be overviewed in figure 6.</p>
 <img class="fig" src="https://2019.igem.org/wiki/images/1/1c/T--Lund--lead-model-integrated.svg" alt="">
-<p class="fig">Figure 5: An overview of the bacteria colony integrated human body uptake model for lead.</p>
+<p class="fig">Figure 6: An overview of the bacteria colony integrated human body uptake model for lead.</p>
+<h2 id="results">Results</h2>
+<p>In this section the results from the parameter optimization, the sensitivity analysis, and the model integration are presented.</p>
+<h3 id="param-results">Parameter Values</h3>
+<p>The results from the parameter optimization for the colony model can be seen in figure 7, 8 and 9. The values of the parameters can be found in table 5.</p>
+<br>
+
+<button type="button" class="collapsible">Figure 7: Colony model fitted to measured consentration of arsenic.</button>
+<div class="collapsible-content">
+<img class="fig"src="https://2019.igem.org/wiki/images/f/f2/T--Lund--pb-fit.svg" alt="">
+</div>
+<p></p>
+<button type="button" class="collapsible">Figure 8: Colony model fitted to measured concentration of lead.</button>
+<div class="collapsible-content">
+<img class="fig"src="https://2019.igem.org/wiki/images/f/f2/T--Lund--pb-fit.svg" alt="">
+</div>
+<p></p>
+<button type="button" class="collapsible">Figure 9: Colony model fitted to measured CFU.</button>
+<div class="collapsible-content">
+<img class="fig" src="https://2019.igem.org/wiki/images/d/d5/T--Lund--growth-fitting.svg" alt="">
+</div>
+<p></p>
+<button type="button" class="collapsible">Table 5: Parameter values yielded from the parameter optimization.</button>
+<table class="collapsible-content">
+  <tr>
+    <th>Parameter</th>
+    <th>Value</th>
+    <th>Comment</th>
+  </tr>
+  <tr>
+      <td><i>k<sub>growth</sub></i></td>
+      <td>2.31</td>
+      <td>
+    This is the in-vitro growth rate. It was not used in the integrated model since the growth in the GI-tract is much lower. This value was used during the parameter optimization against levels of concentration of lead.</td>
+  </tr>
+  <tr>
+      <td><i>N<sub>max</sub></i></td>
+      <td>6.12e8</td>
+      <td>
+This was used in the parameter optimization but not in the integrated model.
+</td>
+  </tr>
+  <tr>
+      <td><i>t<sub>lag</sub></i></td>
+      <td>3.00</td>
+      <td>
+This was used in the parameter optimization but not in the integrated model.
+</td>
+  </tr>
+  <tr>
+      <td><i>V<sub>max</sub></i> (Lead)</td>
+      <td>40.9</td>
+      <td>This was used in the integrated model.</td>
+  </tr>
+  <tr>
+      <td><i>k<sub>m</sub></i> (Lead)</td>
+      <td>1.00e4</td>
+      <td>This was used in the integrated model.</td>
+  </tr>
+  <tr>
+      <td><i>V<sub>max</sub></i> (Arsenic)</td>
+      <td>60.0</td>
+      <td>This was used in the integrated model.</td>
+  </tr>
+  <tr>
+      <td><i>k<sub>m</sub></i> (Arsenic)</td>
+      <td>2.60e-2</td>
+      <td>This was used in the integrated model.</td>
+  </tr>
+  <tr>
+      <td><i>k<sub>GB (Lead Body Uptake)</sub></i></td>
+      <td>0.44</td>
+      <td>This was used in the integrated model.</td>
+  </tr>
+  <tr>
+      <td><i>k<sub>GF (Lead Body Uptake)</sub></i></td>
+      <td>7.02</td>
+      <td>This was used in the integrated model.</td>
+  </tr>
+</table>
+<br>
+
+
+<h3 id="sensitivity-results">Sensitivity Analysis</h3>
+<p>The total order for the sobol sensitivity analysis in relation to the outside ion concentration after 3 hours can be seen in figure 10.</p>
+<img class="fig" src="https://2019.igem.org/wiki/images/a/a3/T--Lund--sobol-total-results.svg" alt="">
+<p class="fig">Figure 10: Total order sobol sensitivity in relation to the outside ion concentration after 3 hours. </p>
+<h3>Accumulation in the Human Body</h3>
+<p>The amount of accumulated arsenic in various organs, with and without the probiotic, can be seen in figure 11 and 12. Figure 11 shows the accumulation after 30 days with a daily intake of 15 mcg, whle figure 12 shows the accumulation after 30 days with a daily intake of 50 mcg, which is the amount that the general population takes in [15]. The average relative reduction for these scenarios was 83% and 25% respectively.</p>
+<img class="fig" src="https://2019.igem.org/wiki/images/2/24/T--Lund--as-result-15mcmol-30d.svg" alt="">
+<p class="fig">Figure 11: The modeled accumulated arsenic in the kidneys, the liver, the lungs and in the skin, after 30 days with a daily intake of 15 µg per day, with and without the probiotic. </p>
+<p></p>
+<img class="fig" src="https://2019.igem.org/wiki/images/6/6a/T--Lund--as-result-50mcmol-30d.svg" alt="">
+<p class="fig">Figure 12: The modeled accumulated arsenic in the kidneys, the liver, the lungs and in the skin, after 30 days with a daily intake of 50 µg per day, with and without the probiotic. </p>
+<br>
+<p>Figure 13 shows the number of accumulated lead ions, according to the model, in various organs after 8 years when given a daily intake of 114 mcg per day of lead. On average, the relative decreasement when using the integrated models was 8 % for this daily intake.
+<img class="fig" src="https://2019.igem.org/wiki/images/1/19/T--Lund--pb-result-114mcg-8y.svg" alt="">
+<p class="fig">Figure 13: The modeled accumulated lead in the blood, the bones, the kidnes, the liver, in the poorly- and well-perfused tissue, after 8 years with a daily intake of 114 µg per day, with and without the probiotic. </p>
+<br>
+<p>
+Figure 14 shows the number of accumulated lead ions, according to the model, in various organs after 8 years when given a daily intake of 11.4 mcg per day of lead. On average, the relative decreasement when using the integrated models was 81 %. An animiation illustrating this accumulation was created using the output of the integrated model. See animation 4.
+</p>
+</p>
+<img class="fig" src="https://2019.igem.org/wiki/images/f/fc/T--Lund--pb-result-11-4mcg-8y.svg" alt="">
+<p class="fig">Figure 14: The modeled accumulated lead in the blood, the bones, the kidnes, the liver, in the poorly- and well-perfused tissue, after 8 years with a daily intake of 11.4 µg per day, with and without the probiotic. </p>
+
+<video class="fig-small" autoplay muted loop playsinline>
+    <source src="https://2019.igem.org/wiki/images/6/64/T--Lund--Body_Modelling_Pb_Prodeacc_wiki.webm" type="video/webm">
+    <source src="https://2019.igem.org/wiki/images/2/24/T--Lund--Body_Modelling_Pb_Prodeacc_wiki.mp4" type="video/mp4">
+</video>
+<p class="fig">Animation 4: The accumulation of lead when using the probiotic, when the daily dose is 11.4úg. See animation 3 for comparison.</p>
+<h2 id="discussion">Discussion</h2>
+<p>In this section, we will discuss the results presented in the previous section.</p>
+<h3>Fitted Parameters and Sensitivity Analysis</h3>
+<p>It is difficult to assess the validity of the parameters in the colon model. More data would need to be collected to know for sure that the parameters are valid. We think it is highly unlikely that <i>k<sub>m</sub></i>, for arsenic and lead, is correct since it was found by only fitting the model to a single concentration, and since <i>k<sub>m</sub></i> is the concentration at which the transport rate is half of <i>V<sub>max</sub></i>. To assess <i>k<sub>m</sub></i>, one would need many different concentrations when fitting. This would be possible with more, and better, data from the wet lab, but since we outsource the MS-ICP testing to Eurofins, we could not afford more samples. Howecer, from the sensitivity analysis (figure 11) it's evident that the <i>k<sub>m</sub></i> has a very low effect on the outcome. Therefore, the low uncertainty of the exact value should not have a significant effect on the model's predictability.</p>
+<br>
+<p>The values for <i>V<sub>max</sub></i> was found to be about two orders of magnitude over the one found for a different transport protein in Ehrenberg and Kurland (1988). We have not been able to judge if our values are beyond reason or not</p>
+<br>
+<p>We have strong confidence in the parameters fitted for the human body uptake model for lead. We tried to reach the authors of the original model, and other experts, to comment on our modification, but without success.</p>
+<br>
+<h3 id="reduced-acc">Reduced Accumulation in Human Body</h3>
+<p>From results, it is evident that the models suggest a significant relative decrease of accumulated lead when daily intake is around 11.4 µg of lead (figure 11), or 15 µg of arsenic (figure 14).</p>
+<br>
+<p>A daily intake of 11.4 µg is far above what is recommended for children by the American Food and Drug Administration (3 mcg)[13], but far lower than 114 mcg per day, which was observed to be the average daily intake in  Kanpur, India in 2005 [14]. For arsenic ic the daily average intake in the US is 50 µg. Since the model did not suggest a big accumulation reduction at these concentrations, we don't believe that this particular probiotic would be useful as a remedy against arsenic exposure. We also do not believe that it would work well against lead at high lead concentrations, for the same reasons (figure 13).</p>
+<br>
+<p>We think that it could be argued that there's a moderate possibility that a probiotic like PRODEACC could be usefull for humans that are moderatly exposed to lead, because the result in figure 14.</p>
+
+<h3 id="future-improvments">Future Improvements</h3>
+<p>The model we’ve developed can be improved in a number of ways. Here are some that we’ve acknowledged:</p>
+<br>
+<p>The colony model doesn’t take into account bacteria death due to the high concentration of metal in the cytoplasm. This would require another parameter describing the thresh-hold concentration of metal in cytoplasm for causing cell death.</p>
+<br>
+<p>With more data about metal concentration decrease, one could estimate the accumulation parameters with better precision. It would also make it easier to say how good the model represents the features of the colony. It is likely that the value for <i>k<sub>m</sub></i> is not accurate since the parameter optimization only was done for a single concentration of ions. With more samples from a variety of concentrations, a more accurate value for<i>k<sub>m</sub></i>would be yielded.</p>
+<br>
+<p>With data from the SDS-page one could estimate the number of expressed protein at different time points and then fit the model to that data to better represent the reality of the protein expression in this colony.</p>
+<br>
+<p>The colony uptake model is developed to from with the lead plasmid in mind, and applied to both lead and arsenic, despite the lack of overexpressed transport proteins in the arsenic plasmid. It, therefore, gives a better representation of the lead plasmid compared to the arsenic plasmid. With more time one could modify the model to better fit the arsenic vector.</p>
+<br>
+<p>The models are implemented in Julia 1.2, and all codes are <a href="https://github.com/igemlund">available on Github</a> for anyone to use or build upon.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Judging from the results, we believe that probiotics, genetically modified or otherwise, are an underappreciated tool for helping the body to get rid of toxic matter. More work needs to be done to evaluate if these particular GM-bacterias can be used in the future as toxic metal remediation. We strongly believe in the methodology used, although the execution can be much improved.</p>
+
+<h4 class="references js-toc-ignore" >References:</h4>
+<ul class="references">
+    <li>[1] Stewart, James; Clegg, Daniel (2012). Brief Applied Calculus. (p. 358)</li>
+    <li>[2] Jaroslawiecka, A., & Piotrowska-Seget, Z. (2013). Lead resistance in micro-organisms. Microbiology, 160(Pt_1), 12–25. doi: 10.1099/mic.0.070284-0</li>
+    <li>[3] Lodish, H. (2002). Molecular cell biology. New York, NY: Freeman. (p. 249)</li>
+    <li>[4] Zhan, Zhang, and Chung. Adaptive particle swarm optimization, IEEE Transactions on Systems, Man, and Cybernetics, Part B: CyberneticsVolume 39, Issue 6, 2009, Pages 1362-1381 (2009)</li>
+    <li>[5] Akman, D., Akman, O., & Schaefer, E. (2018). Parameter Estimation in Ordinary Differential Equations Modeling via Particle Swarm Optimization. Journal of Applied Mathematics, 2018, 1–9. doi: 10.1155/2018/9160793</li>
+    <li>[6] Zhang, X. Y., Trame, M. N., Lesko, L. J., & Schmidt, S. (2015). Sobol Sensitivity Analysis: A Tool to Guide the Development and Evaluation of Systems Pharmacology Models. CPT: pharmacometrics & systems pharmacology, 4(2), 69–79. doi:10.1002/psp4.</li>6
+    <li>[7]  Dede, Eric, et al. "Physiologically-based pharmacokinetic and toxicokinetic models for estimating human exposure to five toxic elements through oral ingestion." Environmental toxicology and pharmacology 57 (2018): 104-114</li>
+    <li>[8] El-Masri, H. A and Kenyon, E. M (2008). Development of a human physiologically based pharmacokinetic (PBPK) model for inorganic arsenic and its mono- and di-methylated metabolites. Journal of Pharmacokinetics and Pharmacodynamics, 35(1), 31–68. doi: 10.1007/s10928-007-9075-z</li>
+    <li>[9] Libretexts. (2019, June 5). The Rate Law. Retrieved from https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Kinetics/Rate_Laws/The_Rate_Law</li>
+    <li>[10] O’Flaherty, E. J. (1991). Physiologically based models for bone-seeking elements. Toxicology and Applied Pharmacology, 111(2), 313–331. doi: 10.1016/0041-008x(91)90033-b</li>
+    <li>[11] O'Flaherty E. J. (1998). A physiologically based kinetic model for lead in children and adults. Environmental health perspectives, 106 Suppl 6(Suppl 6), 1495–1503. doi:10.1289/ehp.98106s61495</li>
+    <li>[12] Fleming, D. E., Chettle, D. R., Webber, C. E., and O’Flaherty, E. J. (1999). The OFlaherty Model of Lead Kinetics: An Evaluation Using Data from a Lead Smelter Population. Toxicology and Applied Pharmacology, 161(1), 100–109. doi: 10.1006/taap.1999.8790</li>
+    <li>[13] Center for Food Safety and Applied Nutrition. (n.d.). Lead in Food, Foodwares, and Dietary Supplements. Retrieved October 19, 2019, from https://www.fda.gov/food/metals/lead-food-foodwares-and-dietary-supplements.</li>
+    <li>[14] Sharma, M., Maheshwari, M., & Morisawa, S. (2005). Dietary and Inhalation Intake of Lead and Estimation of Blood Lead Levels in Adults and Children in Kanpur, India. Risk Analysis, 25(6), 1573–1588. doi: 10.1111/j.1539-6924.2005.00683.x</li>
+    <li>[15] Agency for Toxic Substances and Disease. (2007, August 1). Toxic Substances Portal - Arsenic. Retrieved October 19, 2019, from https://www.atsdr.cdc.gov/phs/phs.asp?id=18&tid=3.</li>
+    <li>[16] https://bionumbers.hms.harvard.edu/bionumber.aspx?id=111997&ver=5</li>
+</ul>
+
+
 
 
 
@@ -234,5 +543,6 @@ We then couple the colony model from above to this human body uptake model by ad
 
 </div>
 {% include "partials/footer.nunjucks" %}
+</div>
 
 {% endblock %}
