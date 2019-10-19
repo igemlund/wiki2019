@@ -28,7 +28,10 @@ h1#title{
     h3{
         @include header();
         font-size: $h3-font-size;
-        color: $h3-font-color;
+    }
+    h4{
+        @include header();
+        font-size: $text-size;
     }
 
     p{
