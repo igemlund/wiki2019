@@ -237,7 +237,7 @@ Values for the parameters that couldn't be found in the literature were estimate
 </p>
 <br>
 <p>
-Values for the parameters that couldn't be found in the literature were estimated using data acquired from experiments. The model could be fitted to the data with the help of optimization algorithms. The acquired parameter values were the ones that yielded the lowest cost from a linear loss function. To find the lowest cost adaptive particle swarm algorithm was used[4]. Particle swarm optimization has been used with good efficiency for other non-linear ODE-parameter estimation for biological systems, where there's a big solution space [5].
+Particle swarm optimization (PSO) is an optimization algorithm inspired by the movement of a group of organisms, for example, a flock of birds or a shoal of fish. An upper and a lower bound to the search space is given and the algorithm initializes by uniformly distributing the particles/organisms in the space. The solution is calculated for each particle. Each particle then moves in the search space in the direction of the vector sum of is own previous best solution and the group’s best solution. The length at which the particles move varies from different flavors of the algorithm [5].
 </p>
 <img class="fig-small" src="https://2019.igem.org/wiki/images/9/90/T--Lund--pso.gif" alt="">
 <p class="fig">Animation 2: Animation showing how particles navigate the solution space and converging on the global minimum. Courtesy: Ephramac, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
@@ -332,7 +332,9 @@ The full system of differential equations including the rate constants can be fo
 <p>The body uptake model for lead was originally developed during the 1990s[10][11][12], it was later modified in 2018[7]. There are ten compartments, seven of which are organs while the other three are excretion pools, as seen in figure 3. </p>
 <img class="fig" src="https://2019.igem.org/wiki/images/f/f0/T--Lund--lead.svg" alt="">
 <p class="fig">Figure 3: Overview of compartements and their relations in non-modfied the lead body uptake model.</p>
+<p>
 To make sure there were no mistakes in the implementation, results were compared to examples in the original paper, when given the same input.
+</p>
 <br>
 <p>To illustrate how lead accumulates in different organs over many years, an animation was created using data given by the model, see animation 2.  This animation illustrates the accumulation when the daily intake is 11.4 µg, over 8 years. After 8 years the accumulation reaches a steady-state for this dose.</p>
 <video class="fig-small" autoplay muted loop playsinline>
@@ -504,7 +506,7 @@ Figure 14 shows the number of accumulated lead ions, according to the model, in 
 <br>
 <p>The colony model doesn’t take into account bacteria death due to the high concentration of metal in the cytoplasm. This would require another parameter describing the thresh-hold concentration of metal in cytoplasm for causing cell death.</p>
 <br>
-<p>With more data about metal concentration decrease, one could estimate the accumulation parameters with better precision. It would also make it easier to say how good the model represents the features of the colony. It is likely that the value for <i>k<sub>m</sub></i> is not accurate since the parameter optimization only was done for a single concentration of ions. With more samples from a variety of concentrations, a more accurate value for<i>k<sub>m</sub></i>would be yielded.</p>
+<p>With more data about metal concentration decrease, one could estimate the accumulation parameters with better precision. It would also make it easier to say how good the model represents the features of the colony. It is likely that the value for <i>k<sub>m</sub></i> is not accurate since the parameter optimization only was done for a single concentration of ions. With more samples from a variety of concentrations, a more accurate value for <i>k<sub>m</sub></i> would be yielded.</p>
 <br>
 <p>With data from the SDS-page one could estimate the number of expressed protein at different time points and then fit the model to that data to better represent the reality of the protein expression in this colony.</p>
 <br>

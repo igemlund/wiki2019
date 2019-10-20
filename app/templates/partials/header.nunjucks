@@ -14,12 +14,11 @@
                 <li><a href="/Team:Lund/Description" onclick="nav()" >Description</a></li>
                 <li><a href="/Team:Lund/Design" onclick="nav()" >Design</a></li>
                 <li><a href="/Team:Lund/Experiments" onclick="nav()" >Experiments</a></li>
-                <li><a href="/Team:Lund/Model" onclick="nav()" >Model</a></li>
                 <li><a href="/Team:Lund/Notebook" onclick="nav()" >Notebook</a></li>
                 <li><a href="/Team:Lund/Contribution" onclick="nav()" >Contribution</a></li>
                 <li><a href="/Team:Lund/Results" onclick="nav()" >Results</a></li>
+                <li><a href="/Team:Lund/Model" onclick="nav()" >Model</a></li>
                 <li><a href="/Team:Lund/Demonstrate" onclick="nav()" >Demonstrate</a></li>
-                <li><a href="/Team:Lund/Improve" onclick="nav()" >Improve</a></li>
                 <li><a href="/Team:Lund/Attributions" onclick="nav()" >Attributions</a></li>
                 <li><a href="/Team:Lund/Safety" onclick="nav()" >Safety</a></li>
             </ul>
@@ -44,7 +43,6 @@
                 <li><a href="/Team:Lund/Parts" onclick="nav()" >Overview</a></li>
                 <li><a href="/Team:Lund/Basic_Part" onclick="nav()" >Basic Parts</a></li>
                 <li><a href="/Team:Lund/Composite_Part" onclick="nav()" >Composite Parts</a></li>
-                <li><a href="/Team:Lund/Part_Collection" onclick="nav()" >Part Collection</a></li>
             </ul>
           </div>
         </li>
