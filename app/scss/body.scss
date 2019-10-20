@@ -119,6 +119,12 @@ h1#title{
         font-size: 12px;
     }
 
+    h5.fig{
+        text-align: center;
+        text-font: $header-font;
+        font-size: 16px;
+        line-height: 1.2;
+    }
     img.fig{width: 100%;}
     video.fig-small{
         float: top;

@@ -47,8 +47,18 @@ body{
 a{
    text-decoration: none; 
    color: $accent-color;
-   &:hover{color: $light-color;}
-   
+   &:hover{
+    color: $light-color;
+    text-decoration: none;
+    }
+   &:visited{
+   text-decoration: none; 
+   color: $accent-color;
+   &:hover{
+    color: $light-color;
+    text-decoration: none;
+    }
+   }
 }
 
 
