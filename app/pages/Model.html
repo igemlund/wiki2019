@@ -15,7 +15,7 @@ To better understand this text it’s recommended to read the <a href="/Team:Lun
 <h2 id="Modeling-growth-and-ion-accumulation in a singel colony">Bioaccumulation in a Bacteria Colony</h2>
 
 <p>
-To model the growth of a single colony, its protein production, and its ions accumulation, a system of seven differential equations was devised. Equation (1) and (2) describes the colony as a whole and the concentration of ions in its growth medium, whereas equation (3) - (7) describes the changes inside the average individual cell. A graphical representation of the equation can be found in figure x. Short descriptions of the time-dependent variables can be found in table x and descriptions and approximate values of the parameters can be found in table 1.
+    To model the growth, protein production and ion accumulation of a single colony, a system of seven differential equations was devised. Equation (1) and (2) describes the colony as a whole and the concentration of ions in its growth medium, whereas equation (3) - (7) describes the changes inside the average individual cell. A graphical representation of the equation can be found in animation 1. Short descriptions of the time-dependent variables can be found in table 1. Descriptions and approximate values of the parameters can be found in table 2. The initial parameters for the initial conditions can be found in table 3.
 </p>
 
 <video class="fig" autoplay muted loop playsinline>
@@ -24,17 +24,17 @@ To model the growth of a single colony, its protein production, and its ions acc
 </video>
 <p class="fig" >Animation 1: A graphical representation of the rate of change of the ions and proteins described by equation (1) and (3)-(7). </p>
 
-<h3 id="derivatoin-of-equations">Derivation of equations</h3>
+<h3 id="derivatoin-of-equations">Derivation of Equations</h3>
 <p>
-The model was devised to simulate the colony in a number of conditions, with only the values of the parameters needed to be changed. For example, for the growth rate <i>k<sub>growth</sub></i> would most likely be lower in a gut environment compared to an in-vitro environment with good pH and no competition from other microbes.
+The model was devised to simulate the colony in a number of conditions, with only the values of the parameters needed to be changed. For example, for the growth rate <i>k<sub>growth</sub></i> would most likely be lower in a gut environment compared to an <i>in-vitro</i> environment with good pH and no competition from other microbes.
 <p>
 <br>
 
-<b>Equation (1)</b> describes the rate of change of the total number of living bacteria cells in the colony. The cells are assumed to divide at a constant rate kgrowth after the lag phase is over. However, the exponential growth will not continue forever. At some point, the lack of energy will force the colony to stop dividing and will reach a stationary phase. Because of this, the term <i>−k<sub>growth</sub>&times N <sup>2</sup>/N<sub>max</sub></i> was introduced making the growth rate stagnate once <i>N</i> reaches <i>N<sub>max</sub></i> [1].
+<b>Equation (1)</b> describes the rate of change of the total number of living bacteria cells in the colony. The cells are assumed to divide at a constant rate <i>k<sub>growth</sub></i> after the lag phase is over. However, the exponential growth will not continue forever. At some point, the lack of energy will force the colony to stop dividing and will reach a stationary phase. Because of this, the term <i>−k<sub>growth</sub>&times N <sup>2</sup>/N<sub>max</sub></i> was introduced making the growth rate stagnate once <i>N</i> reaches <i>N<sub>max</sub></i> [1].
 </p>
 <br>
 <p>
-<b>Equation (2)</b> describes the rate of change of the total number of lead or arsenic ions in the gut (or growth medium). The rate of accumulation by the colony should be a function of the number of living cells <i>N</i>, as well as the number of transport proteins per cell. The working mechanisms for the lead/iron transporter pbrT are unknown[2].  The Michaelis–Menten equation was used in to represent the transport rate with the rational that a higher concentration of ions outside the cells would increase the probability of an ion finding its way through a transporter, but that the increment would give diminishing returns one more and more transporters work at their highest capacity.[3]
+<b>Equation (2)</b> describes the rate of change of the total number of lead or arsenic ions in the gut (or growth medium). The rate of accumulation by the colony should be a function of the number of living cells <i>N</i>, as well as the number of transport proteins per cell. The working mechanisms for the lead/iron transporter pbrT are unknown [2].  The Michaelis–Menten equation was used in to represent the transport rate with the rational that a higher concentration of ions outside the cells would increase the probability of an ion finding its way through a transporter, but that the increment would give diminishing returns one more and more transporters work at their highest capacity [3].
 </p>
 <br>
 
@@ -48,7 +48,7 @@ The model was devised to simulate the colony in a number of conditions, with onl
 </p>
 <br>
 <p>
-<b>Equation (5)</b> describes the rate change in the number of free accumulation proteins. Whenever an accumulation protein binds to an ion, the accumulation protein is no longer free. This rate is proportional to the number of accumulation proteins APfree and the number of free ions in cytoplasm C. The kinetic rate kcapture was introduced to scale the rate of capture.
+<b>Equation (5)</b> describes the rate change in the number of free accumulation proteins. Whenever an accumulation protein binds to an ion, the accumulation protein is no longer free. This rate is proportional to the number of accumulation proteins <i>AP<sub>free</sub></i> and the number of free ions in cytoplasm C. The kinetic rate <i>k<sub>capture</sub></i> was introduced to scale the rate of capture.
 </p>
 <br>
 
@@ -57,7 +57,7 @@ The model was devised to simulate the colony in a number of conditions, with onl
 </p>
 
 <p>
-<b>Equation (7)</b> describes the rate of change in the number of free ions in the cytoplasm.
+<b>Equation (7)</b> describes the rate of change in the number of free ions in the cytoplasm of one bacteria. Ions go from the gut into the cytoplasm, so the equation has the term from equation (2) but with different signs. Once the ions are bound to accumulation proteins, they are no longer free and are removed from the compartment with the same rate as it is removed from the free accumulation proteins compartment from equation (5). Whenever an occupied accumulation protein is degraded, the ion bound to it is released back to the cytoplasm, hence the positive term proportional to the number of occupied accumulation proteins. Last but not least, a negative term to take into account the fact that the number of ions in cytoplasm gets halved every time the bacteria divides. 
 <br>
 
 </p>
@@ -540,13 +540,6 @@ Figure 14 shows the number of accumulated lead ions, according to the model, in 
     <li>[15] Agency for Toxic Substances and Disease. (2007, August 1). Toxic Substances Portal - Arsenic. Retrieved October 19, 2019, from https://www.atsdr.cdc.gov/phs/phs.asp?id=18&tid=3.</li>
     <li>[16] https://bionumbers.hms.harvard.edu/bionumber.aspx?id=111997&ver=5</li>
 </ul>
-
-
-
-
-
-
-
 </div>
 {% include "partials/footer.nunjucks" %}
 </div>

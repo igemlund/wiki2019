@@ -31,6 +31,7 @@
             <ul>
                 <li><a href="/Team:Lund/Team" onclick="nav()" >Team</a></li>
                 <li><a href="/Team:Lund/Collaborations" onclick="nav()" >Collaborations</a></li>
+                <li><a href="/Team:Lund/Attributions" onclick="nav()" >Attributions</a></li>
             </ul>
           </div>
         </li>
