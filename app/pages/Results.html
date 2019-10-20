@@ -1,0 +1,153 @@
+{% extends "layout.html" %}
+{% block content %} 
+{% include "partials/header.nunjucks" %}
+<h1 id="title" class="js-toc-ignore">Results and Discussion</h1>
+<div id="body">
+    <h2 id="overview">Overview</h2>
+    <p>We have successfully sequenced the following parts:</p>
+<ul>
+<li>BBa_K3282003 (arsR-T7)</li>
+<li>BBa_K3282004 (arsR-Tac)</li>
+</ul>
+<p>We have successfully transformed <em>E.</em><em>coli</em> Nissle 1917 to absorb:</p>
+<ul>
+<li>~40% of <strong>lead</strong> in a concentration of ~2 mg/L, in 2.5 hours.</li>
+<li>~20% of <strong>arsenic</strong> in a concentration of ~16 mg/L, in 2.5 hours.</li>
+</ul>
+<p>We have failed on the following points:</p>
+<ul>
+<li>To see evidence of protein expression using SDS-page.</li>
+<li>To sequence the parts BBa_K3282005 (pbrD-T7) and BBa_K3282007 (pbrd-Tac).</li>
+</ul>
+<h2>Parts</h2>
+<p>The following parts were designed:</p>
+
+ <p><strong>Composite part with <i>pbrT, pbrD</i> and a T7 promoter: <a href="http://parts.igem.org/Part:BBa_K3282005">BBa_K3282005</a></p></strong>
+ <img class="fig" src="https://2019.igem.org/wiki/images/2/2d/T--Lund--PbT7.svg" alt="">
+ <p><strong>Composite part with <i>pbrT, pbrD</i> and a Tac promoter: <a href="http://parts.igem.org/Part:BBa_K3282007">BBa_K3282007</a></p></strong>
+<img class="fig" src="https://2019.igem.org/wiki/images/a/ad/T--Lund--PbTac.svg" alt="">
+<br>
+ <p><strong>Composite part with <i>arsR</i> and a T7 promoter: <a href="http://parts.igem.org/Part:BBa_K3282003">BBa_K3282003</a></p></strong>
+ <img class="fig" src="https://2019.igem.org/wiki/images/2/2b/T--Lund--arsRT7.svg" alt="">
+ <p><strong>Composite part with <i>arsR</i> and a Tac promoter: <a href="http://parts.igem.org/Part:BBa_K3282004">BBa_K3282004</a></p></strong>
+ <img class="fig" src="https://2019.igem.org/wiki/images/b/bf/T--Lund--arsRTac.svg" alt="">
+ 
+
+<h2 id="isolation">Isolation of <i>E. coli</i> Nissle 1917</h2>
+<p>
+<em>E. coli</em> Nissle 1917 (EcN) was isolated from a probiotic pharmaceutical Mutaflor. It was resuspended and plated on MacConkey agar that is used to select several <em>E. coli</em> strains, among them EcN[1]. In order to confirm the identity of the strain a colony PCR was performed with primers specific for genomic island II (GEI II) and for cryptic plasmid pMUT2 that are specific for EcN. For GEI II the bands were expected at 400bp, while for pMUT2 at 313 bp [2,3]. The results of the colony PCR can be seen in figure 1 below.
+</p>
+<br>
+<p class="fig">Figure 1: Colony PCR result showing well-defined bands with various annealing temperatures, and pMUT2 and GEI II primers.</p>
+<br>
+<p>All colonies picked from MacConkey agar have shown the expected band with GEI II primers but no bands at all with pMUT2. These results confirm the identity of the strain to be EcN, despite negative results for pMUT2 primers since the GEI II pri
+<h2 id="sequecing">Sequencing Composite Parts</h2>
+<p>The following parts were sequenced BBa_K3282003, BBa_K3282004, BBa_K3282005 and BBa_K3282007. </p>
+<br>
+<p>The sequences of BBa_K3282003 and  BBa_K3282004 showed 100% and 99.6% similarity, the alignment results can be found <a href="https://2019.igem.org/wiki/images/5/52/T--Lund--K3282003-sequencing.txt"></a> and <a href="https://2019.igem.org/wiki/images/a/ae/T--Lund--K3282004-sequencing.txt">here</a> respectivly. For BBa_K3282004 there are two base substitutions in the sequence. The first one is in the region that is only used for amplification PCR  and hence it had no effect on protein structure or expression. However, the second substitution is in the protein coding region and resulted in R18L mutation.</p>
+<br>
+<p>Unfortunately, in the case of BBa_K3282005 and BBa_K3282007, samples were mixed up or contaminated with BBa_K3282003 and  BBa_K3282004 and therefore it was not possible to align the sequences. Due to lack of time it was not possible to repeat sequencing for those composite parts.</p>
+<br>
+<h2 id="cultivation">Cultivation of Transformed Bacteria</h2>
+<p class="fig">Figure 2:</p>
+<p class="fig">Figure 3:</p>
+<p class="fig">Figure 4:</p>
+<h2 id="toxic-metal-analysis">Toxic Metal Analysis</h2>
+<h3 id="arsenic-analysis">Investigation of Composite Parts for Arsenic Accumulation</h3>
+<p>The part BBa_K3282003 (arsR-T7) consists of a T7 promoter (<a href="http://parts.igem.org/Part:BBa_I719005">BBa_I719005</a>), Anderson RBS (<a href="http://parts.igem.org/Part:BBa_J61109">BBa_J61109</a>), arsenic resistance operon repressor (<a href="http://parts.igem.org/Part:BBa_K3282000">BBa_K3282000</a>) and TE terminator (<a href="http://parts.igem.org/Part:BBa_B0012">BBa_B0012</a>), whereas BBa_K3282004 (arsR-Tac)comprises the same basic parts but with a Tac promoter (<a href="http://parts.igem.org/Part:BBa_K3282006">BBa_K3282006</a>).</p>
+<br>
+<p>The <em>Escherichia coli</em> chromosomal <em>ars</em> operon confers resistance to trivalent and pentavalent salts of the metalloids arsenic and antimony. <em>ArsR </em>is the first gene in the ars operon containing a very specific binding site towards As(III) [4].</p>
+<h4 id="arsenic-experiment">Experiment</h4>
+<p><strong>K3282003</strong> was inserted into pUC19 and successfully transformed in <em>E. coli </em>BL21(DE3), and <strong>K3282004</strong> was transformed in the probiotic strain EcN. <em>arsR</em> protein expression was demonstrated by performing SDS-PAGE. The cells were cultured in enriched media (containing peptone, yeast extract, phosphates, chlorides and sulphates) at 37&deg;C. They were grown overnight and were harvested in their late exponential phase in order to normalize the OD values to 2. After normalization, the cells were resuspended in fresh enriched medium containing 10 &micro;M, 50 &micro;M and 200 &micro;M of As2O3. As a negative control, the experiment was also performed with wild type <em>E. coli</em> BL21(DE3) and wild type EcN in growth medium containing 50 &micro;M As2O3.</p>
+<h4 id="arsenic-results">Results</h4>
+<p>The SDS-PAGE analysis result can be seen in figure 8 and figure 9. The expected band for arsR protein has a molecular weight of 13.5 kDa, therefore it should appear between the two marked points as shown in figure 8 and 9. The gel shows that the engineered bacterial strains, as well as the negative controls have a band with the expected molecular weight. Thus, we can not confirm that it corresponds to arsR. It is possible that there are other proteins expressed in E. coli of the same molecular weight, masking the expression of arsR.</p>
+<br>
+<p class="fig">Figure 5: Samples were harvested at different time points, and the total cellular proteins were analyzed by SDS-PAGE. Protein bands of BL21(DE3) can be seen after induction with IPTG, showing arsR at 13.5 kDa. The control shown is wild type BL21(DE3) without arsR.</p>
+
+<p class="fig">Figure 6: Samples were harvested at different time points, and the total cellular proteins were analyzed by SDS-PAGE. Image with protein bands of EcN after induction with IPTG, showing arsR at 13.5 kDa. The control shown is wild EcN without arsR.</p>
+<br>
+<h5 class="fig">Arsenic accumulation over time</h5>
+<p class="fig">Figure 7: Arsenic accumulation over time. The blue line represents the arsenite concentration in a culture that contains the composite part K3282003. While the orange line represents the the arsenite concentration in a culture with wild type E. coli BL21(DE3).</p>
+<br>
+<h5>Arsenic accumulation over time at varying pH</h5>
+<p class="fig">Figure 8: Arsenic accumulation over time at varying pH. The blue line represents the arsenite concentration in a culture maintained at pH 3 containing the composite part while the orange line represents arsenite concentration in a culture maintained at pH 5 containing the composite part. The grey line represents the arsenite concentration in a culture with wild type EcN.</p>
+<br>
+<p>Figure 7 and figure 8 compare the arsenite accumulation over time whereas figure 9 and figure 10 compare the growth of engineered as well as wild type strains. It can be seen in figure 7 that the initially added arsenite had a concentration of 3.745 mg/L for both engineered as well as wild type BL21(DE3), and the arsenite concentration measured at 0 hours was 0.014 mg/L and 0.013 mg/L respectively. Similarly, it can be seen in figure 8 that the initially added arsenite had a concentration of 3.745 mg/L (K3282004 at pH3 and Control) and 14.98 mg/L (K3282004 at pH5), and the arsenite concentration measured at 0 hours was 0.012 mg/L, 0.012 mg/L, and 0.024 mg/L respectively. This rapid decrease in both cases was unexpected. The relative concentration of arsenic in media where transformed and non transformed bacteria were present is showcased in figure 11. </p>
+
+<br>
+<h5 class="fig">Growth comparison between transformed and non-transformed <i>E. coli</i> BL21(DE3)</h5>
+<p class="fig">Figure 9: Comparison of growth of engineered BL21(DE3) with wild type BL21(DE3) in the presence of arsenic oxide.</p>
+
+<h5 class="fig">Growth comparison between transformed and non-transformed EcN
+</h5>
+<p class="fig">Figure 10: Comparison of growth of engineered EcN with wild type EcN in the presence of arsenic oxide.</p>
+<h5 class="fig">Relative Concentration of Arsenite in Media Containing Transformed and Non-Transformed Bacteria</h5>
+<p class="fig">Figure 11: Relative concentration of arsenite in growth media at different timepoints (0, 2.5 and 5 h) with transformed and untransformed (control) strains of E. coli.</p>
+<h4 id="arsenic-discussion">Discussion</h4>
+<p>Arsenite does not suffer from sorption to glass surfaces as it forms oxy ions which are partly dissociated leading to negatively charged ions [5]. Therefore, this decrease cannot be accounted for by the sticking of ions to the glass surface. It might be the case that the engineered bacteria, as well as the control, have a capacity to uptake arsenite. According to Chen et al., when the cells are depleted of endogenous energy reserves, arsenite enters whether or not the cells carry a resistance plasmid [7]. The ars operon carried on the Escherichia coli R-factor R773 encodes the transport system that extrudes arsenite, and the lowering of the intracellular concentration of toxic oxyanion produces resistance. However, plasmid lacking strains of E. coli have also been shown to be intrinsically resistant to arsenite due to the presence of chromosomal ars operon. It has also been found that the R773 arsR protein is 75 % identical with the chromosomal product in E. coli strains [6]. The wild type E. coli strains are resistant to arsenite up to a concentration of 1 mM. This might explain the similarity in growth and arsenite uptake between the engineered EcN and BL21(DE3) strains, and the wild type strains. However, if the measured arsenite concentration at 0 hour is compared with the concentration at 2.5 hours, the engineered BL21(DE3) shows a 21.43 % accumulation of arsenite, compared with only 7.69 % arsenite accumulation in the control. Similarly, for EcN, the comparison of measured arsenite concentration at 0 hours with the concentration at 2.5 hours, shows that the engineered EcN accumulated 21.83 % arsenite, whereas the control accumulated 12.89 % arsenite. This can be considered as a proof of concept; showing that the engineered EcN and BL21(DE3) strains express arsR and have an improved ability to uptake arsenite. The slight increase in the arsenite concentration at 5 hours might suggest that some cells died and released the accumulated arsenite. The growth curves in figure 10 and figure 11 imply that the wild type, as well as engineered strains were able to survive in the presence of arsenite and at pH 5. However, EcN had a very low growth rate at pH 3, suggesting that the cumulative effect of low pH and the presence of toxic arsenite might be inhibitory for the cells.</p>
+
+<h3 id="lead-analysis">Investigation of Composite Parts for Lead Accumulation</h3>
+<p>BBa_K3282005 composite (pbrD-T7) part consists of a T7 promoter <a href="http://parts.igem.org/Part:BBa_I719005">(BBa_I719005)</a>, two Anderson RBS <a href="http://parts.igem.org/Part:BBa_J61109">(Part:BBa_J61109)</a>, separating two coding regions of lead binding protein <a href="http://parts.igem.org/Part:BBa_K3282002">(BBa_K3282002)</a> and lead transport protein <a href="http://parts.igem.org/Part:BBa_K3282001">(BBa_K3282001)</a>, followed by a TE terminator <a href="http://parts.igem.org/Part:BBa_B0012">(Part:BBa_B0012)</a>, whereas the BBa_K3282007 (pbrD-Tac) comprises the same basic parts but with a Tac promoter (<a href="http://parts.igem.org/Part:BBa_K3282006">BBa_K3282006</a>).</p>
+<p>The <em>pbrD</em> gene encodes a Pb(II)-binding protein which is essential for functional lead sequestration, whereas the expression of <em>pbrT</em> leads to uptake of lead into the cytoplasm to reduce interaction of free Pb(II) with side chains of membrane and periplasmic proteins, which would cause extensive cellular damage [8].</p>
+
+<h4 id="lead-experiment">Experiment</h4>
+<p>The K3282005 part was inserted into pUC19 and successfully transformed in E. coli BL21(DE3), and the K3282007 part was transformed in the probiotic strain E. coli Nissle 1917 (EcN). pbrD and pbrT protein expression was demonstrated by performing Sodium Dodecyl Sulphate Polyacrylamide Gel Electrophoresis (SDS-PAGE). The cells were cultured in enriched media (containing peptone, yeast extract, phosphates, chlorides and sulphates) at 37 °C. They were grown overnight and were harvested in their late exponential phase to normalize the OD values to 2. After normalization, the cells were resuspended in fresh enriched medium containing 10 µM, 50 µM, and 200 µM of Pb(NO3)2. As a negative control, the experiment was also performed with the wild type E. coli BL21(DE3), and wild type EcN in growth medium containing 50 µM Pb(NO3)2. </p>
+<br>
+<p>Samples were collected every hour for OD measurement. For investigating the arsenic accumulation by engineered bacteria, samples were collected at 0 hours, 2.5 hours and 5 hours after the addition of Pb(NO3)2.</p>
+
+<h4 id="lead-results">Results</h4>
+<p>The SDS-PAGE analysis result can be seen in figure 12 and figure 13. The pbrD is a 26.7 kDa and pbrT 68.3 kDa protein. Therefore, the bands were expected to be just above the 25kDa band, and just below the 70 kDa band for pbrD and pbrT respectively. The gel shows that the engineered bacteria, as well as the control, have bands with the expected molecular weight. Thus, we can not confirm that the bands corresponds to the desired proteins. It is possible that there are other proteins expressed in E. coli with the same molecular weight, masking the expression of pbrD and pbrT.</p>
+<br>
+<p class="fig">Figure 12: Samples were harvested at different time points, and the total amount of cellular proteins were analyzed by SDS-PAGE. Image with protein bands of BL21(DE3) after induction with IPTG, showing pbrD at 26.7 kDa and pbrT  at 68.3 kDa. The control shown is wild type BL21(DE3) without pbrD and pbrT.</p>
+<br>
+<p class="fig">Figure 13: Samples were harvested at different time points, and the total amount of cellular proteins were analyzed by SDS-PAGE. Image with protein bands of BL21(DE3) after induction with IPTG, showing pbrD at 26.7 kDa and pbrT  at 68.3 kDa. The control shown is wild type BL21(DE3) without pbrD and pbrT.</p>
+<br>
+<h5 class="fig">Lead Accumulation Over Time</h5>
+<p>Figure 14: Lead accumulation over time. The orange line represents the lead concentration in a culture that contains the composite part, while the blue line represents the lead concentration in a culture with wild type E. coli BL21(DE3).</p>
+<br>
+<h5 class="fig">Lead Accumulation Over Time at Varying pH</h5>
+<p class="fig">Figure 15: Lead accumulation over time. The blue line represents the lead concentration in a culture maintained at pH 3 containing the composite part, while the orange line represents lead concentration in a culture maintained at pH 5 containing the composite part. The grey line represents the lead concentration in a culture with wild type EcN.</p>
+<br>
+<p>Figure 14 and figure 15 compares the lead accumulation over time, whereas figure 16 and figure 17 compares the growth rates of engineered as well as wild type strains. It can be seen in figure 14 that the initially added lead concentration to both engineered and wild type cells was 10.63 mg/L, and the concentration at 0 hours was 0.63 mg/L and 0.66 mg/L respectively. Similarly, it can be seen in figure 15 that the initially added lead concentration was 41.44 mg/L, maintained at pH 3 and the concentration at 0 hours was 6 mg/L, showcasing an 85.52 % decrease. The culture maintained at pH 5 with an initial lead concentration of 10.36 mg/L also showed an 89.38 % decrease in lead concentration at time 0 hours. In comparison, the control shows no decrease in lead concentration. The overall lead accumulation was calculated to be 41 % by the engineered EcN, and 39.68 % by the engineered BL21(DE3) after 2,5 hours. The relative concentration of lead in media where transformed and non transformed bacteria were present is showcased in figure 18.
+</p>
+<br>
+<br>
+<h5 class="fig">Growth comparison between transformed and non-transformed <i>E. coli</i> BL21(DE3)</h5>
+<p class="fig">Figure 16: Comparison of the growth rate of engineered BL21(DE3) with wild type BL21(DE3) in the presence of lead nitrate over 6 hours.</p>
+<br>
+<h5 class="fig">Growth comparison between transformed and non-transformed EcN</h5>
+<p class="fig">Figure 17: Comparison of the growth rate of engineered EcN with wild type EcN in the presence of lead nitrate over 6 hours.</p>
+<br>
+<h5 class="fig">Relative Concentration of Lead in Media Containing Transformed and Non-Transformed Bacteria</h5>
+<p class="fig">Figure 18: Relative concentration of lead in growth media at different time points (0, 2.5 and 5 h) with transformed and untransformed (control) strains of E. coli.</p>
+
+<h4 id="lead-discussion">Discussion</h4>
+<p>The rapid decrease in the concentration as seen in figure 14 and 15 is similar to the decrease in arsenite concentration as explained in the previous discussion. A percentage of this rapid decrease can be attributed to the use of borosilicate Erlenmeyer flasks, since it was found that borosilicate glass can adsorb lead ions [9]. However, the study also mentions that adsorption of lead by borosilicate glass is time-dependent and adsorption was found to be only 17.2% over a period of 20 hours. This concludes that not all the lead adsorption was by borosilicate glass but also by the bacterial strains. The slight increase in lead concentration at hour 5 in figure 14 can be explained by the death of cells and release of the accumulated lead. figure 16, 17 and 18 indicate that the engineered cells are capable of accumulating lead and can survive under conditions simulated. </p>
+<br>
+<h2 id="conclusion">In Conclusion</h2>
+<p>Our results indicate an increase in the bacteria capability to bioaccumulate the toxic metals when the composite parts were introduced. However, due to lacking data points we cannot establish statistical significance. Our composite parts and our concept of using microbes to accumulate toxins in the human body deserves further investigation. </p>
+
+
+<h4 class="references js-toc-ignore" >References:</h4>
+<ul class="references">
+    <li>[1] Splichalova, A., Splichal, I., Sonnenborn, U., & Rada, V. (2014). A modified MacConkey agar for selective enumeration of necrotoxigenic E. coli O55 and probiotic E. coli Nissle 1917. J Microbiol Methods, 104, 82-86. doi:10.1016/j.mimet.2014.06.017
+Bart<li>[2] h, S., Duncker, S., Hempe, J., Breves, G., Baljer, G., & Bauerfeind, R. (2009). Escherichia coli Nissle 1917 for probiotic use in piglets: evidence for intestinal colonization. Journal of Applied Microbiology, 107(5), 1697-1710. doi:10.1111/j.1365-2672.2009.04361.
+Blum<li>[3] -Oehler, G., Oswald, S., Eiteljörge, K., Sonnenborn, U., Schulze, J., Kruis, W., & Hacker, J. (2003). Development of strain-specific PCR reactions for the detection of the probiotic Escherichia coli strain Nissle 1917 in fecal samples. Res Microbiol, 154(1), 59-66. doi:https://doi.org/10.1016/S0923-2508(02)00007-4
+Kost<li>[4] al, J., Yang, R., Wu, C. H., Mulchandani, A., & Chen, W. (2004). Enhanced arsenic accumulation in engineered bacterial cells expressing ArsR. Applied and environmental microbiology, 70(8), 4582–4587. doi:10.1128/AEM.70.8.4582-4587.2004
+Mase<li>[5] e, R., Maessen, F.J.M.J. (1981). Losses of silver, arsenic, cadmium, selenium, and zinc traces from distilled water and artificial sea-water by sorption on various container surface. Analytica Chimica Acta, 127 , pp. 206-210
+Carl<li>[6] in, A., Shi, W., Dey, S., & Rosen, B. P. (1995). The ars operon of Escherichia coli confers arsenical and antimonial resistance. Journal of bacteriology, 177(4), 981–986. doi:10.1128/jb.177.4.981-986.1995.
+Chen<li>[7] , C., Misra, T., Silver, S., Rosen, B. (1986). Nucleotide sequence of the structural genes for an anion pump: the plasmid-encoded arseniteal resistance operon. . J. Biol. Chem., 261, pp. 15030-15038.
+Borr<li>[8] emans, B., Hobman, J. L., Provoost, A., Brown, N. L., & van Der Lelie, D. (2001). Cloning and functional analysis of the pbr lead resistance determinant of Ralstonia metallidurans CH34. Journal of bacteriology, 183(19), 5651–5658. doi:10.1128/JB.183.19.5651-5658.2001
+Kim <li>[9] N. D., & Hill, S. J. (1993). Sorption of lead and thallium on borosilicate glass and polypropylene: Implications for analytical chemistry and soil science. Environ Technol, 14(11), 1015-1026. doi:10.1080/09593339309385378
+</ol>
+
+
+
+
+
+
+
+</div>
+{% include "partials/footer.nunjucks" %}
+
+{% endblock %}
