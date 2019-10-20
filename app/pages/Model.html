@@ -36,12 +36,12 @@ The model was devised to simulate the colony in a number of conditions, with onl
 <br>
 
 <p>
-<b>Equation (2)</b> describes the change in the number of mRNAs coding for the accumulation proteins and the transport proteins. The transcription rate Itsc is assumed to be constant once the promoter has been induced. Then the mRNA will degrade att the kinetic rate kRNA-deg.
+<b>Equation (3)</b> describes the change in the number of mRNAs coding for the accumulation proteins and the transport proteins. The transcription rate <i>tsc</i> is assumed to be constant once the promoter has been induced. Then the mRNA will degrade att the kinetic rate <i>k<sub>RNA-deg</sub></i>.
 </p>
 <br>
 
 <p>
-<b>Equation (2)</b> describes the rate of change in the number of transport proteins per cell. The proteins are translated from the mRNAs at a kinetic rate ktsl. The proteins are assumed to degrade at the kinetic rate kpro-deg. The kinetic rate -dN/dT/N was introduced to take into account the effective degradation due to cell growth. Every time a cell divides the average number of proteins in one cell is halved. These kinetics apply the other proteins as well.
+<b>Equation (4)</b> describes the rate of change in the number of transport proteins per cell. The proteins are translated from the mRNAs at a kinetic rate <i>k<sub>tsl</sub></i>. The proteins are assumed to degrade at the kinetic rate <i>k<sub>pro-deg</sub></i>. The kinetic rate <i>-dN/dT/N</i> was introduced to take into account the effective degradation due to cell growth. Every time a cell divides the average number of proteins in one cell is halved. These kinetics apply the other proteins as well.
 </p>
 <br>
 <p>
@@ -70,7 +70,7 @@ The model was devised to simulate the colony in a number of conditions, with onl
 <dtex>\frac{dC}{dt}= \frac{V_{max}}{1+k_m/ \frac{G}{v_{gut}}} \times TP − k_{capture} \times C \times AP_{free} + k_{pro−deg} \times  AP_{occupied} − \frac{dN}{dt} \times \frac{C}{N}  </dtex>
 </p>
 
-<button type="button" class="collapsible">Table 1: Time dependent variable</button>
+<button type="button" class="collapsible">&darr; Table 1: Time dependent variable</button>
 <table class="collapsible-content">
   <tr>
     <th>Varible</th>
@@ -106,7 +106,7 @@ The model was devised to simulate the colony in a number of conditions, with onl
   </tr>
 </table>
 <p></p>
-<button type="button" class="collapsible">Table 2: Parameter descriptions</button>
+<button type="button" class="collapsible">&darr; Table 2: Parameter descriptions</button>
 <table class="collapsible-content">
   <tr>
     <th>Parameter</th>
@@ -201,7 +201,7 @@ The model was devised to simulate the colony in a number of conditions, with onl
     </tr>
 </table>
 <p></p>
-<button type="button" class="collapsible">Table 3: Initial conditions</button>
+<button type="button" class="collapsible">&darr; Table 3: Initial conditions</button>
 <table class="collapsible-content">
   <tr>
     <th>Parameter</th>
@@ -243,7 +243,7 @@ Particle swarm optimization (PSO) is an optimization algorithm inspired by the m
 <p class="fig">Animation 2: Animation showing how particles navigate the solution space and converging on the global minimum. Courtesy: Ephramac, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
 <p>Data acquired from wetlab was used in order to derive the correct values for the colony model parameters. It’s important to keep in mind that the parameters are different in different conditions. Which parameter values that could be acquired from which measurement can be seen in table 4.</p>
 
-<button type="button" class="collapsible">Table 4: Parameters that can be derived from expeiments.</button>
+<button type="button" class="collapsible">&darr; Table 4: Parameters that can be derived from expeiments.</button>
 <table class="collapsible-content">
     <tr>
         <th>Experiment</th>
@@ -276,7 +276,7 @@ Particle swarm optimization (PSO) is an optimization algorithm inspired by the m
 
 <p>Before doing sensitivity analysis on parameters, it’s critical to estimate the sensible ranges of them since the analysis would inform the importance of parameters within the ranges. Range estimation is described in table 5. Furthermore, 5000 samples are taken for each parameter within its range. The higher the number of samples is, the more accurate the analysis is. 5000 seems to be a good number of samples for each for a complex system [6].</p>
 
-<button type="button" class="collapsible">Table 6: Range estimation of parameters of interest.
+<button type="button" class="collapsible">&darr; Table 6: Range estimation of parameters of interest.
 </button>
 <table class="collapsible-content">
     <tr>
@@ -301,7 +301,7 @@ Particle swarm optimization (PSO) is an optimization algorithm inspired by the m
     <tr>
         <td><i>k<sub>m</sub></i></td>
         <td>1e-5-1e14</td>
-        <td>The upper bound is based on literature value used in the parameter table above. The lower bound is estimated to be a small number bigger than 0 since it is known that km can’t be negative. </td>
+        <td>The upper bound is based on literature value used in the parameter table above. The lower bound is estimated to be a small number bigger than 0 since it is known that <i>k<sub>m</sub></i> can’t be negative. </td>
     </tr>
     <tr>
         <td><i>k<sub>RNA-deg</sub>, k<sub>tsl</sub>, k<sub>pro-deg</sub></i></td>
@@ -396,7 +396,7 @@ To make sure there were no mistakes in the implementation, results were compared
 <img class="fig" src="https://2019.igem.org/wiki/images/d/d5/T--Lund--growth-fitting.svg" alt="">
 </div>
 <p></p>
-<button type="button" class="collapsible">Table 5: Parameter values yielded from the parameter optimization.</button>
+<button type="button" class="collapsible">&darr; Table 5: Parameter values yielded from the parameter optimization.</button>
 <table class="collapsible-content">
   <tr>
     <th>Parameter</th>
