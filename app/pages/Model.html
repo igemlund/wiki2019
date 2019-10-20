@@ -2,9 +2,12 @@
 {% extends "layout.html" %}
 {% block content %} 
 {% include "partials/header.nunjucks" %}
-<h1 id="title" class="js-toc-ignore">Mathematical models for predicting the long term health benefits of using PRODEACC</h1>
+<h1 id="title" class="js-toc-ignore">Mathematical Models</h1>
 <div id="body">
-    <p>To better understand the long term health benefits of PRODEACC consumption, mathematical models of transformed <em>E. coli </em>Nissle 1917 colonies were developed. Unknown parameters were estimated using parameter optimization against data collected from in-vitro experiments. Once the models could predict the toxic metal bioaccumulation in a single colony, they could be integrated into existing models describing how lead and arsenic are bio-accumulated in the human body. By comparing the output of the modified body accumulation models to the output of the non-modified model, the long term effects of PRODEACC could be assessed. <strong>The modeling team has worked in conjunction with the lab group to reach this goal. In the beginning, it was planned to study the deaccumulating effects of PRODEACC on worms in order to assess the long term benefits. This id&eacute;a was discarded in favor of using computer models. The computer model has, therefore, had a huge impact on the lab work by alleviating this opportunity cost.</strong></p>
+<p class="ingress">We at iGEM Lund have developed mathematical models to see if toxic metal exposure can be treated with a daily intake of our gut bacteria, PRODEACC. This is the lead accumulation over 8 years when consuming 11 µg per day, with and without the use of PRODEACC. </p>
+
+<h1 class="js-toc-ignore">Predicting the Long Term Health Benefits of using PRODEACC</h1>
+    <p>To better understand the long term health benefits of PRODEACC consumption, mathematical models of transformed <em>E. coli </em>Nissle 1917 colonies were developed. Unknown parameters were estimated using parameter optimization against data collected from in-vitro experiments. Once the models could predict the toxic metal bioaccumulation in a single colony, they could be integrated into existing models describing how lead and arsenic are bio-accumulated in the human body. By comparing the output of the modified body accumulation models to the output of the non-modified model, the long term effects of PRODEACC could be assessed. <b>The modeling team has worked in conjunction with the lab group to reach this goal. In the beginning, it was planned to study the deaccumulating effects of PRODEACC on worms in order to assess the long term benefits. This id&eacute;a was discarded in favor of using computer models. The computer model has, therefore, had a huge impact on the lab work by alleviating this opportunity cost.</b></p>
     <br>
 <p>
 To better understand this text it’s recommended to read the <a href="/Team:Lund/Description">project description</a> before continuing.
@@ -271,6 +274,7 @@ Particle swarm optimization (PSO) is an optimization algorithm inspired by the m
 <br>
 <p>In particular, a global sensitivity analysis (GSA) method called Sobol is used, which is a variance-based analysis. GSA allows us to vary all the parameters simultaneously to evaluate their relative contribution to the model outputs as well as their interaction with each other [6]. Unlike local sensitivity analysis, which only allows for the evaluation of one parameter at a time. The steps for Sobol analysis are described in the figure below.</p>
 
+<h5 class="fig">Figure Header</h5>
 <img class="fig"src="https://2019.igem.org/wiki/images/3/38/T--Lund--sobol.svg" alt="">
 <p class="fig">Figure 1: Pre-Sobol and Sobol sensitivity analysis steps [6]</p>
 
