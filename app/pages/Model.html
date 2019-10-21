@@ -27,7 +27,7 @@ To better understand this text it’s recommended to read the <a href="/Team:Lun
     <source src="https://2019.igem.org/wiki/images/d/d8/T--Lund--colony-model.webm" type="video/webm">
     <source src="https://2019.igem.org/wiki/images/b/bb/T--Lund--colony-model.mp4" type="video/mp4">
 </video>
-<p class="fig" >Animation 1: A graphical representation of the rate of change of the ions and proteins described by equation (1) and (3)-(7). </p>
+<p class="fig" >Animation 1: A graphical representation of the rate of change of the ions and proteins described by equation (1) and (3)-(7). (*For the accutal rate, see equation 1.)</p>
 
 <h3 id="derivatoin-of-equations">Derivation of Equations</h3>
 <p>
@@ -379,7 +379,7 @@ To make sure there were no mistakes in the implementation, results were compared
 <p>To integrate the colony uptake model into the body uptake it first had to be modified. The original-, modified- and colony integrated versions of the GI-tract-liver dynamics can be seen in figure 5.</p>
 
 <img class="fig" src="https://2019.igem.org/wiki/images/3/34/T--Lund--model-mod.svg" alt="">
-<p class="fig">Figure 5: Overview of the original liver-gut compartment, the modified liver-gut compartement, and the colony model integrated liver-gut compartement.</p>
+<p class="fig">Figure 5: Overview of the original liver-gut compartment, the modified liver-gut compartement, and the colony model integrated liver-gut compartement.(*For the actual rate, see equation 1.)</p>
 <br>
 
 <p>In the original version, the oral lead intake was described as a constant rate <i>IR<sub>gi</sub></i>. The rate being absorbed by the liver was described as a fraction of the daily intake. Which means it tells how much of lead is being absorbed daily but not how fast. To integrate the colony uptake model, these dynamics had to be replaced by first-order kinetic rates, similar to the rates found in the body uptake model for arsenic. The daily intake <i>IR<sub>gi</sub></i> was then set as an initial condition for the GI tract differential equation. The model could then be solved piecewise, each time with the initial condition <i>G(0) = IR<sub>gi</sub></i>. The original (8) and the modified (9) equation for the gut-compartement can be seen below.</p>

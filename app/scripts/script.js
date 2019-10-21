@@ -7,7 +7,8 @@ tocbot.init({
     tocSelector: '.js-toc',
     contentSelector: '#body',
     headingSelector: 'h1, h2, h3, h4',
-    orderedList: false
+    orderedList: false,
+    collapseDepth: 0
 });
 
 $(window).scroll(function(){
