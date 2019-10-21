@@ -4,7 +4,7 @@
 {% include "partials/header.nunjucks" %}
 <h1 id="title" class="js-toc-ignore">Mathematical Models</h1>
 <div id="body">
-<p class="ingress">We at iGEM Lund have developed mathematical models to see if toxic metal exposure can be treated with a daily intake of our gut bacteria, PRODEACC. This animation shows the lead accumulation over 8 years when consuming 11 µg lead per day, with and without the use of PRODEACC. </p>
+<p class="ingress">We at iGEM Lund have developed mathematical models to see if toxic metal exposure can be treated with a daily intake of our gut bacteria, PRODEACC. This animation shows the of lead accumulation over 8 years when consuming 11 µg lead per day, with and without the use of PRODEACC. </p>
 <video class="fig" autoplay muted loop playsinline>
     <source src="https://2019.igem.org/wiki/images/9/9b/T--Lund--SidebySideV2_logo_Wiki.webm" type="video/webm">
     <source src="https://2019.igem.org/wiki/images/0/00/T--Lund--SidebySideV2_logo_Wiki.mp4" type="video/mp4">
@@ -60,12 +60,11 @@ The model was devised to simulate the colony in a number of conditions, with onl
 <p>
 <b>Equation (6)</b> describes the rate of change in the number of occupied accumulation proteins, the proteins bound to an ion. The kinetics are similar to that of equation (5).
 </p>
-
+<br>
 <p>
 <b>Equation (7)</b> describes the rate of change in the number of free ions in the cytoplasm of one bacteria. Ions go from the gut into the cytoplasm, so the equation has the term from equation (2) but with different signs. Once the ions are bound to accumulation proteins, they are no longer free and are removed from the compartment with the same rate as it is removed from the free accumulation proteins compartment from equation (5). Whenever an occupied accumulation protein is degraded, the ion bound to it is released back to the cytoplasm, hence the positive term proportional to the number of occupied accumulation proteins. Last but not least, a negative term to take into account the fact that the number of ions in cytoplasm gets halved every time the bacteria divides. 
-<br>
-
 </p>
+<br>
 
 
 <p class ="math">
@@ -114,6 +113,7 @@ The model was devised to simulate the colony in a number of conditions, with onl
   </tr>
 </table>
 <p></p>
+<br>
 <button type="button" class="collapsible">&darr; Table 2: Parameter descriptions</button>
 <table class="collapsible-content">
   <tr>
@@ -201,7 +201,7 @@ The model was devised to simulate the colony in a number of conditions, with onl
         <td><a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=Weimar%20WR%5BAuthor%5D&cauthor=true&cauthor_uid=2185228">R J Bergeron and W R Weimar</a> The parameter is for another bacteria and another transport protein. Original unit is microM.</td>
     </tr>
     <tr>
-        <td><i>k<sub>ca</sub></i></td>
+        <td><i>k<sub>capture</sub></i></td>
         <td>Accumulation protein capture rate</td>
         <td>0.1</td>
         <td>/h</td>
@@ -209,6 +209,7 @@ The model was devised to simulate the colony in a number of conditions, with onl
     </tr>
 </table>
 <p></p>
+<br>
 <button type="button" class="collapsible">&darr; Table 3: Initial conditions</button>
 <table class="collapsible-content">
   <tr>
@@ -252,7 +253,7 @@ Particle swarm optimization (PSO) is an optimization algorithm inspired by the m
 <img class="fig-small" src="https://2019.igem.org/wiki/images/9/90/T--Lund--pso.gif" alt="">
 <p class="fig">Animation 2: Animation showing how particles navigate the solution space and converging on the global minimum. Courtesy: Ephramac, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
 <p>Data acquired from wetlab was used in order to derive the correct values for the colony model parameters. It’s important to keep in mind that the parameters are different in different conditions. Which parameter values that could be acquired from which measurement can be seen in table 4.</p>
-
+<br>
 <button type="button" class="collapsible">&darr; Table 4: Parameters that can be derived from expeiments.</button>
 <table class="collapsible-content">
     <tr>
@@ -277,7 +278,7 @@ Particle swarm optimization (PSO) is an optimization algorithm inspired by the m
 
 </p> 
 <h3 id="sensitivity">Sensitivity Analysis</h3>
-<p>When having a complex system of inputs and outputs, it’s difficult to know which inputs have more effects on the outputs. Insight on how to adjust the system to a preferred output can be acquired via sensitivity analysis, in this case how to improve the probiotic’s ability to accumulate metals. Several parameters in the colony model have the potential to be critical, such as  <i>k<sub>ca</sub></i> (the capture rate of accumulation protein, which does not have an importance in the current state of this model), <i>k<sub>m</sub></i> and <i>V<sub>max</sub></i> (the rate constants for transport protein), or <i>k<sub>growth</sub></i> and <i>N<sub>max</sub></i> (the growth rate and the maximum concentration of the bacteria colony), etc. So knowing the importance of these parameters for the de-accumulating effect is also knowing which part of the bacteria colony should be focused on for future improvement. It can either the accumulation protein, the transport protein or the survival of bacteria itself. In order to do that, sensitivity analysis is carried out on the model.</p>
+<p>When having a complex system of inputs and outputs, it’s difficult to know which inputs have more effects on the outputs. Insight on how to adjust the system to a preferred output can be acquired via sensitivity analysis, in this case how to improve the probiotic’s ability to accumulate metals. Several parameters in the colony model have the potential to be critical, such as  <i>k<sub>capture</sub></i> (the capture rate of accumulation protein, which does not have an importance in the current state of this model), <i>k<sub>m</sub></i> and <i>V<sub>max</sub></i> (the rate constants for transport protein), or <i>k<sub>growth</sub></i> and <i>N<sub>max</sub></i> (the growth rate and the maximum concentration of the bacteria colony), etc. So knowing the importance of these parameters for the de-accumulating effect is also knowing which part of the bacteria colony should be focused on for future improvement. It can either the accumulation protein, the transport protein or the survival of bacteria itself. In order to do that, sensitivity analysis is carried out on the model.</p>
 <br>
 <p>In particular, a global sensitivity analysis (GSA) method called Sobol is used, which is a variance-based analysis. GSA allows us to vary all the parameters simultaneously to evaluate their relative contribution to the model outputs as well as their interaction with each other [6]. Unlike local sensitivity analysis, which only allows for the evaluation of one parameter at a time. The steps for Sobol analysis are described in the figure below.</p>
 <br>
