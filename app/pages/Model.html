@@ -39,78 +39,8 @@
       <td>True negative (TN).</td>
   </tr>
 </table>
-
-
-
-
-
-To better understand this text it’s recommended to read the <a href="/Team:Lund/Description">project description</a> before continuing.
-</p>
-<h2 id="Modeling-growth-and-ion-accumulation in a singel colony">Bioaccumulation in a Bacteria Colony</h2>
-
-<p>
-    To model the growth, protein production and ion accumulation of a single colony, a system of seven differential equations was devised. Equation (1) and (2) describes the colony as a whole and the concentration of ions in its growth medium, whereas equation (3) - (7) describes the changes inside the average individual cell. A graphical representation of the equation can be found in animation 1. Short descriptions of the time-dependent variables can be found in table 1. Descriptions and approximate values of the parameters can be found in table 2. The initial parameters for the initial conditions can be found in table 3.
-</p>
-<br>
-<p><b>Equation (1)</b> describes the precision in the binary confusion matrix .</p>
-<br>
-<p><b>Equation (2)</b> describes the recall in the binary confusion matrix. </p>
-<br>
-<b>Equation (3)</b> describes the f1 score in the binary confusion matrix. </p>
-<br>
-<b>Equation (4)</b> describes the precision of A in the multilabel confusion matrix.  </p>
-<br>
-<b>Equation (5)</b> describes the Recall of A in the multilabel confusion matrix. </p>
-<br>
-<b>Equation (6)</b> defines the harmonic mean of the AFP precision (here A) and the NoAFPAMP recall (here B). The values for the NoAMP class are denoted by C. See the multilabel confusion matrix for reference. </p>
-<br>
-
-
-<p class ="math">
-<dtex> Precision =\frac{TP}{TP + FP}</dtex>
-<dtex>Recall  =\frac{TP}{TP + FN}</dtex> 
-<dtex>F1Score=\frac{PrecisionxRecall}{Precision+Recall}</dtex>
-<dtex>Precision_{A} = \Frac{Aa}{Aa+Ba+Ca} </dtex>
-<dtex>Recall_{A} =\ Frac{Aa}{Aa+Ab+Ac}</dtex> 
-<dtex>HM=\frac{2}{Precision_{A}^{-1} + Recall_{B}^{-1}} = \frac{2Aa x Bb}{2Aa x Bb + Aa(Bc+Ba)+Bc(Ca+Ba)} = (1+ \frac{Ba + Bc}{Bb} + \frac{Ba + Ca}{Aa})^{-1}  </dtex>
-</p>
-
-<button type="button" class="collapsible">&darr; Table 1: Confusion matrix in binary classification:</button>
-<table>
-  <tr>
-    <th>Varible</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td><i>N</i></td>
-    <td>The total number of living cells in the growth medium.</td>
-  </tr>
-  <tr>
-    <td><i>G</i></td>
-    <td>The total number of ions in the growth medium.</td>
-  </tr>
-  <tr>
-      <td><i>mRNA</i></td>
-      <td>The number of mRNAs coding for the ion-transport protein and the ions accumulation protein.</td>
-  </tr>
-  <tr>
-      <td><i>TP</i></td>
-      <td>The number of transport proteins expressed in a single cell.</td>
-  </tr>
-  <tr>
-      <td><i>AP<sub>free</sub></i></td>
-      <td>The number of free accumulation protein expressed inside a single cell.</td>
-  </tr>
-  <tr>
-      <td><i>AP<sub>occupied</sub></i></td>
-      <td>The number of accumulation protein expressed a single cell, that are bound to an ion.</td>
-  </tr>
-  <tr>
-      <td><i>C</i></td>
-      <td>The number of free ions inside the cytoplasm of a single cell.</td>
-  </tr>
-</table>
 <p></p>
+
 <br>
 <button type="button" class="collapsible">&darr; Table 2: Confusion matrix in Multilabel classification</button>
 <table>
@@ -139,30 +69,209 @@ To better understand this text it’s recommended to read the <a href="/Team:Lun
     <td>Cc</td>
   </tr>
 </table>
+<h3 id="js-toc-ignore">Multilabel metrics:</h3>
+<p>Which metric to use depends on the objective of the model. When dealing with a multilabel dataset, one gets even more alternatives. One could look at global metrics such as the macro-average or micro-average of multilabel metrics such as precision and recall, or individual metrics of each label. </p>
+<p>Given the stated issues and challenges when choosing a metric as well as the purpose of the STAAC model of generating new peptides with high antifungal properties and low antibacterial properties, we decided to mainly monitor the precision of the AFP-classification and the recall of the NoAFPAMP-classification. A logical way of combining the two metrics into one is taking the harmonic average, similar to how one computes the commonly used f1-score. 
+</p>
+<p>Optimizing the AFP-classification precision results in a model that strongly punishes “risky” patterns that may misclassify peptides as AFPs. We hypothesize that this would be analogous to the model promoting only strong antifungal properties in peptides. Optimizing the NoAFPAMP-classification recall results in a model that more strongly classifies peptides as NoAFPAMPs. We hypothesize that this is analogous to the model promoting non-antifungal, antimicrobial properties, classifying even the weak properties as NoAFPAMP. Knowing that the model is more sensitive to promoting AFPs and more strongly promotes NoAFPAMPs we hypothesize that if we then maximize the predicted probability of a given peptide being an AFP and minimize the probability of it being a NoAFPAMP, we will be able to generate peptides with high antifungal properties and low antibacterial properties. </p>
+<h2 id="js-toc-ignore">Method</h2>
+<h3 id="js-toc-ignore">Data Management:</h3>
+<p>Peptides were imported, cleaned, and sorted into the groups “Antifungal peptides” (AFPs), “Non-antifungal, antimicrobial peptides” (NoAFP-AMPs), and “Non-antimicrobial peptides” (NoAMPs). Peptides with a length between 10 and 50, inclusive, were selected. Peptides with missing information on their antifungal properties were not removed but classified as not having antifungal properties. Not removing peptides with missing data was a mistake which probably resulted in a worse model. A limited schedule is to blame for why this issue persists.</p>
+<p>120 AFPs, 20 NoAFP-AMPs, and 100 NoAMPs were randomly chosen to be moved to a holdout data set. The remaining 11563 peptides were randomly split into two groups: 80 % to a data set used to train the first three independent classifiers (Sequential Model, Trigrams Model, PseAAC Model), and 20 % to a data set used to train the SVM. The complete distribution of peptides can be seen in the table below. </p>
+<br>
+<button type="button" class="collapsible">&darr; Table 3: The complete distribution of peptides</button>
+<table>
+  <tr>
+    <th>      </th>
+    <th>AFP</th>
+    <th>NoAFP-AMP</th>
+    <th>NoAMP</th>
+  </tr>
+  <tr>
+      <td><b>Classifier Training</b></td>
+      <td>4317</td>
+      <td>506</td>
+      <td>5995</td>
+  </tr>
+  <tr>
+    <td><b>SVM Training</b></td>
+    <td>1079</td>
+    <td>126</td>
+    <td>1499</td>
+  </tr>
+  <tr>
+    <td><b>Holdout Data</b></td>
+    <td>120</td>
+    <td>20</td>
+    <td>100</td>
+  </tr>
+</table>
+<h2 id="js-toc-ignore">Feature extraction:</h2>
+<p>Features were extracted from the peptide strings in three different ways:</p>
+<h3 id="js-toc-ignore">Sequential Transformation:</h3>
+<p>Each given string of amino acids was transformed into a 50 x 20 binary matrix where the 50 rows represented each position in the string and the 20 columns represented the 20 possible values at each position. The string “ABD” would hence be transformed into a 50 x 20 matrix of zeros with ones at the positions (0,0), (1,1), and (2,3). The matrices were then flattened into a single list of binary values. Using a <a href="(https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html?highlight=standard%20scaler#sklearn.preprocessing.StandardScaler">sklearn Standard Scaler</a>, the data was normalized.  </p>
+<h3 id="js-toc-ignore">Ngrams Transformation:</h3>
+<p>Mono-, bi- and trigrams were extracted from the strings using <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html">sklearn CountVectorizer</a> analyzing characters with a fixed vocabulary. The three transformations were concatenated. Using a sklearn Standard Scaler, the data was normalized. </p>
+<h3 id="js-toc-ignore"> PseAAC:</h3>
+<p>The Pseudo amino acid composition of each peptide was computed using lambda = 2 and for every 63 combinations of the six amino acid properties 'Hydrophobicity', 'hydrophilicity', 'residue mass', 'pK1', 'pK2' and 'pI' using <a href="https://github.com/gadsbyfly/PyBioMed">PyBioMed </a>. </p>
+<p>This resulted in a 63 x 22 matrix that was then flattened into a single list. Using a sklearn Standard Scaler, the data was normalized. Similar to (https://www.worldscientific.com/doi/abs/10.1142/S0219720018500166) features were then selected using recursive feature elimination, removing two features at a time. Here sklearn RFE was used with an inversely weighted sklearn Random Forest Classifier. 400 of the 1386 features were selected. </p>
+<h2 id="js-toc-ignore">Model creation:</h2>
+<p>Four different models were created; two neural networks, trained on the sequentially transformed data and the mono-, bi- and trigrams data respectively, a random forest classifier, trained on the PseAAC data, and an SVC, used to combine the three previously mentioned models. </p>
+<h4 class="js-toc-ignore" class="js-toc-ignore">Sequential Model:</h4>
+<p> A neural network was built using <a href="https://www.tensorflow.org/guide/keras/sequential_model">TensorFlow.Keras</a>:
+<ul>
+<li>Layers: 3 dense layers</li>
+<li>Nodes: 10 per layer</li>
+<li>Activation function: ReLu</li>
+<li>Regularization: L2, L=0.05</li>
+<li>Output layer: 3 nodes, activation: sigmoid</li>
+<li>Optimizer: Adam</li>
+<li>Loss function: Binary Crossentropy</li>
+</ul></p>
+<p class="fig">The model was trained on the designated 80 % of the sequentially transformed data, inversely weighted, for 12 epochs.</p>
+<br>
+<h4 class="js-toc-ignore" class="js-toc-ignore">Ngrams Model:</h4>
+<p> A neural network was built using <a href="https://www.tensorflow.org/guide/keras/sequential_model">TensorFlow.Keras</a>:
+<ul>
+<li>Layers: 3 dense layers with 30 % dropout</li>
+<li>Nodes: 10 per layer</li>
+<li>Activation function: ReLu</li>
+<li>Regularization: L2, L=0.01</li>
+<li>Output layer: 3 nodes, activation: sigmoid</li>
+<li>Optimizer: Adam</li>
+<li>Loss function: Binary Crossentropy</li>
+</ul></p>
+<p class="fig">The model was trained on the designated 80 % of the mono-, bi- and trigrams transformed data, inversely weighted, for 4 epochs. </p>
+<br>
+<h2 id="js-toc-ignore">PseAAC Model:</h2>
+<pr>The designated 80 % of the PseAAC data was used to train a Random Forest Classifier (200 estimators, maximum depth of each tree: 20 nodes, maximum number of features supplied to each tree: 9, minimum samples per leaf: 4, criterion: entropy). The training data was inversely weighted to account for label imbalance. </pr>
+<br>
+<h2 id="js-toc-ignore">SVM Model:</h2>
+<p>The designated 20 % of the peptides were used to generate predictions from the three different previously described models. The models’ predictions were concatenated into a 3x3 matrix. The column describing the predictions of NoAFP-AMP was dropped to reduce the number of features, resulting in a 3x2 matrix that was then flattened to a 6x1 list. The data was inversely weighted and used to train a sklearn SVC using an RBF kernel (gamma=0.1).</p>
+<br>
+  
 
-<p></p>
 
 <br>
+<button type="button" class="collapsible">&darr; Table 4: Results</button>
+<table>
+  <tr>
+    <th>      </th>
+    <th>Training Accuracy</th>
+    <th>Test Accuracy</th>
+    <th>AFP Precision</th>
+    <th>NoAFPAMP Precision</th>
+    <th>AFP Recall</th>
+    <th>NoAFPAMP Recall</th>
+    <th>HM</th>
+  </tr>
+  <tr>
+      <td><b>Sequential Model</b></td>
+      <td>0.74</td>
+      <td>0.70</td>
+      <td>0.65</td>
+      <td>0.17</td>
+      <td>0.65</td>
+      <td>0.73</td>
+      <td>0.69</td>
+  </tr>
+  <tr>
+    <td><b>Ngrams Model</b></td>
+    <td>0.89</td>
+    <td>0.77</td>
+    <td>0.70</td>
+    <td>0.24</td>
+    <td>0.76</td>
+    <td>0.60</td>
+    <td>0.65</td>
+</tr>
+<tr>
+    <td><b>PseAAC Model</b></td>
+    <td>0.97</td>
+    <td>0.86</td>
+    <td>0.78</td>
+    <td>0.44</td>
+    <td>0.80</td>
+    <td>0.25</td>
+    <td>0.38</td>
+</tr>
+<tr>
+    <td><b>SVM</b></td>
+    <td>0.85</td>
+    <td>0.84</td>
+    <td>0.83</td>
+    <td>0.29</td>
+    <td>0.72</td>
+    <td>0.67</td>
+    <td>0.74</td>
+</tr>
+<tr>
+    <td><b>Holdout</b></td>
+    <td>  </td>
+    <td>0.78</td>
+    <td>0.88</td>
+    <td>0.3</td>
+    <td>0.69</td>
+    <td>0.55</td>
+    <td>0.65</td>
+</tr>
+</table>
+<h2 id="js-toc-ignore">Creation of new peptides:</h2>
+<p>New peptides were created using a genetic algorithm similar to (ref). Several different metrics were used as loss functions to efficiently generate 10 very different peptides. Due to time restrictions, only two of the 10 were selected to be tested experimentally. 
+    These were:
+    </p>
+<br>
+<button type="button" class="collapsible">&darr; Table 5: Peptides Selected to be Tested Experimentally</button>
+<table>
+  <tr>
+    <th> Peptide name </th>
+    <th>Sequence</th>
+    <th>P(AFP)</th>
+    <th>P(NoAMP)</th>
+    <th>P(NoAFP-AMP)</th>
+  </tr>
+  <tr>
+    <td><b>WHIPR</b></td>
+    <td>KATRIVWWRCEKKIKLLLLEFWHIPRPRFH</td>
+    <td>0.91</td>
+    <td>0.05</td>
+    <td>0.04</td>
+  </tr>
+  <tr>
+    <td><b>MAFP-1</b></td>
+    <td>IGKHWKHWAKR</td>
+    <td>0.87</td>
+    <td>0.08</td>
+    <td>0.05</td>
+  </tr>
+</table>
 
-<h4 class="references js-toc-ignore" >References:</h4>
-<ul class="references">
-    <li>[1] Stewart, James; Clegg, Daniel (2012). Brief Applied Calculus. (p. 358)</li>
-    <li>[2] Jaroslawiecka, A., & Piotrowska-Seget, Z. (2013). Lead resistance in micro-organisms. Microbiology, 160(Pt_1), 12–25. doi: 10.1099/mic.0.070284-0</li>
-    <li>[3] Lodish, H. (2002). Molecular cell biology. New York, NY: Freeman. (p. 249)</li>
-    <li>[4] Zhan, Zhang, and Chung. Adaptive particle swarm optimization, IEEE Transactions on Systems, Man, and Cybernetics, Part B: CyberneticsVolume 39, Issue 6, 2009, Pages 1362-1381 (2009)</li>
-    <li>[5] Akman, D., Akman, O., & Schaefer, E. (2018). Parameter Estimation in Ordinary Differential Equations Modeling via Particle Swarm Optimization. Journal of Applied Mathematics, 2018, 1–9. doi: 10.1155/2018/9160793</li>
-    <li>[6] Zhang, X. Y., Trame, M. N., Lesko, L. J., & Schmidt, S. (2015). Sobol Sensitivity Analysis: A Tool to Guide the Development and Evaluation of Systems Pharmacology Models. CPT: pharmacometrics & systems pharmacology, 4(2), 69–79. doi:10.1002/psp4.</li>6
-    <li>[7]  Dede, Eric, et al. "Physiologically-based pharmacokinetic and toxicokinetic models for estimating human exposure to five toxic elements through oral ingestion." Environmental toxicology and pharmacology 57 (2018): 104-114</li>
-    <li>[8] El-Masri, H. A and Kenyon, E. M (2008). Development of a human physiologically based pharmacokinetic (PBPK) model for inorganic arsenic and its mono- and di-methylated metabolites. Journal of Pharmacokinetics and Pharmacodynamics, 35(1), 31–68. doi: 10.1007/s10928-007-9075-z</li>
-    <li>[9] Libretexts. (2019, June 5). The Rate Law. Retrieved from https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Kinetics/Rate_Laws/The_Rate_Law</li>
-    <li>[10] O’Flaherty, E. J. (1991). Physiologically based models for bone-seeking elements. Toxicology and Applied Pharmacology, 111(2), 313–331. doi: 10.1016/0041-008x(91)90033-b</li>
-    <li>[11] O'Flaherty E. J. (1998). A physiologically based kinetic model for lead in children and adults. Environmental health perspectives, 106 Suppl 6(Suppl 6), 1495–1503. doi:10.1289/ehp.98106s61495</li>
-    <li>[12] Fleming, D. E., Chettle, D. R., Webber, C. E., and O’Flaherty, E. J. (1999). The OFlaherty Model of Lead Kinetics: An Evaluation Using Data from a Lead Smelter Population. Toxicology and Applied Pharmacology, 161(1), 100–109. doi: 10.1006/taap.1999.8790</li>
-    <li>[13] Center for Food Safety and Applied Nutrition. (n.d.). Lead in Food, Foodwares, and Dietary Supplements. Retrieved October 19, 2019, from https://www.fda.gov/food/metals/lead-food-foodwares-and-dietary-supplements.</li>
-    <li>[14] Sharma, M., Maheshwari, M., & Morisawa, S. (2005). Dietary and Inhalation Intake of Lead and Estimation of Blood Lead Levels in Adults and Children in Kanpur, India. Risk Analysis, 25(6), 1573–1588. doi: 10.1111/j.1539-6924.2005.00683.x</li>
-    <li>[15] Agency for Toxic Substances and Disease. (2007, August 1). Toxic Substances Portal - Arsenic. Retrieved October 19, 2019, from https://www.atsdr.cdc.gov/phs/phs.asp?id=18&tid=3.</li>
-    <li>[16] https://bionumbers.hms.harvard.edu/bionumber.aspx?id=111997&ver=5</li>
-</ul>
+<p><b>Equation (1)</b> describes the precision in the binary confusion matrix.
+</p>
+<br>
+<p><b>Equation (2)</b> describes the recall in the binary confusion matrix. 
+</p>
+<br>
+<p><b>Equation (3)</b> describes the f1 score in the binary confusion matrix. 
+</p>
+<br>
+<p><b>Equation (4)</b> describes the precision of A in the multilabel confusion matrix.  
+</p>
+<br>
+<p><b>Equation (5)</b> describes the Recall of A in the multilabel confusion matrix. 
+</p>
+<br>
+<p><b>Equation (6)</b> defines the harmonic mean of the AFP precision (here A) and the NoAFPAMP recall (here B). The values for the NoAMP class are denoted by C. See the multilabel confusion matrix for reference.
+ </p>
+<br>
+
+<p class ="math">
+    <dtex>Precision =\frac{TP}{TP + FP}</dtex> 
+    <dtex>Recall  =\frac{TP}{TP + FN}</dtex> 
+    <dtex>F1Score=\frac{PrecisionxRecall}{Precision+Recall}</dtex>
+    <dtex> Recall_{A}=\frac{ Aa }{ Aa+Ab+Ac } </dtex>
+    <dtex>HM =\frac{2}{Precision_{ A }^{-1} + Recall_{ B }^{-1}} = \frac{ 2Aa \times Bb }{ 2Aa \times Bb + Aa(Bc+Ba)+Bc(Ca+Ba) } = (1+ \frac{ Ba + Bc }{ Bb } + \frac{ Ba + Ca }{ Aa })^{-1} </dtex>
+   </p>
 </div>
 {% include "partials/footer.nunjucks" %}
 </div>
