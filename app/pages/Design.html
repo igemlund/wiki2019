@@ -4,48 +4,49 @@
 <h1 id="title" class="js-toc-ignore">Project Design</h1>
 <div id="body">
 <p class="ingress" >This page discusses the design of the project and the theory behind it.</p>
+<h3 id="js-toc-ignore">Background</h3>
+<p><strong><em></em>Phytopththora infestans</strong>, or late blight, is the causal pathogen of potato late blight. In order to combat it, heavy preventative use of pesticides is required, and potatoes account for high pesticide use per crop area. In order to minimize the impact of the pesticides used, sustainable ones are necessary.The best current pesticide, oxathiapiprolin is excellent as compared to the historic ones, but <i>P. infestans</i> has a plastic genome and is prone to developing resistance, and as such a pipeline of sustainable pesticides is necessary.&nbsp;</p>
 <h2 id="process">Design Process</h2>
-<p>Our design followed the engineering principle of first analyzing the problem which had been chosen, that is, the accumulation of toxic metals in the body, and then analyzing a probable solution. The solution we came up with was to prevent accumulation of the toxic metals before they could act out their harmful effects in the body. Since a majority of <i>in vivo</i> accumulated metals comes from food and beverage, the idea of a modified probiotic bacteria emerged, which could, in theory, accumulate the metal in your place and then leave the body via excretion. By investigating literature we found bacteria which was capable of accumulating metals, which then could be used as a model bacteria and applied to a safe, ingestible bacteria. Genes for metal remediation were identified (specific details of the design and composition can be found <a href="/Team:Lund/Design#applied-design">below</a>). Since most probiotic bacteria can be a struggle to work with, a probiotic strain of <em>E. coli </em>was chosen: <i>E. coli</i> Nissle 1917 (henceforth EcN). This strain isn't documented well, therefore <em>E. coli</em> BL21-DE3 was also used as a safe bet.&nbsp;</p>
+<p>A potent, sustainable and efficiently produced antimicrobial agent is required to compete with current pesticides. Antimicrobial peptides either inhibit or kill the susceptible microorganisms, and are part of plants' and animals’ immune defense. We believe that these can be taken from one organism, transferred to another, and then serve to protect the previously vulnerable plant, much like humans requiring antibodies for their immune system to work properly. We decided to try to create a simple SynBio system to achieve this.&nbsp;</p>
+<h3 id="js-toc-ignore">Expression System</h3>
+<p>Our constructs are designed to be cloned into pET-11a and expressed in <i>E. coli</i> BL21 (DE3), and should have a strong expression after IPTG. With it comes the T7 promoter (code) and terminator (code) as parts. However other chassis and plasmids can likely be used with good success.
+<h3 id="js-toc-ignore">Designing the composite parts</h3>
+<p>The composite parts follow the same pattern, having a his-tag, fusion partner, protease cleavage site and lastly the AMP coding region, depicted in figure 1. For enterokinase, the His-tag is instead located at the C-terminal. which can be seen in figure 2.
+<p> The purpose of the His-tag is to enable protein purification for later analysis. The fusion partners are either Thioredoxin 1 or Glutathione S-Transferase, which should both increase solubility and expression rates. Thioredoxin 1 could also help in catalyzing cysteine bridges of the AMPs. The Ek-cleavage site is added to enable separation of fusion partner and AMP/Ek with proteolytic cleavage of enterokinase. And lastly the AMP and Ek parts are the main functional units of the constructs.
 
-<h3 id="js-toc-ignore">How do some Bacteria Deal with Toxic Metals?</h3>
-<p>Depending on the level of exposure of toxic metals bacteria have had during its evolution its genome has adapted in different ways. A special case is <strong><em>Cupriavidus metallidurans</em></strong> strain CH34, as it has been subject to high levels of toxic metal stress and has developed two megaplasmids, pMOL28 and pMOL30 because of it. These plasmids contain genes coding for toxic metal remediation.&nbsp;</p>
-
-<h2 id="applied-design">Applied Design</h2>
-<p>By taking some of the genes from <i>C. metallidurans</i> CH34 and inserting them into a probiotic chassis, EcN, we could increase the arsenic- and lead-accumulation capabilities of EcN. The bacteria is then to be ingested as a probiotic, where it adapts to our gut microbiome due to the innate abilities of EcN. There, it will accumulate arsenic and lead in your place. Soon the bacteria full of metals will be excreted, decreasing the amount of toxic metals in your body. Our engineered EcN will most likely not cause any harm in nature. In fact, it will most likely die due to its wasteful expendidature of energy on overexpressing our proteins. However, we understand that while genetically modified microbes are rare, the idea of environmental exposure is frightening.&nbsp;</p>
-<h3 id="lead">Lead</h3>
-<p>The proteins responsible for lead remediation in <i>C. metallidurans</i> are present in the pbr operon. The mechanism of the <em>C. metallidurans</em> pbr operon on pMOL30 is described in figure 1.
     <br>
     <img class="fig-small" src="https://2019.igem.org/wiki/images/4/47/T--Lund--lead-resistence.svg" alt="">
-    <p class="fig">Figure 1: from &ldquo;Lead(II) resistance in <i>Cupriavidus metallidurans</i> CH34: the interplay between plasmid and chromosomally-located functions&rdquo; Safiyh Taghavi, Celine Lesaulnier, Sebastien Monchy, Ruddy Wattiez, Max Mergeay, Daniel van der Lelie</p>
+    <p class="fig">Figure 1: The components of the AMP insert. Fusion partner is either Trx A or GST, Cleavage site is for enterokinase and AMPs is either AMP.</p>
+    <br>
+    <img class="fig-small" src="https://2019.igem.org/wiki/images/4/47/T--Lund--lead-resistence.svg" alt="">
+    <p class="fig">Figure 2: The components of the EK insert. Fusion partner is either Trx A or GST, Cleavage site is for enterokinase and EK is enterokinase, light chain.
+    </p>
+<h3 id="js-toc-ignore">Activating the AMPs</h3>
+<p>After successfully expressing the constructs, the AMP-fusion proteins will have to be digested by enterokinase to free the AMPs from their fusion partners. Enterokinase is expressed using a fusion partner as well, but will self-digest through auto catalyzed cleavage and become a fully active enterokinase. Enterokinase will be mixed with the individual cell lysates of the AMPs, and enterokinase will then digest the AMP-fusion proteins as seen in figure 3. This will result in free, active AMPs that are ready for application.
+    <br>
+    <img class="fig-small" src="https://2019.igem.org/wiki/images/4/47/T--Lund--lead-resistence.svg" alt="">
+    <p class="fig">Figure 3: presenting how expressed Trx-Enterokinase will first self-digest and then enterokinase will continue digesting the AMP-fusion proteins. 
+<h3 id="js-toc-ignore">Double or single plasmid system</h3>
+<p> The first step for expressing the AMP-fusion proteins and Trx-Enterokinase will be to express them in separate cells as shown in figure 4. Once this is successful, activation of the AMPs can be performed as described above. However we have a more delicate solution that could increase efficiency and allow for a single system to produce already active AMPs, which would not require mixing of cell lysates, this is described below.
+    <br>
+    <img class="fig-small" src="https://2019.igem.org/wiki/images/4/47/T--Lund--lead-resistence.svg" alt="">
+    <p class="fig">Figure 4: presenting the single plasmid systems, expressing AMPs and Enterokinase individually.
+    <p>The second step, after initial expression of the constructs, would be to implement a double plasmid system to express both the AMP-fusion protein and Trx-Enterokinase within the same cell, see figure 3. pET-11a would still be used for the AMPs but to avoid competition of replication machinery, a plasmid with a different Ori would be used for Enterokinase. The details of this system are however not fully complete, due to unforeseen circumstances.
+    <br>
+    <img class="fig-small" src="https://2019.igem.org/wiki/images/4/47/T--Lund--lead-resistence.svg" alt="">
+    <p class="fig">Figure 5: presenting the double plasmid system, expressing AMP and Enterokinase within the same cell on different plasmids.
+<h2 id="process">Testing effectivity of the AMPs</h2>
+<p>Testing of the AMPs is meant to give an first indication to whether the cell lysates inhibit <i>P. infestans</i> or not, and testing will not yield any quantitative results. Having the cell lysates containing the AMPs, growth inhibition tests will be performed on <i>P. infestans</i> in three different ways. The AMPs will be tested individually to determine which AMPs that will be more likely to make up an effective cocktail. After individual testing, tests can be performed for cocktails containing several AMPs 
+    <h3 id="js-toc-ignore">Inhibition of <i>P. infestans</i> growing on nutrient agar in petri dishes.</h3>
+    <p> Isolates of <i>P. infestans</i> will be incubated on nutrient agar in petri dishes with the presence of cell lysates. Results of growth inhibition will be examined by eye-observations and microscopy. 
 
-    <p>Since we&rsquo;re focusing on bioaccumulation our interests are PbrT, a lead transporter protein, and PbrD, a putative lead-binding protein. Since we're interested in the highest amount of expression possible we&rsquo;ve used a T7 promoter <a href="http://parts.igem.org/Part:BBa_I719005">(BBa_I719005)</a> for use in <em>E. coli </em>BL21-DE3, and Tac promoter <a href="http://parts.igem.org/Part:BBa_K3282006">(BBa_K3282006)</a> for use in EcN.</p>
-<p><strong><i>pbrT</i>: <a href="http://parts.igem.org/Part:BBa_K3282001">BBa_K3282001</a></strong></p>
-<p><strong><i>pbrD</i>: <a href="http://parts.igem.org/Part:BBa_K3282002">BBa_K3282002</a></p></strong>
-<br>
-<p><strong>Composite part with <i>pbrT, pbrD</i> and a T7 promoter: <a href="http://parts.igem.org/Part:BBa_K3282005">BBa_K3282005</a></p></strong>
-<img class="fig" src="https://2019.igem.org/wiki/images/2/2d/T--Lund--PbT7.svg" alt="">
-<p><strong>Composite part with <i>pbrT, pbrD</i> and a Tac promoter: <a href="http://parts.igem.org/Part:BBa_K3282007">BBa_K3282007</a></p></strong>
-<img class="fig" src="https://2019.igem.org/wiki/images/a/ad/T--Lund--PbTac.svg" alt="">
-<img class="fig" src="https://2019.igem.org/wiki/images/5/50/T--Lund--lead_image.svg" alt="">
-<p class="fig">Figure 2: An overview of the lead accumulation mechanism.</p>
-
-
-
-<h3 id="arsenic">Arsenic</h3>
-<p>The ars operon is widespread amongst bacteria, including EcN. However, the accumulation capabilities of EcN is low, something we aimed to improve. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC492386/">A paper from 2004 by Kostal et al.</a> showcased that overexpression of ArsR, a regulatory protein in the ars operon, in genetically modified <em>E. coli</em>, increased its accumulation capabilities by 5-60 fold. Applying the same logic we decided to include this protein as an accumulation protein. Because arsenic transport is facilitated in glycerol uptake facilitator proteins (GlpFs) we do not have to include a transport protein. Similarly, since we&rsquo;re aiming for the highest possible expression and have thus chosen a T7 promoter <a href="http://parts.igem.org/Part:BBa_I719005">(BBa_I719005)</a>  for use in <em>E.coli</em> BL21-DE3 and Tac-promoter <a href="http://parts.igem.org/Part:BBa_K3282006">(BBa_K3282006)</a>  for use in EcN.</p>
-<p><strong><i>arsR</i>: <a href="http://parts.igem.org/Part:BBa_K3282000">BBa_K3282000</a></p></strong>
-<p><strong>Composite part with <i>arsR</i> and a T7 promoter: <a href="http://parts.igem.org/Part:BBa_K3282003">BBa_K3282003</a></p></strong>
-<img class="fig" src="https://2019.igem.org/wiki/images/2/2b/T--Lund--arsRT7.svg" alt="">
-<p><strong>Composite part with <i>arsR</i> and a Tac promoter: <a href="http://parts.igem.org/Part:BBa_K3282004">BBa_K3282004</a></p></strong>
-<img class="fig" src="https://2019.igem.org/wiki/images/b/bf/T--Lund--arsRTac.svg" alt="">
-
-<img class="fig" src="https://2019.igem.org/wiki/images/d/d3/T--Lund--arsenic_image.svg" alt="">
-<p class="fig">Figure 3: An overview of the arsenic accumulation mechanism.</p>
-<br>
-<h3 id="experimental-plan">Experimental Plan</h3>
-<p>The experiments were designed in a way to prove the protein expression and protein function. Before we could start experiments the proper constructs were created according to common biochemical methods of cloning and transformed into the correct strains. The experimental plan was made to first characterize the growth of the bacteria in their preferred conditions, and to test the expression of the proteins that had been implemented. This was done by growing cultures, testing cell growth and using SDS-PAGE to illustrate the presence of the expected protein. Thereafter, we needed to prove the concept and the function of the proteins. This was done by growing culture in toxic metal-infused media. The uptake of metal into the cell was investigated by measuring the concentration of metal in the media over time. We could then prove that accumulation of metals occured by a decreased concentration of metals in the media.&nbsp;</p>
-
-<p>The plan was to then prove the function of the constructs in realistic conditions. This would be proved by letting earthworms consume the engineered EcN as well as toxic metals. This would be compared with a control group of worms that were supplied with toxic metals without the helpful bacteria. The proof of the concept in a realistic environment would then come from the survival rate of worms. Another option for the design of this experiment would be to measure the concentration of toxic metals in the actual worms. Worms fed with both metal and engineered EcN would according to our hypothesis have a lower concentration of metal than a control group of worms fed with only metal. Even though this experiment had several suggestions for design, there was not enough time to prove the concept in a realistic setting using worms. Instead, the conditions of the gut was simulated by lowering the pH of the media. </p>
+     <h3 id="js-toc-ignore">Inhibition of <i>P. infestans</i> growing on potato leaf in petri dishes.</h3>
+<p> Liquid cultivations of <i>P. infestans</i> will be sprayed and incubated on single isolated potato leaves in petri dishes. Individual cell lysates will be sprayed on leaves prior to the incubation as this would more resemble the real life use of the pesticide. Growth inhibition will be observed by the eye.
+    <h3 id="js-toc-ignore">Inhibition of <i>P. infestans</i> infecting a whole potato plant. </h3>
+    <p>If growth inhibition tests 1 and 2 show positive results, the AMP will also be tested on infection of a whole plant. The cell lysate will be sprayed on the plant prior to spraying liquid cultivation of <i>P. infestans</i> on the plant and inbuating it. Growth inhibition will be observed by the eye.
+<h2 id="js-toc-ignore">Explaining our choice of antimicrobial peptides</h2>
+<p> After conducting a literature study to assemble peptides known to disrupt <i>P. infestans</i> growth, we screened on toxicity towards it, the chassi and the potato plant as well as the class of AMP, as it likely determines which mechanism it has. The ones we selected were suitable according to our criteria.
+    </p>
 <br>
 <p>To see how it all played out, head over to the <a href="/Team:Lund/Results">Results-page</a>!</p>
 </div>
