@@ -5,42 +5,85 @@
 <h1 id="title" class="js-toc-ignore">Protocols and Experiments</h1>
 <div id="body">
 <h2 id="protocols" >Protocols</h2>
-<h3 id="PCR">PCR (Amplification of gBlocks)</h3>
-<h4 class="js-toc-ignore" class="js-toc-ignore">Mastermix:</h4>
-<p> For each 20 µL reaction mixture, mix the following:
+<h3 id="PCR">Medium Preparation:</h3>
+<h4 class="js-toc-ignore" class="js-toc-ignore">LB Media</h4>
+<p> For each 1 L reaction mixture, mix the following:
 <ul>
-<li>2 µL dNTP mix</li>
-<li>2 µL Forward primer</li>
-<li>2 µL Reverse primer</li>
-<li>0.1 µL Phusion High Fidelity DNA Polymerase</li>
-<li>2 µL Phusion buffer</li>
-<li>10 µL MilliQ water</li>
+<li>5 g Yeast Extract </li>
+<li>10 g Tryptone</li>
+<li>10 g NaCl</li>
 </ul></p>
+<h4 class="js-toc-ignore">Preperation:</h4>
+<ol>
+<li>Weigh ingredients individually and put them in a schott bottle with a magnetic stirrer</li>
+<li>Fill with 1 L of distilled water</li>
+<li>Stir until all powder is diluted</li>
+</ol>
+<h4 class="js-toc-ignore" class="js-toc-ignore">TB Media</h4>
+<p> For each 1 L reaction mixture, mix the following:
+<ul>
+<li>12 g Peptone </li>
+<li>24 g Yeast Extract</li>
+<li>4 mL Glycerol</li>
+<li>2.3 g KH2PO4</li>
+<li>12.5 g K2HPO4</li>
+</ul></p>
+<h4 class="js-toc-ignore">Preperation:</h4>
+<ol>
+<li>Weigh and later autoclave Potassium salts, glycerol separately and peptone along with yeast extract to avoid precipitation</li>
+<li>Dissolve all the components in a sufficient amount of distilled water but not exceeding the total 1 L volume</li>
+</ol>
+<h4 class="js-toc-ignore" class="js-toc-ignore">LB Agar Media</h4>
+<p> For each 1 L reaction mixture, mix the following:
+<ul>
+<li>5 g Yeast Extract </li>
+<li>10 g Tryptone</li>
+<li>10 g NaCl</li>
+<li>150 g agarose</li>
+</ul></p>
+<h4 class="js-toc-ignore">Preperation:</h4>
+<ol>
+<li>Weigh ingredients individually and put them in a schott bottle with a magnetic stirrer</li>
+<li>Fill with 1 L of distilled water</li>
+<li>After autoclaving, cool the media and add 100 μg/ml of antibiotic of choice (ampicillin) depending on the application</li>
+<li>Pour into sterile Petri dishes</li>
+</ol>
+<h3 id="PCR"><h3 id="PCR">PCR - Amplification of gBlocks</h3>
+<h4 class="js-toc-ignore" class="js-toc-ignore">MasterMix</h4>
+<p> For each 50  µL reaction mixture, mix the following in this order:
+<ul>
+<li>38.25  µL MilliQ water </li>
+<li>10  µL HF buffer</li>
+<li>0.25  µL of each dNTP</li>
+<li>0.25  µL Forward Primer</li>
+<li>0.25  µL Reverse Primer</li>
+<li>0.5  µL Phusion High Fidelity DNA Polymerase</li>
+</ul>
+<p>Divide the MasterMix into 10 PCR tubes and add 0.5  µL Template DNA (20  µL each in total) and arrange them in the thermocycler.
+    <ul></p>
 <h4 class="js-toc-ignore">Thermal Cycler Settings:</h4>
 <ol>
-<li>98°C for 180 seconds</li>
-<li>98°C for 20 seconds</li>
-<li>Set a gradient for 55.9°C, 57.1°C and 62.1°C for 60 seconds</li>
-<li>72°C for 90 seconds</li>
-<li>Repeat step 1-4 for 25 cycles</li>
-<li>72°C for 10 minutes</li>
-<li>Store at 4C° until loading</li>
+<li>Initial denaturation: 98 ℃ for 30 seconds</li>
+<li>Denaturation: 98  ℃ for 10 seconds</li>
+<li>Annealing: 67.4 ℃ (for Trx 61.1 ℃)  for 20 seconds (15 cycles)</li>
+<li>Extension: 72 ℃ for 20 seconds</li>
+<li>Final extension: 72 ℃ for 7minutes</li>
+<li>Hold: 4 ℃ until loading</li>
 </ol>
 <h3 id="gel">Gel Electrophoresis</h3>
 <h4 class="js-toc-ignore">Gel preparation:</h4>
 <p>
 <ol>
-<li>Weigh 1.5 gram agarose.</li>
-<li>Mix in 100 mL TAE buffer.</li>
-<li>Warm the mixture in microwave and heat until the solution is clear.</li>
-<li>Add 12 µL GelRed after the solution has cooled down.</li>
+<li>Prepare 2 % agarose gel electrophoresis (0.8 grams agarose powder in 40 mL TAE buffer)</li>
+<li>Warm the mixture in the microwave and heat until the solution is clear.</li>
+<li>Add 2 µL GelRed after the solution has cooled down.</li>
 <li>Fix comb and add the solution into the casket for the gel to solidify.</li>
 </ol>
 </p>
 <h4 class="js-toc-ignore">Ladder &amp; samples:</h4>
 <p>
 <ol>
-<li>Mix 2 µL gene ruler with 2 µL loading dye and 1 µL MilliQ water for preparation of ladder.</li>
+<li>Add 2 µL of 100 bp ladder (GeneRuler).</li>
 <li>Mix 10 µL of PCR samples with 2 µL loading dye.</li>
 </ol>
 </p>
@@ -49,14 +92,19 @@
 <ol>
 <li>Remove the comb and move the solidified gel to the electrophoresis set up.</li>
 <li>Fill the chamber with TAE buffer until all the wells are covered completely.</li>
-<li>Load gel and run it for 90 minutes at 100 V.</li>
+<li>Load the gel and run it for 90 minutes at 100 V (NOTE: start at 80 V until the samples in the wells move into the gel and then increase to 100 V).</li>
 </ol>
 </P>
 <h3 id="colony-pcr">Colony PCR</h3>
-<h4 class="js-toc-ignore">Template preparation</h4>
+<h4 class="js-toc-ignore">Template preparation and Master Plate</h4>
 <p>
 <ol>
-<li>Pick colonies with inoculation loop and re-suspend in 50 μL of MilliQ water.</li>
+<li>Divide an Agar-plate into four parts using a marker pen.</li>
+<li>Inoculate one colony from the transformed TG1 onto one part of the agar plate. Make sure to spread the bacteria within the marked area, and watch out for droplets of water which may spread the bacteria around the plate.</li>
+<li>Directly after spreading the bacteria on the plate, dip the inoculation loop in a prepared PCR tube to inoculate this as well. </li>
+<li>Incubate plates at 37 ℃ for a few hours or until a suitable amount of growth is seen.</li>
+<li>While waiting, continue with Colony PCR.</li>
+<li>Inoculate positive transformants from the masterplate in 10ml tubes and incubate at 37 ℃ over night. This is for Sanger Sequencing.</li>
 </ol>
 </p>
 <h4 class="js-toc-ignore">PCR reaction mixture</h4>
@@ -65,93 +113,35 @@
 <li>2 µL dNTP mix</li>
 <li>2 µL Forward primer</li>
 <li>2 µL Reverse primer</li>
-<li>0.1 µL Dream Taq DNA Polymerase</li>
-<li>2 µL Dream Taq buffer</li>
-<li>2 µL template prepared in previous step</li>
-<li>10 µL MilliQ water</li>
+<li>0.1 µL Taq DNA Polymerase</li>
+<li>2 µL Taq buffer</li>
+<li>3 µL MgCl2</li>
+<li>12 µL MilliQ water</li>
 </ul></p>
-<h4 class="js-toc-ignore">Thermal Cycler Protocol</h4>
-<p>
+<h4 class="js-toc-ignore">Thermal Cycler Settings:</h4>
 <ol>
-<li>95°C for 5 minutes</li>
-<li>95°C for 30 seconds</li>
-<li>59°C for 30 seconds</li>
-<li>72°C for 45 seconds</li>
-<li>Repeat above steps for 30 cycles</li>
-<li>72°C for 5 minutes</li>
-<li>Store at 4°C until loading</li>
+<li>Initial denaturation: 95 ℃ for 180 seconds</li>
+<li>Denaturation: 95  ℃ for 30 seconds</li>
+<li>Annealing: 60 ℃  for 30 seconds (35 cycles)</li>
+<li>Extension: 72 ℃ for 20 seconds</li>
+<li>Final extension: 72 ℃ for 10 minutes</li>
+<li>Hold: 4 ℃ until loading</li>
 </ol></p>
 <h3 id="transformations">Transformations</h3>
 <p> For TG1 and BL21-DE3 cells (Heat Shock):
 <ol>
-<li>Add 2 μL of plasmid DNA to 50 μL cells on ice (no more than 5 μL, i.e. no more than 10% volume of cells).</li>
+<li>Thaw the competent cells on ice.</li>
+<li>Add 10 μL of ligation mixture to 200 μL cells on ice (maximum concentration of plasmid allowed is 100 ng/mL).</li>
 <li>Swirl gently to mix the contents.</li>
-<li>Incubate on ice for 30 minutes.</li>
-<li>Transfer tubes to shaking incubator at 42oC for 90 seconds.</li>
-<li>Place samples back on ice and let them cool for 1-2 minutes.</li>
-<li>Add 800 μL of LB media.</li>
-<li>Incubate for 60 min in the shaking incubator at 37°C, for the cells to revive.</li>
-<li>Plate 75-100  μL of the culture on LB agar and incubate overnight at 37 °C.</li>
+<li>Incubate on ice for 1 hour.</li>
+<li>Transfer tubes in the heat block at 42 ℃ for 45 seconds.</li>
+<li>Place samples back on ice and let them cool for 5 minutes.</li>
+<li>Add 400 μL of LB media without antibiotics.</li>
+<li>Incubate for 45 min in the shaking incubator at 37°C, for the cells to revive.</li>
+<li>Centrifuge the tubes in a tabletop centrifuge for 1 minute and remove medium so that only 50 μL is left. Resuspend the cells in the 50 μL left.</li>
+<li>Plate 50  μL of the culture on LB agar with ampicillin antibiotic and incubate overnight at 37 °C.</li>
 </ol></p>
-<p> For<em> E. coli Nissle </em>cells (Electroporation):
-<ol>
-<li>Keep 2 mm electroporation cuvettes on ice to cool.</li>
-<li>Let the electrocompetent EcN cells (-80°C) thaw completely on ice.</li>
-<li>Add 1 μL of pure plasmid DNA to 25 μL of electrocompetent EcN cells.</li>
-<li>Pipet the mixture into chilled cuvette and flick to deposit cells at the bottom.</li>
-<li>Electroporate at 1800 V for 5 ms.</li>
-<li>Add 975 μL of LB medium to the cuvette, and pipette up and down to resuspend the cells.</li>
-<li>Transfer to a culture tube and place in shaking incubator for 1 hour at 37 °C.</li>
-<li>Plate 75-100  μL of the culture on LB agar and incubate overnight at 37 °C.</li>
-</ol></p>
-<h3 id="medium-preparations">Medium Preparation</h3>
-<p>
-<h4 class="js-toc-ignore">LB Media (for 1 L):</h4>
-<ul>
-<li>5 g Yeast Extract </li>
-<li>10 g Tryptone</li>
-<li>10 g NaCl</li>
-<li>Weigh ingredients individually and put them in a schott bottle with a magnetic stirrer</li>
-<li>Fill with 1 L of distilled water</li>
-<li>Stir until all powder is diluted</li>
-</ul></p>
-<h4 class="js-toc-ignore">TB Media (for 1 L):</h4>
-<p>
-<ul>
-<li>12 g Peptone</li>
-<li>24 g Yeast Extract</li>
-<li>4 mL Glycerol</li>
-<li>2.3 g KH2PO4</li>
-<li>12.5 g K2HPO4</li>
-<li>Weigh and later autoclave Potassium salts, glycerol separately and peptone along with yeast extract to avoid precipitation</li>
-<li>Dissolve all the components in a sufficient amount of distilled water but not exceeding the total 1 L volume</li></p>
-</ul>
-<h4 class="js-toc-ignore">Enriched Complex Media (for 1 L):</h4>
-<p>
-<ul>
-<li>20 g Peptone</li>
-<li>20 g Yeast Extract</li>
-<li>30 g Glucose</li>
-<li>13 g KH2PO4</li>
-<li>10 g K2HPO4</li>
-<li>5 g NaCl</li>
-<li>2 g (NH4)2SO4</li>
-<li>1 g MgSO4 * 7 H2O</li>
-<li>0.2 g NH4Cl</li>
-<li>Weigh and later autoclave Potassium salts,  Sulfate salts, Chloride salts, glucose separately and peptone along with yeast extract to avoid precipitation</li>
-<li>Dissolve all the components in a sufficient amount of distilled water but not exceeding the total 1 L volume</li>
-</ul></p>
-<h4 class="js-toc-ignore">LB Agar ( for 1 L  approximately 45- 50 Petri Dishes):</h4>
-<ul>
-<li>5 g Yeast Extract </li>
-<li>10 g Tryptone</li>
-<li>10 g NaCl</li>
-<li>150 g agarose</li>
-<li>Weigh ingredients individually and put them in a schott bottle with a magnetic stirrer</li>
-<li>Fill with 1 L of distilled water</li>
-<li>After autoclaving, cool the media and add 100 μg/ml of antibiotic of choice (ampicillin, carbenicillin, chloramphenicol) depending on the application</li>
-<li>Pour into sterile Petri dishes</li>
-</ul>
+ 
 <h3 id="SDS">SDS-PAGE</h3>
 <h4 class="js-toc-ignore">Reagents:</h4>
 <ol>
@@ -225,115 +215,54 @@
 <h3 id="dna-purification">DNA Purification
 <p>The protocol according to <a href="https://2019.igem.org/wiki/images/3/37/T--Lund--PCR_%26_Gel_clean-up.pdf">Nucleospin Gel and PCR clean-up kit</a> was followed for DNA purification.</p>
 
-<h3 id="restriction">Restriction</h3>
+
+
+
+<h3 id="restriction">Restriction Enzyme Cloning</h3>
 <p>
 <ol>
 <li>Premix the following in an eppendorf:
     <ul>
-<li>MilliQ water-15 µL</li>
-<li>10 X Buffer Tango- 2 µL</li>
-<li>Plasmid to be digested- 1 µL</li>
+<li>MilliQ water-11 µL</li>
+<li>2  µL FD buffer</li>
+<li>5  µL Plasmid DNA</li>
     </ul></li>
-<li>Mix 2 µL of PscI enzyme to the mixture and keep the eppendorf on ice at all times.</li>
-<li>Mix gently and spin down for a few seconds.</li>
-<li>Incubate at 37°C for 2 hours.</li>
-<li>Inactivate PscI by incubating at 65 °C for 20 min.</li>
-<li>Cool the mixture by keeping on ice.</li>
-<li>Add 2.5 µL of 10X buffer Tango to the same eppendorf.</li>
-<li>Add 2.5 µL of enzyme NdeI and vortex briefly.</li>
-<li>Incubate at 37 °C for 2 hours.</li>
-<li>Inactivate NdeI by incubating at 65 °C for 20 min.</li>
+<li>Add 1 µL Nde I and mix gently and spin down.</li>
+<li>Incubate for 60 min at 37 ℃.</li>
+<li>Add 1 µL BamH I   and mix gently and spin down.</li>
+<li>Incubate for 7 min at 37 ℃.</li>
+<li>Incubate for 5 min at 80 ℃ to inactivate enzymes.</li>
+<li>7Add 1 µL FastAP and incubate for 10 min at 37 ℃.</li>
+<li>Incubate for 5 min at 75 ℃ to inactivate enzyme.</li>
+<li>Store on ice or at -20 ℃.</li>
+</ol></p>
+<h3 id="PCR product digestion">PCR product digestion</h3>
+<p>
+<ol>
+<li>Combine the reagents in the following order at room temperature
+    <ul>
+<li>16 μL MilliQ water</li>
+<li>2 μL FastDigest buffer</li>
+<li>10 μL DNA (~0,2 μg)</li>
+    </ul></li>
+<li>Mix gently and spin down</li>
+<li>Add 1 μL Nde1 and incubate at 37°C for 2 hours.</li>
+<li>4Add 1 μL BamH1 and incubate for 10 minutes</li>
 </ol></p>
 <h3 id="ligation">Ligation</h3>
 <p>
-<ol>
-<li>Mix digested gBlock and plasmid in ratio of 1:1, i.e., 50 ng of gBlock and plasmid, or in the ratio of 1:3, i.e., 60 ng gBlock and 20 ng plasmid.</li>
-<li>Add 2 µL of T4 DNA ligase buffer.</li>
-<li>Add 1 µL of T4 DNA ligase. </li>
-<li>Add MilliQ water to make the volume upto 20 µL.</li>
+    <ol>
+    <li>Prepare the reaction mixture:
+        <ul>
+    <li>1 : 4 molar ratio (plasmid : gblock)</li>
+    <li>2  µL Ligase Buffer</li>
+    <li>1  µL T4 DNA ligase</li>
+    <li>MilliQ water to 20 µL</li>
+        </ul></li>
+<li>Incubate for at least 2 hours at room temperature. </li>
+<li>Use 10 uL of ligation mixture in the transformation of 200 uL bacteria.</li>
 </ol></p>
-<h3 id="toxic-metal-soltuion">Toxic Metals stock solution</h3>
-<p>Regarding toxic metals Arsenic Standard for ICM-MS and Lead Standard for AAS were purchased from Sigma- Aldrich.</p>
-<p>For arsenic, in 250 mL culture:
-<ul>
-<li>For 200μΜ add 7.5 ml</li>
-<li>For 50μΜ add 0.99 ml</li>
-<li>For 10μΜ add 0.188 ml</li>
-</ul></p>
-<p>For lead, in 250 mL culture:
-<ul>
-<li>For 200μΜ add 10.36 ml</li>
-<li>For 50μΜ add 2.59 ml</li>
-<li>For 10μΜ add 0.52 ml</li>
-</ul>
-</p>
-<h3 id="sample-preparation">Sample pretreatment for testing (Eurofins ICP-MS)</h3>
-<p>
-<ol>
-<li>Centrifuge 15 μL of sample at 8000 rpm for 8 minutes.</li>
-<li>Transfer supernatant to new tubes. </li>
-</ol></p>
-<h3 id="pH-regulation">pH regulation via buffer</h3>
-<p>
-<ol>
-<li>Prepare 2 M Na2HPO4 and 1 M citric acid buffer.</li>
-<li>To obtain pH 3, add 3.42 mL of 2 M Na2HPO4 and 13.25 mL of 1 M citric acid to 250 mL of media.</li>
-<li>To obtain pH 5, add 8.22 mL of 2 M Na2HPO4 and 8.45 mL of 1 M citric acid to 250 mL of media.</li>
-</ol></p>
-<h3 id="bradford">Bradford</h3>
-<h4 class="js-toc-ignore">Materials:</h4>
-<ul>
-<li>Bovine Serum Albumin (BSA) (Sigma-Aldrich)</li>
-<li>Coomassie Brilliant Blue G-250 (Sigma-Aldrich, catalog number: <a href="http://www.bio-thing.com/p868">27815 </a>)</li>
-<li>Methanol</li>
-<li>Phosphoric acid (H3PO4)</li>
-<li>Bradford reagent:
-<ol>
-<li>Dissolve 50 mg of Coomassie Brilliant Blue G-250 in 50 ml of methanol and add 100 ml 85% (w/v) phosphoric acid (H3PO4).</li>
-<li>Add the acid solution mixture slowly into 850 ml of H2O and let the dye dissolve completely.</li>
-<li>Filter to remove the precipitates just before use.</li>
-<li>Store in a dark bottle at 4 °C.</li>
-</ol></li>
-</ul></p>
-<h4 class="js-toc-ignore">Prepare Calibration curve:</h4>
-<p>
-<ol>
-<li>Prepare a 5-point calibration curve with bovine serum albumin (BSA) as standard.</li>
-<li>Make solutions of 0.2, 0.4, 0.6, 0.8 and 1.0 mg/ml BSA.</li>
-<li>Rest samples at room temperature and wait exactly 5 minutes.</li>
-<li>Measure the absorbance spectrophotometrically at 595 nm.</li>
-</ol>
-</p>
-<h4 class="js-toc-ignore">Sample handling:</h4>
-<p>
-<ol>
-<li>Mix 25 µl sample (BSA standard solution or your sample) with 1.0 ml of Bradford reagent.</li>
-<li>Rest samples at room temperature and wait exactly 5 minutes and then measure the absorbance spectrophotometrically at 595 nm, absorbance will increase over time.</li>
-</ol>
-</p>
-<h4 class="js-toc-ignore">Sample preparation for sequencing:</h4>
-<p>
-<ol>
-<li>Add 5μL of DNA 100 ng/μL.</li>
-<li>Add 5μL of each primer concentration 5 μM.</li>
-<li>Mix by inverting 6-8 times in an Eppendorf. </li>
-<li>Forward and reverse primer should be in different tubes along with 5 μL of DNA in each.</li>
-</ol>
-<h2 id="experiments">Experiments</h2>
-<p>The first parts of experiments were the cloning and isolation of plasmids. The gBlocks with the appropriate biobricks were purchased from IDT and Eurofins. They were amplified using PCR. The PCR product was then inserted into a pUC19 vector using plasmid digestion and ligation. The plasmids were transformed into the cloning strain of <em>E.coli </em>TG1.  Some plasmids were purchased as a complete construct with no cloning necessary. Plasmids were isolated and transformed into <em>E.coli BL21-DE3</em> cells and <em>E.coli </em>Nissle cells. The latter was isolated from the Mutaflor® probiotic supplement.</p><br>
-<p>The presence of the proper <em>E.coli</em> strain out of the Mutaflor® supplement was verified with cPCR, for this experiment specific primers were designed.</p><br>
-<p>For comparison of strains, all experiments were performed using both <em>E.coli </em>BL21-DE3 and <em>E.coli </em>Nissle<em>.</em> The transformed cells were cultivated under differing growth parameters. The parameters that were varied were induction time and pH. Cultivations were performed using shake-flasks in a shake-incubator at 37 °C. The analysis methods used to evaluate the cultivations were spectrophotometric measurements of optical cell density at 600nm, pH-measurements, SDS-PAGE, and Bradford analysis. </p><br>
-<p>The genetically engineered cells were tested for toxic metal uptake by cultivating the cells in media containing toxic metals. The concentration of metal in the media was measured at start concentration and continuously during the cultivation to detects changes in concentration. A lower metal concentration in the media would mean uptake of metals into the cells. </p><br>
-<p>Before start testing the original construct with <em>EcN</em>, preliminary testing of the gene construct took place using <em>E.coli </em>BL21(DE3) with T7 promoter.</p><br>
-<h3 id="plasmid-purification">Plasmid purification</h3>
-<p>Five gblocks were purchased from IDT, the gene for ArsR using promoter T7 and Tac, fusion protein of ArsR+ MBL using promoter T7 and genes for PbrD and pbrT using promoters T7 and Tac. Whole plasmids with the genes for PbrD+ pbrT, ArsR and MBL with the T7 promoter was purchased from IDT. An additional purchase from eurofins was made of a whole plasmid with the gene for ArsR using the Tac promoter. The whole plasmids were all delivered in a company specific vector with an ampicillin antibiotic marker. PCR was used to amplify the gblocks, using amplification primers of our own design. The PCR protocol used is described under “Protocols”. The PCR product was run through agarose electrophoresis and purified using a plasmid purification kit found under “protocols”. The purified gblocks were digested according to the digestion protocol found under “protocols”, using the restriction enzymes PscI and NdeI. The vector pUC19 was also digested using the same enzymes. The gblocks and vector was then ligated using T4 ligase while following the ligation protocol under “protocols”. The plasmids were transformed into <em>E.coli BL21-DE3 </em>chemically competent cells using the heat-shock protocol under “protocols”. Plasmids were transformed into <em>E.coli Nissle </em>electrocompetent cells following the protocol for the Nissle electroporation under “protocols”. </p>
-<h3 id="cultivation">Cultivation</h3>
-<p>The genetically modified cells were cultivated in LB media in shake-flasks in a shaking-incubator set at 175 rpm and 37 °C. The growth of the cells was analysed and compared to control strain of <em>E.coli BL21-DE3 </em>and <em>E.coli Nissle </em>without the inserted plasmid. The growth was measured using a spectrophotometer to measure the optical cell density at 600nm. Growth curves can be found on the <a href="https://2019.igem.org/Team:Lund/Results">results page</a>. Two different induction times were tested 0.8 or 2 OD600nm. For the induction Isopropyl β-d-1-thiogalactopyranoside (IPTG) was used.  After induction samples were taken every hour for the monitoring of optical density and prepared for SDS-PAGE. After three constant OD readings the cultivation was terminated, since the cultures had reached stationary phase and the possibility of protein expression was minimized.</p>
-<h3 id="testing-protein-expression">Testing protein expression</h3>
-<p>Two methods were used to analyse the protein expression; SDS-PAGE and Bradford assay. To analyze the amount of the protein of interest the SDS-PAGE samples were prepared and loaded in the set up as is described in “protocol”. To analyze the total amount of protein a bradford analysis was performed as described above in the “protocol”. </p>
-<h3 id="testing-toxic-metals">Testing of toxic metal uptake to modified cells</h3>
-<p>Metal uptake in the genetically modified cells were tested, both using strain <em>E.coli BL21-DE3 </em>and <em>E.coli Nissle. </em>The cells were cultivated in an enriched complex media, recipe found under protocols. After 12 hours of cell growth, the cells were harvested and put into new media containing different concentrations of the metal. The cells modified to take up arsenic were added to arsenic containing media, and same for the lead uptaking cells. </p>
-   
+
 </div>
 {% include "partials/footer.nunjucks" %}
 
