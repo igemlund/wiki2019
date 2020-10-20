@@ -1,0 +1,27 @@
+<!-- index.html -->
+{% extends "layout.html" %}
+{% block content %} 
+{% include "partials/header.nunjucks" %}
+<h1 id="title" class="js-toc-ignore">Proposed Implementation</h1>
+<div id="body">
+  <img class="fig-small" src="https://2020.igem.org/wiki/images/4/4f/T--Lund--design--2.JPG" alt="">
+    <p class="fig">Figure 1. A flowchart for the process from first industrial step to the final result. The parts which our project deals with are marked by a rectangle. Other processes may apply.
+    </p>
+<p>The group primarily benefiting from the intended product would be the potato farmers, who would spray their crops with the cell extract. The usage would not be characteristically different from the usage of Bt extract, meaning that the cell extract would be sprayed onto the plants. There will also be an environmental benefit as the product will have less side effects than some common pesticides worldwide.
+</p> 
+<p>One of the overall problems of replacing small organic compounds with biomolecules, even small ones, is the production cost. It doesn’t matter how good a product is, if you want it to see the light of day, it can’t be more expensive than comparable alternatives. However, we believe that our proposed system would produce affordable gene products without being irresponsible. 
+</p>
+<p>A unique characteristic of biomolecules as cell lysates is the fact that it does not require separation of the antimicrobial peptides from the remaining lysate. This in turn means that the production cost potentially can be driven down. One thing that would drive cost down is the incorporation of the protease in the production cell. Purchasing an isolated, purified gene product in order to produce another gene product we don’t plan on isolating and purifying would be economically wasteful.
+</p>
+<p>Some downward processing could be relevant, however. Implementation of our project requires releasing lysed genetically modified microorganisms (GMMs) into the environment. That calls for thorough safety and ethics considerations, not only because of scientific concerns but because of the current status of GMOs in society. Our first argument would be that since the cells will be sonicated, in theory, there should be no live microorganisms present and thus pose low risk and low consequences.</p>
+<p>But, oftentimes there is no such thing as 100% efficiency, and if so, how do we address it? We are proposing that a kill switch, Deadman in this case, would be an efficient second layer of defense. By having a chemically repressed kill switch, the production organism lives on our grace.
+</p>
+<p>Take the following statements to be true: a significant number of GMMs survive sonication, and if we spray the cell extract into the environment as it is, there will be unintended ecosystem consequences. If we then have a kill switch, we know that we can trigger it and by so we can achieve a greater safety. </p>
+<p>If we assume that sonication and the kill switch combined yields 100% efficiency, is that enough? One could certainly argue that it would be irresponsible to release antibiotic resistance genes even though the cells have been sonicated, as well as the related gene products. By incorporating a nucleic acid separation step and ultrafiltration, we could dramatically improve our credibility in delivering a safe product to a relatively low increase in production cost as compared to implementing chromatographic separation processes, removing all the non-native E. coli biomolecules. This was never within the scope of our project, but would be of interest when trying to implement.</p>
+<p>Overall, we believe that our project, were it to be successful and ethically accepted by the general population, has a clear enough proposed implementation for us to be able to proceed with development afterwards.</p>
+
+
+</div>
+{% include "partials/footer.nunjucks" %}
+
+{% endblock %}

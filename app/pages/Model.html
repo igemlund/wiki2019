@@ -6,8 +6,9 @@
 <div id="body">
 <h1 class="js-toc-ignore">STACC</h1>
     <p>We here present our machine learning algorithm STAAC. STAAC is a combination of two neural networks and a tree-based model that when integrated into a genetic algorithm can generate peptides with different antimicrobial properties by classifying them into the categories antifungal (AFP), non-antifungal antimicrobial (NoAFP-AMP), and non-antimicrobial (NoAMP). The categories are illustrated in the Venn diagram below:
-        </p>
-<br>
+      </p>
+<img class="fig" src="https://2020.igem.org/wiki/images/2/23/T--Lund--Staac--1.JPG" alt="">
+
 <p>The objective of STAAC is to generate new, previously unseen peptides that would suit our project of producing anti-oomycete peptides in bacteria. This means that the peptides should have strong antifungal and therefore anti-oomycete, properties, while at the same time having weak antibacterial properties. STAAC is therefore trained to maximize the harmonic mean (HM) of the AFP classification precision and the NoAFP-AMP classification recall. Overall, STAAC can classify unseen peptides with an accuracy of 88 %, AFPs with a precision of 88 %, and NoAFP-AMPs with a recall of 65 %. We would like to stress that there are models out there with much better accuracy and precision if one would like to answer the binary question: “Is this peptide antifungal?”. Indeed, when we converted our model to answer this binary question, we received a precision of 93.5 % and an overall accuracy of 94 %.</p>
 
 <h2 id="js-toc-ignore">Theory</h2>
@@ -74,6 +75,7 @@
 <p>Given the stated issues and challenges when choosing a metric as well as the purpose of the STAAC model of generating new peptides with high antifungal properties and low antibacterial properties, we decided to mainly monitor the precision of the AFP-classification and the recall of the NoAFPAMP-classification. A logical way of combining the two metrics into one is taking the harmonic average, similar to how one computes the commonly used f1-score. 
 </p>
 <p>Optimizing the AFP-classification precision results in a model that strongly punishes “risky” patterns that may misclassify peptides as AFPs. We hypothesize that this would be analogous to the model promoting only strong antifungal properties in peptides. Optimizing the NoAFPAMP-classification recall results in a model that more strongly classifies peptides as NoAFPAMPs. We hypothesize that this is analogous to the model promoting non-antifungal, antimicrobial properties, classifying even the weak properties as NoAFPAMP. Knowing that the model is more sensitive to promoting AFPs and more strongly promotes NoAFPAMPs we hypothesize that if we then maximize the predicted probability of a given peptide being an AFP and minimize the probability of it being a NoAFPAMP, we will be able to generate peptides with high antifungal properties and low antibacterial properties. </p>
+<img class="fig" src="https://2020.igem.org/wiki/images/8/82/T--Lund--staac--2.JPG" alt="">
 <h2 id="js-toc-ignore">Method</h2>
 <h3 id="js-toc-ignore">Data Management:</h3>
 <p>Peptides were imported, cleaned, and sorted into the groups “Antifungal peptides” (AFPs), “Non-antifungal, antimicrobial peptides” (NoAFP-AMPs), and “Non-antimicrobial peptides” (NoAMPs). Peptides with a length between 10 and 50, inclusive, were selected. Peptides with missing information on their antifungal properties were not removed but classified as not having antifungal properties. Not removing peptides with missing data was a mistake which probably resulted in a worse model. A limited schedule is to blame for why this issue persists.</p>
@@ -245,6 +247,7 @@
     <td>0.05</td>
   </tr>
 </table>
+<h3 id="js-toc-ignore">Derived Equations:</h3>
 
 <p><b>Equation (1)</b> describes the precision in the binary confusion matrix.
 </p>

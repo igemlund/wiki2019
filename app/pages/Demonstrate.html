@@ -3,13 +3,17 @@
 {% include "partials/header.nunjucks" %}
 <h1 id="title" class="js-toc-ignore">Demonstrate</h1>
 <div id="body">
-    <p class="ingress">On this page, we explain how we showcased how our system would work under real world conditions! </p>
+    <p class="ingress">On this page, we will showcase the engineering success behind our project </p>
     <br>
-    <p>In order to obtain an indication on whether our system would work under realistic conditions and whether our engineered bacteria would thrive in the gut, we applied two methods. Firstly, we provided experimental evidence by changing the pH in the growth media to simulate the gut. We then observed the engineered bacteria's ability to grow and absorb arsenic and lead compared to controls of untransformed bacteria.&nbsp;</p>
+    <p>We were only available to achieve protein expression, but the following paragraphs.
+        One of the reasons, apart from wanting to test combinations, for why we express multiple AMPs is because we expect to gain new knowledge along with the experiments. Many of them have never been previously expressed in bacteria, much less in E. coli. We need a system able to produce a gene product according to at least two quality parameters: a significant yield of soluble fusion protein and a usable yield of protease digested AMPs</p>
     <br>
-<p>Second, we modeled the distribution of metals in the human body with and without the influence of our probiotic bacteria. The model was created by improving old models of metal-distribution. It was then backed up by data regarding growth and accumulation from the wet-lab as mentioned above.</p>
+<p>For producing the soluble protein, we try multiple fusion partners, Thioredoxin A (Trx A) and Glutathione S-Transferase (GST). Since many of the peptides are cysteine rich, we expect the disulphide bridge formation catalyzing Trx A to have the greatest solubility increase, but this hypothesis requires experimental validation, and given that GST increases it more, we will proceed with it as our fusion partner. There may also be other reasons for why a particular antimicrobial peptide is not expressed properly, and using a wider selection hedges us against unexpected issues.</p>
 <br>
-<p>By implementing data from the wet-lab to our improved distribution model, we&rsquo;ve created a probable model of how our engineered bacteria would affect the human body. <a href="Model">Read more in our model!</a></p>
+<p>When it comes to the AMP yield, meaning the yield from fusion partner digestion, we require experimental validation. The protease, enterokinase (EK), is a naturally occuring protease in mammals (humans, bovine). The region it recognizes and cleaves is hydrophilic, so it should be accessible for EK. However, the substrate data from Brenda indicates that while enterokinase is selective, it’s specificity varies with the chains, such that experimental validation is the most feasible approach within the scope of the project.</p>
+<br>
+<p>When we have produced cell extract containing AMPs, we will screen for which ones produce the strongest antimicrobial effect. Based on this, we will conduct a factorial experiment trying to determine if we can get a significant synergistic effect of combination therapy. We believe that with these objectives along with the proper research, design, building and testing, we will follow the engineering cycle in a way that will benefit the project.
+</p>
 </div>
 {% include "partials/footer.nunjucks" %}
 
